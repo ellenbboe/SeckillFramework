@@ -6,9 +6,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.thymeleaf.util.StringUtils;
 import sf.entity.User;
+import sf.result.CodeMsg;
+import sf.result.Result;
 import sf.service.UserService;
+import sf.util.MD5Util;
 import sf.vo.LoginVo;
 
+import javax.validation.Valid;
 import javax.websocket.server.PathParam;
 
 @Controller
@@ -18,9 +22,20 @@ public class LoginController {
     UserService userService;
 
 
-    @RequestMapping("/user/login")
+    @RequestMapping("/user")
     public String login(){
         return "login";
+    }
+
+    @RequestMapping("/user/do_login")
+    @ResponseBody
+    public Result<CodeMsg> LoginByMobile(@Valid LoginVo loginVo)
+    {
+        if (userService.login(loginVo)){
+            return Result.success(CodeMsg.SUCCESS);
+        }else{
+            return Result.error(CodeMsg.SERVER_ERROR);
+        }
     }
 
 

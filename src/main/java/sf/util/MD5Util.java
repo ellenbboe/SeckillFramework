@@ -8,7 +8,7 @@ public class MD5Util {
         return DigestUtils.md5Hex(src);
     }
 
-    private static final String salt = "fsa31fds2";
+    private static final String salt = "9d5b364d";
 //使用固定salt进行md5,用户端的加密
     public static String inputPassForm(String inputPass)
     {
@@ -27,5 +27,5 @@ public class MD5Util {
     {
         return FormPassToDB(inputPassForm(inputpass),salt);
     }
-
+    
 }

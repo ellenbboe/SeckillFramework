@@ -1,7 +1,16 @@
 package sf.vo;
+
+import sf.validator.IsMobile;
+
+import javax.validation.constraints.NotNull;
+
 //登录认证
 public class LoginVo {
+    @NotNull
+    @IsMobile
     private String phone;
+
+    @NotNull
     private String password;
 
     public String getPassword() {
