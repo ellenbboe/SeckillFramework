@@ -12,6 +12,7 @@ import sf.service.UserService;
 import sf.util.MD5Util;
 import sf.vo.LoginVo;
 
+import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
 import javax.websocket.server.PathParam;
 
@@ -22,48 +23,21 @@ public class LoginController {
     UserService userService;
 
 
-    @RequestMapping("/user")
+    @RequestMapping("/user/login")
     public String login(){
         return "login";
     }
 
     @RequestMapping("/user/do_login")
     @ResponseBody
-    public Result<CodeMsg> LoginByMobile(@Valid LoginVo loginVo)
+    public Result<CodeMsg> LoginByMobile(HttpServletResponse response, @Valid LoginVo loginVo)
     {
-        if (userService.login(loginVo)){
+        if (userService.login(response,loginVo)){
             return Result.success(CodeMsg.SUCCESS);
         }else{
             return Result.error(CodeMsg.SERVER_ERROR);
         }
     }
-
-
-
-    @RequestMapping("/user/1")
-    @ResponseBody
-    public User getUsers(){
-        return userService.getById(1);
-    }
-//    public String dologin(LoginVo loginVo)
-//    {
-//        String phone = loginVo.getPhone();
-//        String password = loginVo.getPassword();
-//        //数据检验
-//        if(StringUtils.isEmpty(password))
-//        {
-//            return
-//        }
-//        if(StringUtils.isEmpty(phone))
-//        {
-//            return
-//        }
-//    }
-
-//    public String dologinout()
-//    {
-//
-//    }
 
 
 }

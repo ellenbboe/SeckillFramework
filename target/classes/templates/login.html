@@ -31,7 +31,8 @@
     <form name="loginForm" id="loginForm" method="post">
         <div class="form-group">
             <input id="mobile" name="mobile" class="form-control" type="text" placeholder="手机号码" required="true"
-                     minlength="11" maxlength="11"/>
+                   onBlur="isPoneAvailable()"  minlength="11" maxlength="11"/>
+
         </div>
 
         <div class="form-group">

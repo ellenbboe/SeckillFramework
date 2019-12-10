@@ -3,7 +3,8 @@ package sf;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.ComponentScan;
+import org.springframework.boot.web.servlet.ServletComponentScan;
+import org.springframework.cache.annotation.EnableCaching;
 
 /**
  * Hello world!
@@ -11,6 +12,8 @@ import org.springframework.context.annotation.ComponentScan;
  */
 @SpringBootApplication
 @MapperScan("sf.dao")
+@EnableCaching
+@ServletComponentScan
 public class SeckillStartApplication
 {
     public static void main( String[] args )
