@@ -10,11 +10,12 @@ import sf.exception.BaseException;
 import sf.redis.RedisService;
 import sf.result.CodeMsg;
 import sf.service.UserService;
+import sf.util.Const;
 import sf.util.CookieUtil;
 import sf.util.MD5Util;
 import sf.vo.LoginVo;
 
-import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpServletRequest;
 
 @Service
 public class UserServiceImpl implements UserService {
@@ -37,7 +38,7 @@ public class UserServiceImpl implements UserService {
 
     //登录
     @Override
-    public boolean login(HttpServletResponse response, LoginVo loginVo) {
+    public boolean login(HttpServletRequest request, LoginVo loginVo) {
         if(loginVo == null)
         {
             throw new BaseException(CodeMsg.SERVER_ERROR);
@@ -54,8 +55,7 @@ public class UserServiceImpl implements UserService {
         {
             throw new BaseException(CodeMsg.LOGIN_ERROR_PASS_ERROR);
         }
-        // TODO: 2019/12/10 这里不应该使用redis 
-        redisService.addTokenInCookie(response,user);
+        request.getSession();
         return true;
     }
 

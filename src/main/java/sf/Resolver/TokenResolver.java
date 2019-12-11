@@ -14,6 +14,8 @@ import sf.util.CookieUtil;
 import sf.validator.LoginTokenValidator;
 
 import javax.servlet.http.HttpServletRequest;
+
+//通过token来获取user
 @Component
 public class TokenResolver implements HandlerMethodArgumentResolver {
 
