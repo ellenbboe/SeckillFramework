@@ -16,8 +16,8 @@ import java.io.IOException;
 
 
 //加长session的时间
-@Component
-@WebFilter(filterName="SessionExpireFilter",urlPatterns="/*")
+//@Component
+//@WebFilter(filterName="SessionExpireFilter",urlPatterns="/*")
 public class SessionExpireFilter implements Filter {
 
     @Autowired

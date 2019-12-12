@@ -6,8 +6,6 @@ function g_showLoading(){
 
 
 
-//salt
-var g_passsword_salt="9d5b364d"
 
 // 获取url参数
 function g_getQueryString(name) {

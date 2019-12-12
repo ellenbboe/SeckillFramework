@@ -32,9 +32,9 @@ public class LoginController {
 
     @RequestMapping("/user/do_login")
     @ResponseBody
-    public Result<CodeMsg> LoginByMobile(HttpServletRequest request, @Valid LoginVo loginVo)
+    public Result<CodeMsg> LoginByMobile(@Valid LoginVo loginVo)
     {
-        if (userService.login(request,loginVo)){
+        if (userService.login(loginVo)){
             return Result.success(CodeMsg.SUCCESS);
         }else{
             return Result.error(CodeMsg.SERVER_ERROR);

@@ -3,11 +3,9 @@ package sf.service;
 import sf.entity.User;
 import sf.vo.LoginVo;
 
-import javax.servlet.http.HttpServletRequest;
-
 public interface UserService {
-    User getById(int id);//没用过
+    String GetpasswordByphone(String phone);
     User getByPhone(String phone);
-    boolean login(HttpServletRequest request, LoginVo loginVo);
+    boolean login(LoginVo loginVo);
     User getByToken(String token);
 }

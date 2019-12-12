@@ -6,17 +6,16 @@
         <result property="id" column="id"/>
         <result property="nickname" column="nickname"/>
         <result property="password" column="password"/>
-        <result property="salt" column="salt"/>
         <result property="phone" column="phone"/>
         <result property="lastlogindate" column="lastlogindate"/>
     </resultMap>
     <sql id="BaseColumn" >
-        id, nickname, phone, password, salt,  lastlogindate
+        id, nickname, phone, password,  lastlogindate
     </sql>
-    <select id="getById" resultType="sf.entity.User" resultMap="userMap">
-        select <include refid="BaseColumn"/>
+    <select id="GetpasswordByphone" parameterType="java.lang.String" resultType="String">
+        select password
         from user
-        where id=#{id}
+        where phone=#{phone}
     </select>
     <select id="getByPhone" resultType="sf.entity.User" resultMap="userMap">
         select <include refid="BaseColumn"/>

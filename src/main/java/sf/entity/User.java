@@ -7,7 +7,6 @@ public class User implements Serializable {
     private int id;
     private String nickname;
     private String password;
-    private String salt;
     private Date lastlogindate;
     private String phone;
 
@@ -33,14 +32,6 @@ public class User implements Serializable {
 
     public void setPassword(String passwrod) {
         this.password = passwrod;
-    }
-
-    public String getSalt() {
-        return salt;
-    }
-
-    public void setSalt(String salt) {
-        this.salt = salt;
     }
 
     public Date getLastlogindate() {
