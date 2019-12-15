@@ -14,6 +14,8 @@ import sf.util.CookieUtil;
 import sf.validator.LoginTokenValidator;
 
 import javax.servlet.http.HttpServletRequest;
+
+//通过token来获取user
 @Component
 public class TokenResolver implements HandlerMethodArgumentResolver {
 
@@ -30,15 +32,11 @@ public class TokenResolver implements HandlerMethodArgumentResolver {
     @Override
     public Object resolveArgument(MethodParameter methodParameter, ModelAndViewContainer modelAndViewContainer, NativeWebRequest nativeWebRequest, WebDataBinderFactory webDataBinderFactory) throws Exception {
         HttpServletRequest request = nativeWebRequest.getNativeRequest(HttpServletRequest.class);
-
-        String paramToken = request.getParameter(CookieUtil.USER_COOKIE_TOKEN_NAME);
         String cookieToken = CookieUtil.getCookieValue(request,CookieUtil.USER_COOKIE_TOKEN_NAME);
-
-        if(StringUtils.isEmpty(paramToken)&&StringUtils.isEmpty(cookieToken))
+        if(StringUtils.isEmpty(cookieToken))
         {
             return null;
         }
-        String token = StringUtils.isEmpty(paramToken)?cookieToken:paramToken;
-        return userService.getByToken(token);
+        return userService.getByToken(cookieToken);
     }
 }

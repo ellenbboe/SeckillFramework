@@ -2,23 +2,33 @@ package sf.service.impl;
 
 
 import com.alibaba.druid.util.StringUtils;
+import org.apache.shiro.SecurityUtils;
+import org.apache.shiro.authc.AuthenticationException;
+import org.apache.shiro.authc.UsernamePasswordToken;
+import org.apache.shiro.crypto.hash.Md5Hash;
+import org.apache.shiro.subject.Subject;
+import org.apache.shiro.util.ByteSource;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import sf.dao.UserMapper;
 import sf.entity.User;
+import sf.entity.UserExample;
 import sf.exception.BaseException;
 import sf.redis.RedisService;
 import sf.result.CodeMsg;
 import sf.service.UserService;
-import sf.util.CookieUtil;
-import sf.util.MD5Util;
+import sf.util.JwtUtil;
 import sf.vo.LoginVo;
 
 import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
 
 @Service
 public class UserServiceImpl implements UserService {
 
+    private static final Logger logger = LoggerFactory.getLogger(UserServiceImpl.class);
 
     @Autowired(required = false)
     UserMapper userMapper;
@@ -26,8 +36,8 @@ public class UserServiceImpl implements UserService {
     @Autowired
     RedisService redisService;
     @Override
-    public User getById(int id) {
-        return userMapper.getById(id);
+    public String GetpasswordByphone(String phone) {
+        return userMapper.GetpasswordByphone(phone);
     }
 
     @Override
@@ -37,26 +47,24 @@ public class UserServiceImpl implements UserService {
 
     //登录
     @Override
-    public boolean login(HttpServletResponse response, LoginVo loginVo) {
+    public String login(LoginVo loginVo) {
         if(loginVo == null)
         {
-            throw new BaseException(CodeMsg.SERVER_ERROR);
+            throw new BaseException(CodeMsg.LOGIN_OR_PASS_ERROR);
         }
+        Subject subject = SecurityUtils.getSubject();
+        System.out.println("login");
         String phone = loginVo.getPhone();
-        User user = getByPhone(phone);
-        if(user == null)
+        String password = loginVo.getPassword();
+        ByteSource credentialsSalt = ByteSource.Util.bytes(phone);
+        password =new Md5Hash(password,credentialsSalt.toString()).toString();
+//        UsernamePasswordToken token = new UsernamePasswordToken(phone, password);
+//        subject.login(token);
+        if(!password.equals(GetpasswordByphone(phone)) | StringUtils.isEmpty(GetpasswordByphone(phone)))
         {
-            throw new BaseException(CodeMsg.LOGIN_ERROR_USER_NOT_ERROR);
+            throw new BaseException(CodeMsg.LOGIN_OR_PASS_ERROR);
         }
-        String salt = user.getSalt();
-        String password = MD5Util.FormPassToDB(loginVo.getPassword(),salt);
-        if(!password.equals(user.getPassword()))
-        {
-            throw new BaseException(CodeMsg.LOGIN_ERROR_PASS_ERROR);
-        }
-        // TODO: 2019/12/10 这里不应该使用redis 
-        redisService.addTokenInCookie(response,user);
-        return true;
+        return JwtUtil.createToken(phone);
     }
 
 
@@ -67,12 +75,20 @@ public class UserServiceImpl implements UserService {
         {
             return null;
         }
-        return redisService.getObj(token);
+        String username = JwtUtil.getUsername(token);
+        if (username == null || !JwtUtil.verify(token, username)) {
+            throw new AuthenticationException("token认证失败！");
+        }
+        UserExample userExample = new UserExample();
+        UserExample.Criteria criteria = userExample.createCriteria();
+        criteria.andPhoneEqualTo(username);
+        return userMapper.selectByExample(userExample).get(0);
     }
 
-
-
-
-
-
+    public User GETbyID(){
+        UserExample userExample = new UserExample();
+        UserExample.Criteria criteria = userExample.createCriteria();
+        criteria.andNicknameEqualTo("老王");
+        return userMapper.selectByExample(userExample).get(0);
+    }
 }

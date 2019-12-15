@@ -1,13 +1,33 @@
 package sf.dao;
 
-
-import org.apache.ibatis.annotations.Mapper;
+import java.util.List;
+import org.apache.ibatis.annotations.Param;
 import sf.entity.User;
+import sf.entity.UserExample;
 
 public interface UserMapper {
-    User getById(int id);
+    int countByExample(UserExample example);
+
+    int deleteByExample(UserExample example);
+
+    int deleteByPrimaryKey(Integer id);
+
+    int insert(User record);
+
+    int insertSelective(User record);
+
+    List<User> selectByExample(UserExample example);
+
+    User selectByPrimaryKey(Integer id);
+
+    int updateByExampleSelective(@Param("record") User record, @Param("example") UserExample example);
+
+    int updateByExample(@Param("record") User record, @Param("example") UserExample example);
+
+    int updateByPrimaryKeySelective(User record);
+
+    int updateByPrimaryKey(User record);
+    //自己之前写的
+    String GetpasswordByphone(String phone);
     User getByPhone(String phone);
-//    User selectByPhoneAndPassword(@Param("phone") String phone , @Param("password") String password);
-//
-//    User checkPhone(@Param("phone") String phone );
 }

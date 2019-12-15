@@ -40,8 +40,6 @@ public class RedisService {
     //生成用户的token,添加到cookie中
     public void addTokenInCookie(HttpServletResponse response, User user)
     {
-        String token = UUIDUtil.uuid();
-        setObj(token,user);
-        response.addCookie(CookieUtil.addCookie(CookieUtil.USER_COOKIE_TOKEN_NAME,token));
+       
     }
 }

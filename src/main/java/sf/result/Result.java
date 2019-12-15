@@ -19,6 +19,7 @@ public class Result<T> {
         this.msg = "success";
         this.data = data;
     }
+
     private Result(CodeMsg cm) {
         if(cm == null) {
             return;
