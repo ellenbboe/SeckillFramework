@@ -1,20 +1,23 @@
 package sf.entity;
 
-import java.io.Serializable;
 import java.util.Date;
 
-public class User implements Serializable {
-    private int id;
+public class User {
+    private Integer id;
+
     private String nickname;
+
     private String password;
+
     private Date lastlogindate;
+
     private String phone;
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -23,15 +26,15 @@ public class User implements Serializable {
     }
 
     public void setNickname(String nickname) {
-        this.nickname = nickname;
+        this.nickname = nickname == null ? null : nickname.trim();
     }
 
     public String getPassword() {
         return password;
     }
 
-    public void setPassword(String passwrod) {
-        this.password = passwrod;
+    public void setPassword(String password) {
+        this.password = password == null ? null : password.trim();
     }
 
     public Date getLastlogindate() {
@@ -47,6 +50,12 @@ public class User implements Serializable {
     }
 
     public void setPhone(String phone) {
-        this.phone = phone;
+        this.phone = phone == null ? null : phone.trim();
+    }
+
+
+    @Override
+    public String toString() {
+        return "User:"+"name"+nickname;
     }
 }

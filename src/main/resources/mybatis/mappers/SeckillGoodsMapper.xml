@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="sf.dao.SeckillGoodsMapper" >
+  <resultMap id="BaseResultMap" type="sf.entity.SeckillGoods" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="goods_id" property="goodsId" jdbcType="INTEGER" />
+    <result column="seckill_price" property="seckillPrice" jdbcType="DECIMAL" />
+    <result column="seckill_number" property="seckillNumber" jdbcType="INTEGER" />
+    <result column="seckill_starttime" property="seckillStarttime" jdbcType="TIMESTAMP" />
+    <result column="seckill_endtime" property="seckillEndtime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    id, goods_id, seckill_price, seckill_number, seckill_starttime, seckill_endtime
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="sf.entity.SeckillGoodsExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from seckill_goods
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from seckill_goods
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from seckill_goods
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="sf.entity.SeckillGoodsExample" >
+    delete from seckill_goods
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="sf.entity.SeckillGoods" >
+    insert into seckill_goods (id, goods_id, seckill_price, 
+      seckill_number, seckill_starttime, seckill_endtime
+      )
+    values (#{id,jdbcType=INTEGER}, #{goodsId,jdbcType=INTEGER}, #{seckillPrice,jdbcType=DECIMAL}, 
+      #{seckillNumber,jdbcType=INTEGER}, #{seckillStarttime,jdbcType=TIMESTAMP}, #{seckillEndtime,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="sf.entity.SeckillGoods" >
+    insert into seckill_goods
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="goodsId != null" >
+        goods_id,
+      </if>
+      <if test="seckillPrice != null" >
+        seckill_price,
+      </if>
+      <if test="seckillNumber != null" >
+        seckill_number,
+      </if>
+      <if test="seckillStarttime != null" >
+        seckill_starttime,
+      </if>
+      <if test="seckillEndtime != null" >
+        seckill_endtime,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="goodsId != null" >
+        #{goodsId,jdbcType=INTEGER},
+      </if>
+      <if test="seckillPrice != null" >
+        #{seckillPrice,jdbcType=DECIMAL},
+      </if>
+      <if test="seckillNumber != null" >
+        #{seckillNumber,jdbcType=INTEGER},
+      </if>
+      <if test="seckillStarttime != null" >
+        #{seckillStarttime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="seckillEndtime != null" >
+        #{seckillEndtime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="sf.entity.SeckillGoodsExample" resultType="java.lang.Integer" >
+    select count(*) from seckill_goods
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update seckill_goods
+    <set >
+      <if test="record.id != null" >
+        id = #{record.id,jdbcType=INTEGER},
+      </if>
+      <if test="record.goodsId != null" >
+        goods_id = #{record.goodsId,jdbcType=INTEGER},
+      </if>
+      <if test="record.seckillPrice != null" >
+        seckill_price = #{record.seckillPrice,jdbcType=DECIMAL},
+      </if>
+      <if test="record.seckillNumber != null" >
+        seckill_number = #{record.seckillNumber,jdbcType=INTEGER},
+      </if>
+      <if test="record.seckillStarttime != null" >
+        seckill_starttime = #{record.seckillStarttime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.seckillEndtime != null" >
+        seckill_endtime = #{record.seckillEndtime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update seckill_goods
+    set id = #{record.id,jdbcType=INTEGER},
+      goods_id = #{record.goodsId,jdbcType=INTEGER},
+      seckill_price = #{record.seckillPrice,jdbcType=DECIMAL},
+      seckill_number = #{record.seckillNumber,jdbcType=INTEGER},
+      seckill_starttime = #{record.seckillStarttime,jdbcType=TIMESTAMP},
+      seckill_endtime = #{record.seckillEndtime,jdbcType=TIMESTAMP}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="sf.entity.SeckillGoods" >
+    update seckill_goods
+    <set >
+      <if test="goodsId != null" >
+        goods_id = #{goodsId,jdbcType=INTEGER},
+      </if>
+      <if test="seckillPrice != null" >
+        seckill_price = #{seckillPrice,jdbcType=DECIMAL},
+      </if>
+      <if test="seckillNumber != null" >
+        seckill_number = #{seckillNumber,jdbcType=INTEGER},
+      </if>
+      <if test="seckillStarttime != null" >
+        seckill_starttime = #{seckillStarttime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="seckillEndtime != null" >
+        seckill_endtime = #{seckillEndtime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="sf.entity.SeckillGoods" >
+    update seckill_goods
+    set goods_id = #{goodsId,jdbcType=INTEGER},
+      seckill_price = #{seckillPrice,jdbcType=DECIMAL},
+      seckill_number = #{seckillNumber,jdbcType=INTEGER},
+      seckill_starttime = #{seckillStarttime,jdbcType=TIMESTAMP},
+      seckill_endtime = #{seckillEndtime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

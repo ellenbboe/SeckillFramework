@@ -3,7 +3,7 @@ package sf.service.impl;
 
 import com.alibaba.druid.util.StringUtils;
 import org.apache.shiro.SecurityUtils;
-import org.apache.shiro.authc.*;
+import org.apache.shiro.authc.UsernamePasswordToken;
 import org.apache.shiro.crypto.hash.Md5Hash;
 import org.apache.shiro.subject.Subject;
 import org.apache.shiro.util.ByteSource;
@@ -13,12 +13,16 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import sf.dao.UserMapper;
 import sf.entity.User;
+import sf.entity.UserExample;
 import sf.exception.BaseException;
 import sf.redis.RedisService;
 import sf.result.CodeMsg;
 import sf.service.UserService;
-import sf.util.MD5Util;
+import sf.util.JwtUtil;
 import sf.vo.LoginVo;
+
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
 
 @Service
 public class UserServiceImpl implements UserService {
@@ -42,30 +46,24 @@ public class UserServiceImpl implements UserService {
 
     //登录
     @Override
-    public boolean login(LoginVo loginVo) {
-        Subject subject = SecurityUtils.getSubject();
+    public boolean login(HttpServletResponse response, LoginVo loginVo) {
         if(loginVo == null)
         {
             throw new BaseException(CodeMsg.LOGIN_OR_PASS_ERROR);
         }
+        Subject subject = SecurityUtils.getSubject();
+        System.out.println("login");
         String phone = loginVo.getPhone();
         String password = loginVo.getPassword();
         ByteSource credentialsSalt = ByteSource.Util.bytes(phone);
         password =new Md5Hash(password,credentialsSalt.toString()).toString();
-        UsernamePasswordToken token = new UsernamePasswordToken(phone, password);
-        try{
-            subject.login(token);
-        } catch (ExcessiveAttemptsException eae) {
-            throw new BaseException(CodeMsg.REQUEST_OVER_LIMIT);//请求次数过多
-        } catch (AuthenticationException uae) {
-            throw new BaseException(CodeMsg.LOGIN_OR_PASS_ERROR);//用户名或者密码错误
-        }
-
-        if (!subject.isAuthenticated())
+//        UsernamePasswordToken token = new UsernamePasswordToken(phone, password);
+//        subject.login(token);
+        if(!password.equals(GetpasswordByphone(phone)) | StringUtils.isEmpty(GetpasswordByphone(phone)))
         {
-            token.clear();
-            return false;
+            throw new BaseException(CodeMsg.LOGIN_OR_PASS_ERROR);
         }
+        response.addHeader("Authorization", JwtUtil.createToken(phone));
         return true;
     }
 
@@ -80,9 +78,10 @@ public class UserServiceImpl implements UserService {
         return redisService.getObj(token);
     }
 
-
-
-
-
-
+    public User GETbyID(){
+        UserExample userExample = new UserExample();
+        UserExample.Criteria criteria = userExample.createCriteria();
+        criteria.andNicknameEqualTo("老王");
+        return userMapper.selectByExample(userExample).get(0);
+    }
 }
