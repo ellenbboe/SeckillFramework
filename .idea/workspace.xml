@@ -2,151 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1c868734-b1ff-418b-a49a-f018d642be3a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/sf/service/GoodsService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/sf/service/impl/GoodsServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/jquery.cookie.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sf/Resolver/TokenResolver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sf/Resolver/TokenResolver.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sf/controller/GoodsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sf/controller/GoodsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sf/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sf/controller/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sf/entity/Goods.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sf/entity/Goods.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sf/entity/GoodsExample.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sf/entity/GoodsExample.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/sf/filter/JwtFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sf/filter/JwtFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sf/redis/RedisService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sf/redis/RedisService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sf/result/Result.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sf/result/Result.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sf/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sf/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sf/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sf/service/impl/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sf/jwt/JwtDefaultSubjectFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sf/jwt/JwtDefaultSubjectFactory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/sf/shiro/shiroConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sf/shiro/shiroConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sf/util/CookieUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sf/util/CookieUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/generatorConfig.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/generatorConfig.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mybatis/mappers/GoodsMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mybatis/mappers/GoodsMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/common.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/common.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/goods_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/goods_list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/generatorConfig.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mybatis/mappers/GoodsMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mybatis/mappers/OrderMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mybatis/mappers/SeckillGoodsMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mybatis/mappers/SeckillOrderMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mybatis/mappers/UserMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mybatis/mybatis-config.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sf/Resolver/TokenResolver.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sf/SeckillStartApplication.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sf/config/WebConfig.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sf/controller/GoodsController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sf/controller/LoginController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sf/dao/GoodsMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sf/dao/OrderMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sf/dao/SeckillGoodsMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sf/dao/SeckillOrderMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sf/dao/UserMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sf/entity/Goods.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sf/entity/GoodsExample$Criteria.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sf/entity/GoodsExample$Criterion.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sf/entity/GoodsExample$GeneratedCriteria.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sf/entity/GoodsExample.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sf/entity/Order.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sf/entity/OrderExample$Criteria.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sf/entity/OrderExample$Criterion.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sf/entity/OrderExample$GeneratedCriteria.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sf/entity/OrderExample.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sf/entity/SeckillGoods.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sf/entity/SeckillGoodsExample$Criteria.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sf/entity/SeckillGoodsExample$Criterion.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sf/entity/SeckillGoodsExample$GeneratedCriteria.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sf/entity/SeckillGoodsExample.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sf/entity/SeckillOrder.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sf/entity/SeckillOrderExample$Criteria.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sf/entity/SeckillOrderExample$Criterion.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sf/entity/SeckillOrderExample$GeneratedCriteria.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sf/entity/SeckillOrderExample.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sf/entity/User.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sf/entity/UserExample$Criteria.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sf/entity/UserExample$Criterion.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sf/entity/UserExample$GeneratedCriteria.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sf/entity/UserExample.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sf/exception/BaseException.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sf/exception/BaseExceptionHandler.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sf/filter/JwtFilter.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sf/jwt/JwtDefaultSubjectFactory.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sf/jwt/JwtToken.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sf/redis/RedisConfig.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sf/redis/RedisService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sf/redis/StringRedisService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sf/result/CodeMsg.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sf/result/Result.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sf/service/UserService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sf/service/impl/UserServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sf/shiro/ShiroRealm.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sf/shiro/shiroConfig.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sf/util/Const.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sf/util/CookieUtil.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sf/util/JwtUtil.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sf/util/MD5Util.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sf/util/UUIDUtil.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sf/validator/IsMobile.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sf/validator/IsMobileValidator.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sf/validator/LoginTokenValidator.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sf/vo/LoginVo.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap/css/bootstrap-theme.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap/css/bootstrap-theme.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap/css/bootstrap-theme.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap/css/bootstrap-theme.min.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap/css/bootstrap.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap/css/bootstrap.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap/css/bootstrap.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap/css/bootstrap.min.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap/fonts/glyphicons-halflings-regular.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap/fonts/glyphicons-halflings-regular.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap/fonts/glyphicons-halflings-regular.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap/fonts/glyphicons-halflings-regular.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap/fonts/glyphicons-halflings-regular.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap/js/bootstrap.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap/js/bootstrap.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap/js/npm.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/css/detail.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/css/goods.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/css/login.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/goods_detail.htm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/img/index_back.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/img/iphone.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/img/oppo.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/img/rongyao.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/img/xiaomi.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/jquery-validation/additional-methods.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/jquery-validation/jquery.validate.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/jquery-validation/localization/messages_zh.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/js/common.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/js/jquery.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/js/md5.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/layer/layer.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/layer/mobile/layer.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/layer/mobile/need/layer.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/layer/skin/default/icon-ext.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/layer/skin/default/icon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/layer/skin/default/layer.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/layer/skin/default/loading-0.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/layer/skin/default/loading-1.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/layer/skin/default/loading-2.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/order_detail.htm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/bak/goods_detail.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/bak/goods_list.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/error/404.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/error/500.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/error/505.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/goods_detail.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/goods_list.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/login.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/miaosha_fail.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/order_detail.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/META-INF/SeckillFramework.kotlin_module" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/org/example/SeckillStartApplicationTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/sf/filter/SessionExpireFilterTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/sf/others/GeneratorUser.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/sf/redis/StringRedisServiceTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/sf/service/impl/UserServiceImplTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/sf/filter/JwtFilter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sf/filter/JwtFilter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/sf/jwt/JwtDefaultSubjectFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sf/jwt/JwtDefaultSubjectFactory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/sf/shiro/shiroConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sf/shiro/shiroConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap/fonts/glyphicons-halflings-regular.svg" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/bootstrap/fonts/glyphicons-halflings-regular.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/index_back.png" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/img/index_back.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/oppo.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/img/oppo.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/xiaomi.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/img/xiaomi.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/layer/skin/default/icon-ext.png" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/layer/skin/default/icon-ext.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/layer/skin/default/icon.png" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/layer/skin/default/icon.png" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -201,7 +69,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="other" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -391,10 +259,10 @@
     <list>
       <item itemvalue="Application.basetest" />
       <item itemvalue="JUnit.SessionExpireFilterTest.doFilter" />
-      <item itemvalue="Maven.SeckillFramework [mybatis-generator:generate...]" />
-      <item itemvalue="Spring Boot.SeckillStartApplication" />
       <item itemvalue="JUnit.basetest.GETbyID" />
       <item itemvalue="JUnit.UserServiceImplTest.GETbyID" />
+      <item itemvalue="Maven.SeckillFramework [mybatis-generator:generate...]" />
+      <item itemvalue="Spring Boot.SeckillStartApplication" />
     </list>
     <recent_temporary>
       <list>
@@ -450,7 +318,7 @@
       <workItem from="1576206142542" duration="18463000" />
       <workItem from="1576287601897" duration="600000" />
       <workItem from="1576295003314" duration="5302000" />
-      <workItem from="1576376164896" duration="22778000" />
+      <workItem from="1576376164896" duration="23292000" />
     </task>
     <task id="LOCAL-00001" summary="2019年12月8日">
       <created>1575803498758</created>
@@ -501,7 +369,14 @@
       <option name="project" value="LOCAL" />
       <updated>1576390910429</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="2019年12月15日">
+      <created>1576410445335</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1576410445335</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -569,46 +444,46 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="740" y="230" key="Github.UntrackedFilesDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1575803232877" />
-    <state width="1877" height="209" key="GridCell.Tab.0.bottom" timestamp="1576410283938">
+    <state width="1877" height="209" key="GridCell.Tab.0.bottom" timestamp="1576410926400">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1131" height="233" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1575778672051" />
-    <state width="1877" height="209" key="GridCell.Tab.0.bottom/0.0.1920.1050@0.0.1920.1050" timestamp="1576410283938" />
-    <state width="1877" height="209" key="GridCell.Tab.0.center" timestamp="1576410283937">
+    <state width="1877" height="209" key="GridCell.Tab.0.bottom/0.0.1920.1050@0.0.1920.1050" timestamp="1576410926400" />
+    <state width="1877" height="209" key="GridCell.Tab.0.center" timestamp="1576410926399">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1131" height="233" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1575778672051" />
-    <state width="1877" height="209" key="GridCell.Tab.0.center/0.0.1920.1050@0.0.1920.1050" timestamp="1576410283937" />
-    <state width="1877" height="209" key="GridCell.Tab.0.left" timestamp="1576410283937">
+    <state width="1877" height="209" key="GridCell.Tab.0.center/0.0.1920.1050@0.0.1920.1050" timestamp="1576410926399" />
+    <state width="1877" height="209" key="GridCell.Tab.0.left" timestamp="1576410926399">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1131" height="233" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1575778672051" />
-    <state width="1877" height="209" key="GridCell.Tab.0.left/0.0.1920.1050@0.0.1920.1050" timestamp="1576410283937" />
-    <state width="1877" height="209" key="GridCell.Tab.0.right" timestamp="1576410283938">
+    <state width="1877" height="209" key="GridCell.Tab.0.left/0.0.1920.1050@0.0.1920.1050" timestamp="1576410926399" />
+    <state width="1877" height="209" key="GridCell.Tab.0.right" timestamp="1576410926400">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1131" height="233" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1575778672051" />
-    <state width="1877" height="209" key="GridCell.Tab.0.right/0.0.1920.1050@0.0.1920.1050" timestamp="1576410283938" />
-    <state width="1877" height="209" key="GridCell.Tab.1.bottom" timestamp="1576410283938">
+    <state width="1877" height="209" key="GridCell.Tab.0.right/0.0.1920.1050@0.0.1920.1050" timestamp="1576410926400" />
+    <state width="1877" height="209" key="GridCell.Tab.1.bottom" timestamp="1576410926400">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1131" height="233" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1575778672051" />
-    <state width="1877" height="209" key="GridCell.Tab.1.bottom/0.0.1920.1050@0.0.1920.1050" timestamp="1576410283938" />
-    <state width="1877" height="209" key="GridCell.Tab.1.center" timestamp="1576410283938">
+    <state width="1877" height="209" key="GridCell.Tab.1.bottom/0.0.1920.1050@0.0.1920.1050" timestamp="1576410926400" />
+    <state width="1877" height="209" key="GridCell.Tab.1.center" timestamp="1576410926400">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1131" height="233" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1575778672051" />
-    <state width="1877" height="209" key="GridCell.Tab.1.center/0.0.1920.1050@0.0.1920.1050" timestamp="1576410283938" />
-    <state width="1877" height="209" key="GridCell.Tab.1.left" timestamp="1576410283938">
+    <state width="1877" height="209" key="GridCell.Tab.1.center/0.0.1920.1050@0.0.1920.1050" timestamp="1576410926400" />
+    <state width="1877" height="209" key="GridCell.Tab.1.left" timestamp="1576410926400">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1131" height="233" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1575778672051" />
-    <state width="1877" height="209" key="GridCell.Tab.1.left/0.0.1920.1050@0.0.1920.1050" timestamp="1576410283938" />
-    <state width="1877" height="209" key="GridCell.Tab.1.right" timestamp="1576410283938">
+    <state width="1877" height="209" key="GridCell.Tab.1.left/0.0.1920.1050@0.0.1920.1050" timestamp="1576410926400" />
+    <state width="1877" height="209" key="GridCell.Tab.1.right" timestamp="1576410926400">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1131" height="233" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1575778672051" />
-    <state width="1877" height="209" key="GridCell.Tab.1.right/0.0.1920.1050@0.0.1920.1050" timestamp="1576410283938" />
+    <state width="1877" height="209" key="GridCell.Tab.1.right/0.0.1920.1050@0.0.1920.1050" timestamp="1576410926400" />
     <state width="1877" height="352" key="GridCell.Tab.2.bottom" timestamp="1576240369468">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
@@ -654,6 +529,10 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="731" y="227" key="com.intellij.testIntegration.createTest.CreateTestDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1576389376886" />
+    <state x="641" y="316" key="git4idea.merge.GitPullDialog" timestamp="1576410589731">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="641" y="316" key="git4idea.merge.GitPullDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1576410589731" />
     <state x="702" y="152" key="refactoring.ChangeSignatureDialog" timestamp="1576223357611">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>

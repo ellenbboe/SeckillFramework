@@ -23,6 +23,11 @@ import java.util.Map;
 @Configuration
 public class shiroConfig {
     @Bean
+    JwtDefaultSubjectFactory subjectFactory()
+    {
+        return new JwtDefaultSubjectFactory();
+    }
+    @Bean
     ShiroRealm ShiroRealm() {
         return new ShiroRealm();
     }
@@ -37,8 +42,8 @@ public class shiroConfig {
         defaultSessionStorageEvaluator.setSessionStorageEnabled(false);
         subjectDAO.setSessionStorageEvaluator(defaultSessionStorageEvaluator);
         securityManager.setSubjectDAO(subjectDAO);
-//        //禁止Subject的getSession方法
-//        securityManager.setSubjectFactory(subjectFactory());
+        //禁止Subject的getSession方法
+        securityManager.setSubjectFactory(subjectFactory());
         return securityManager;
     }
 //    @Bean
