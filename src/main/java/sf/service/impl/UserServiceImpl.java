@@ -3,6 +3,7 @@ package sf.service.impl;
 
 import com.alibaba.druid.util.StringUtils;
 import org.apache.shiro.SecurityUtils;
+import org.apache.shiro.authc.AuthenticationException;
 import org.apache.shiro.authc.UsernamePasswordToken;
 import org.apache.shiro.crypto.hash.Md5Hash;
 import org.apache.shiro.subject.Subject;
@@ -46,7 +47,7 @@ public class UserServiceImpl implements UserService {
 
     //登录
     @Override
-    public boolean login(HttpServletResponse response, LoginVo loginVo) {
+    public String login(LoginVo loginVo) {
         if(loginVo == null)
         {
             throw new BaseException(CodeMsg.LOGIN_OR_PASS_ERROR);
@@ -63,8 +64,7 @@ public class UserServiceImpl implements UserService {
         {
             throw new BaseException(CodeMsg.LOGIN_OR_PASS_ERROR);
         }
-        response.addHeader("Authorization", JwtUtil.createToken(phone));
-        return true;
+        return JwtUtil.createToken(phone);
     }
 
 
@@ -75,7 +75,14 @@ public class UserServiceImpl implements UserService {
         {
             return null;
         }
-        return redisService.getObj(token);
+        String username = JwtUtil.getUsername(token);
+        if (username == null || !JwtUtil.verify(token, username)) {
+            throw new AuthenticationException("token认证失败！");
+        }
+        UserExample userExample = new UserExample();
+        UserExample.Criteria criteria = userExample.createCriteria();
+        criteria.andPhoneEqualTo(username);
+        return userMapper.selectByExample(userExample).get(0);
     }
 
     public User GETbyID(){

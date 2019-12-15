@@ -9,6 +9,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.RequestMethod;
 import sf.jwt.JwtToken;
+import sf.util.CookieUtil;
 
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
@@ -24,7 +25,7 @@ public class JwtFilter extends BasicHttpAuthenticationFilter {
     @Override
     protected boolean isAccessAllowed(ServletRequest servletRequest, ServletResponse servletResponse, Object o) throws UnauthorizedException {
         //判断请求的请求头是否带上 "token"
-
+        System.out.println("isAccessAllowed");
         if (isLoginAttempt(servletRequest, servletResponse)) {
             //如果存在，则进入 executeLogin 方法执行登入，检查 token 是否正确
             try {
@@ -46,7 +47,7 @@ public class JwtFilter extends BasicHttpAuthenticationFilter {
     @Override
     protected boolean isLoginAttempt(ServletRequest request, ServletResponse response) {
         HttpServletRequest req = (HttpServletRequest) request;
-        String token = req.getHeader("Authorization");
+        String token = CookieUtil.getCookieValue(req,"token");
         return token != null;
     }
 
@@ -57,7 +58,7 @@ public class JwtFilter extends BasicHttpAuthenticationFilter {
     protected boolean executeLogin(ServletRequest request, ServletResponse response) throws Exception {
         System.out.println("executeLogin");
         HttpServletRequest httpServletRequest = (HttpServletRequest) request;
-        String token = httpServletRequest.getHeader("Authorization");
+        String token = CookieUtil.getCookieValue(httpServletRequest,"token");
         JwtToken jwtToken = new JwtToken(token);
         // 提交给realm进行登入，如果错误它会抛出异常并被捕获
         getSubject(request, response).login(jwtToken);

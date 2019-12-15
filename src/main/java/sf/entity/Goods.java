@@ -15,6 +15,8 @@ public class Goods {
 
     private Integer goodsStock;
 
+    private BigDecimal goodsSeckillprice;
+
     public Integer getId() {
         return id;
     }
@@ -61,5 +63,13 @@ public class Goods {
 
     public void setGoodsStock(Integer goodsStock) {
         this.goodsStock = goodsStock;
+    }
+
+    public BigDecimal getGoodsSeckillprice() {
+        return goodsSeckillprice;
+    }
+
+    public void setGoodsSeckillprice(BigDecimal goodsSeckillprice) {
+        this.goodsSeckillprice = goodsSeckillprice;
     }
 }

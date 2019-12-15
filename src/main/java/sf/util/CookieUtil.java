@@ -10,16 +10,8 @@ import javax.servlet.http.HttpServletResponse;
 
 public class CookieUtil {
 
-    public static final String  USER_COOKIE_TOKEN_NAME = "userToken";
+    public static final String  USER_COOKIE_TOKEN_NAME = "token";
 
-    //将信息添加到cookie中
-    public static Cookie addCookie(String key,String value)
-    {
-        Cookie cookie = new Cookie(key,value);
-        cookie.setMaxAge(3600*24*2);
-        cookie.setPath("/");
-        return cookie;
-    }
 
     //得到指定cookiename的value值
     public static String getCookieValue(HttpServletRequest request,String cookieName)

@@ -6,11 +6,10 @@
 
     <!-- jquery -->
     <script type="text/javascript" th:src="@{/js/jquery.min.js}"></script>
+    <script type="text/javascript" th:src="@{/js/jquery.cookie.js}"></script>
     <!-- bootstrap -->
     <link rel="stylesheet" type="text/css" th:href="@{/bootstrap/css/bootstrap.min.css}"/>
-
     <link rel="stylesheet" type="text/css" th:href="@{/css/login.css}"/>
-
     <style>
         .form-control{
             font-size: 10px !important;
@@ -88,6 +87,8 @@
                 layer.closeAll();
                 if (data.code == 0) {
                     layer.msg("成功");
+                    console.log(data.data);
+                    $.cookie('token', data.data,{path:"/",expires:7});
                     window.location.href = "/goods/list";
                 } else {
                     layer.msg(data.msg);

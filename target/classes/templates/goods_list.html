@@ -13,6 +13,8 @@
 
 </head>
 <body>
+<h4 th:text="${user.getNickname()}"></h4>
+<h4 th:text="${user.getLastlogindate()}"></h4>
 <div class="seckill_content">
     <div class="title"><h2>秒杀商品列表</h2></div>
     <div class="all_seckill_goods">
@@ -21,9 +23,8 @@
             <img th:src="@{${goods.goodsImg}}" width="250"/>
             <br/><br/>
             <div class="seckill_price">
-                <p th:text="${goods.goodsTitle}"></p>
                 <p>
-                    <span class="price1" th:text="${goods.seckillPrice}+'元  '"></span>
+                    <span class="price1" th:text="${goods.goodsSeckillprice}+'元  '"></span>
                     <del><span class="price2" th:text="${goods.goodsPrice}+'元'"></span></del>
                 </p>
                 <a th:href="'/goods_detail.htm?goodsId='+${goods.id}">
@@ -45,4 +46,6 @@
 <script type="text/javascript" th:src="@{/js/md5.min.js}"></script>
 <!-- common.js -->
 <script type="text/javascript" th:src="@{/js/common.js}"></script>
+<script>
+</script>
 </html>

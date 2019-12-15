@@ -494,6 +494,66 @@ public class GoodsExample {
             addCriterion("goods_stock not between", value1, value2, "goodsStock");
             return (Criteria) this;
         }
+
+        public Criteria andGoodsSeckillpriceIsNull() {
+            addCriterion("goods_seckillPrice is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andGoodsSeckillpriceIsNotNull() {
+            addCriterion("goods_seckillPrice is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andGoodsSeckillpriceEqualTo(BigDecimal value) {
+            addCriterion("goods_seckillPrice =", value, "goodsSeckillprice");
+            return (Criteria) this;
+        }
+
+        public Criteria andGoodsSeckillpriceNotEqualTo(BigDecimal value) {
+            addCriterion("goods_seckillPrice <>", value, "goodsSeckillprice");
+            return (Criteria) this;
+        }
+
+        public Criteria andGoodsSeckillpriceGreaterThan(BigDecimal value) {
+            addCriterion("goods_seckillPrice >", value, "goodsSeckillprice");
+            return (Criteria) this;
+        }
+
+        public Criteria andGoodsSeckillpriceGreaterThanOrEqualTo(BigDecimal value) {
+            addCriterion("goods_seckillPrice >=", value, "goodsSeckillprice");
+            return (Criteria) this;
+        }
+
+        public Criteria andGoodsSeckillpriceLessThan(BigDecimal value) {
+            addCriterion("goods_seckillPrice <", value, "goodsSeckillprice");
+            return (Criteria) this;
+        }
+
+        public Criteria andGoodsSeckillpriceLessThanOrEqualTo(BigDecimal value) {
+            addCriterion("goods_seckillPrice <=", value, "goodsSeckillprice");
+            return (Criteria) this;
+        }
+
+        public Criteria andGoodsSeckillpriceIn(List<BigDecimal> values) {
+            addCriterion("goods_seckillPrice in", values, "goodsSeckillprice");
+            return (Criteria) this;
+        }
+
+        public Criteria andGoodsSeckillpriceNotIn(List<BigDecimal> values) {
+            addCriterion("goods_seckillPrice not in", values, "goodsSeckillprice");
+            return (Criteria) this;
+        }
+
+        public Criteria andGoodsSeckillpriceBetween(BigDecimal value1, BigDecimal value2) {
+            addCriterion("goods_seckillPrice between", value1, value2, "goodsSeckillprice");
+            return (Criteria) this;
+        }
+
+        public Criteria andGoodsSeckillpriceNotBetween(BigDecimal value1, BigDecimal value2) {
+            addCriterion("goods_seckillPrice not between", value1, value2, "goodsSeckillprice");
+            return (Criteria) this;
+        }
     }
 
     public static class Criteria extends GeneratedCriteria {
