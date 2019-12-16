@@ -286,66 +286,6 @@ public class SeckillGoodsExample {
             return (Criteria) this;
         }
 
-        public Criteria andSeckillNumberIsNull() {
-            addCriterion("seckill_number is null");
-            return (Criteria) this;
-        }
-
-        public Criteria andSeckillNumberIsNotNull() {
-            addCriterion("seckill_number is not null");
-            return (Criteria) this;
-        }
-
-        public Criteria andSeckillNumberEqualTo(Integer value) {
-            addCriterion("seckill_number =", value, "seckillNumber");
-            return (Criteria) this;
-        }
-
-        public Criteria andSeckillNumberNotEqualTo(Integer value) {
-            addCriterion("seckill_number <>", value, "seckillNumber");
-            return (Criteria) this;
-        }
-
-        public Criteria andSeckillNumberGreaterThan(Integer value) {
-            addCriterion("seckill_number >", value, "seckillNumber");
-            return (Criteria) this;
-        }
-
-        public Criteria andSeckillNumberGreaterThanOrEqualTo(Integer value) {
-            addCriterion("seckill_number >=", value, "seckillNumber");
-            return (Criteria) this;
-        }
-
-        public Criteria andSeckillNumberLessThan(Integer value) {
-            addCriterion("seckill_number <", value, "seckillNumber");
-            return (Criteria) this;
-        }
-
-        public Criteria andSeckillNumberLessThanOrEqualTo(Integer value) {
-            addCriterion("seckill_number <=", value, "seckillNumber");
-            return (Criteria) this;
-        }
-
-        public Criteria andSeckillNumberIn(List<Integer> values) {
-            addCriterion("seckill_number in", values, "seckillNumber");
-            return (Criteria) this;
-        }
-
-        public Criteria andSeckillNumberNotIn(List<Integer> values) {
-            addCriterion("seckill_number not in", values, "seckillNumber");
-            return (Criteria) this;
-        }
-
-        public Criteria andSeckillNumberBetween(Integer value1, Integer value2) {
-            addCriterion("seckill_number between", value1, value2, "seckillNumber");
-            return (Criteria) this;
-        }
-
-        public Criteria andSeckillNumberNotBetween(Integer value1, Integer value2) {
-            addCriterion("seckill_number not between", value1, value2, "seckillNumber");
-            return (Criteria) this;
-        }
-
         public Criteria andSeckillStarttimeIsNull() {
             addCriterion("seckill_starttime is null");
             return (Criteria) this;

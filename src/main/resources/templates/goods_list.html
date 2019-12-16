@@ -13,8 +13,10 @@
 
 </head>
 <body>
-<h4 th:text="${user.getNickname()}"></h4>
-<h4 th:text="${user.getLastlogindate()}"></h4>
+<div class="top">
+    <span th:if="${user == null}"> 您还没有登录，请登陆后再操作</span>
+    <span th:if="${user != null}"> <span th:text="'欢迎您 '+${user.nickname}"></span></span>
+</div>
 <div class="seckill_content">
     <div class="title"><h2>秒杀商品列表</h2></div>
     <div class="all_seckill_goods">
@@ -27,7 +29,7 @@
                     <span class="price1" th:text="${goods.goodsSeckillprice}+'元  '"></span>
                     <del><span class="price2" th:text="${goods.goodsPrice}+'元'"></span></del>
                 </p>
-                <a th:href="'/goods_detail.htm?goodsId='+${goods.id}">
+                <a th:href="'/goods_detail/goodsId/'+${goods.id}">
                     <button class="btn btn-default" type="submit">进入详情页...</button>
                 </a>
 

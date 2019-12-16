@@ -27,7 +27,4 @@ public interface UserMapper {
     int updateByPrimaryKeySelective(User record);
 
     int updateByPrimaryKey(User record);
-    //自己之前写的
-    String GetpasswordByphone(String phone);
-    User getByPhone(String phone);
 }

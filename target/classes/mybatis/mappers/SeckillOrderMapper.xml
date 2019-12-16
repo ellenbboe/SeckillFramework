@@ -4,7 +4,7 @@
   <resultMap id="BaseResultMap" type="sf.entity.SeckillOrder" >
     <id column="id" property="id" jdbcType="INTEGER" />
     <result column="user_id" property="userId" jdbcType="INTEGER" />
-    <result column="order_id" property="orderId" jdbcType="INTEGER" />
+    <result column="ord_id" property="ordId" jdbcType="INTEGER" />
     <result column="goods_id" property="goodsId" jdbcType="INTEGER" />
   </resultMap>
   <sql id="Example_Where_Clause" >
@@ -66,7 +66,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List" >
-    id, user_id, order_id, goods_id
+    id, user_id, ord_id, goods_id
   </sql>
   <select id="selectByExample" resultMap="BaseResultMap" parameterType="sf.entity.SeckillOrderExample" >
     select
@@ -79,7 +79,7 @@
       <include refid="Example_Where_Clause" />
     </if>
     <if test="orderByClause != null" >
-      order by ${orderByClause}
+      ord by ${orderByClause}
     </if>
   </select>
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
@@ -99,9 +99,9 @@
     </if>
   </delete>
   <insert id="insert" parameterType="sf.entity.SeckillOrder" >
-    insert into seckill_order (id, user_id, order_id, 
+    insert into seckill_order (id, user_id, ord_id, 
       goods_id)
-    values (#{id,jdbcType=INTEGER}, #{userId,jdbcType=INTEGER}, #{orderId,jdbcType=INTEGER}, 
+    values (#{id,jdbcType=INTEGER}, #{userId,jdbcType=INTEGER}, #{ordId,jdbcType=INTEGER}, 
       #{goodsId,jdbcType=INTEGER})
   </insert>
   <insert id="insertSelective" parameterType="sf.entity.SeckillOrder" >
@@ -113,8 +113,8 @@
       <if test="userId != null" >
         user_id,
       </if>
-      <if test="orderId != null" >
-        order_id,
+      <if test="ordId != null" >
+        ord_id,
       </if>
       <if test="goodsId != null" >
         goods_id,
@@ -127,8 +127,8 @@
       <if test="userId != null" >
         #{userId,jdbcType=INTEGER},
       </if>
-      <if test="orderId != null" >
-        #{orderId,jdbcType=INTEGER},
+      <if test="ordId != null" >
+        #{ordId,jdbcType=INTEGER},
       </if>
       <if test="goodsId != null" >
         #{goodsId,jdbcType=INTEGER},
@@ -150,8 +150,8 @@
       <if test="record.userId != null" >
         user_id = #{record.userId,jdbcType=INTEGER},
       </if>
-      <if test="record.orderId != null" >
-        order_id = #{record.orderId,jdbcType=INTEGER},
+      <if test="record.ordId != null" >
+        ord_id = #{record.ordId,jdbcType=INTEGER},
       </if>
       <if test="record.goodsId != null" >
         goods_id = #{record.goodsId,jdbcType=INTEGER},
@@ -165,7 +165,7 @@
     update seckill_order
     set id = #{record.id,jdbcType=INTEGER},
       user_id = #{record.userId,jdbcType=INTEGER},
-      order_id = #{record.orderId,jdbcType=INTEGER},
+      ord_id = #{record.ordId,jdbcType=INTEGER},
       goods_id = #{record.goodsId,jdbcType=INTEGER}
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
@@ -177,8 +177,8 @@
       <if test="userId != null" >
         user_id = #{userId,jdbcType=INTEGER},
       </if>
-      <if test="orderId != null" >
-        order_id = #{orderId,jdbcType=INTEGER},
+      <if test="ordId != null" >
+        ord_id = #{ordId,jdbcType=INTEGER},
       </if>
       <if test="goodsId != null" >
         goods_id = #{goodsId,jdbcType=INTEGER},
@@ -189,7 +189,7 @@
   <update id="updateByPrimaryKey" parameterType="sf.entity.SeckillOrder" >
     update seckill_order
     set user_id = #{userId,jdbcType=INTEGER},
-      order_id = #{orderId,jdbcType=INTEGER},
+      ord_id = #{ordId,jdbcType=INTEGER},
       goods_id = #{goodsId,jdbcType=INTEGER}
     where id = #{id,jdbcType=INTEGER}
   </update>

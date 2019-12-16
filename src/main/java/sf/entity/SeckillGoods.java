@@ -10,8 +10,6 @@ public class SeckillGoods {
 
     private BigDecimal seckillPrice;
 
-    private Integer seckillNumber;
-
     private Date seckillStarttime;
 
     private Date seckillEndtime;
@@ -38,14 +36,6 @@ public class SeckillGoods {
 
     public void setSeckillPrice(BigDecimal seckillPrice) {
         this.seckillPrice = seckillPrice;
-    }
-
-    public Integer getSeckillNumber() {
-        return seckillNumber;
-    }
-
-    public void setSeckillNumber(Integer seckillNumber) {
-        this.seckillNumber = seckillNumber;
     }
 
     public Date getSeckillStarttime() {

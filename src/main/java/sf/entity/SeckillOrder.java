@@ -5,7 +5,7 @@ public class SeckillOrder {
 
     private Integer userId;
 
-    private Integer orderId;
+    private Integer ordId;
 
     private Integer goodsId;
 
@@ -25,12 +25,12 @@ public class SeckillOrder {
         this.userId = userId;
     }
 
-    public Integer getOrderId() {
-        return orderId;
+    public Integer getOrdId() {
+        return ordId;
     }
 
-    public void setOrderId(Integer orderId) {
-        this.orderId = orderId;
+    public void setOrdId(Integer ordId) {
+        this.ordId = ordId;
     }
 
     public Integer getGoodsId() {

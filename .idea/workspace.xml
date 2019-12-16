@@ -2,19 +2,91 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1c868734-b1ff-418b-a49a-f018d642be3a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/sf/controller/SeckillController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/sf/dao/OrdMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/sf/entity/Ord.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/sf/model/GoodsListModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/sf/model/OrderModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/sf/model/SeckillGoodsModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/sf/model/UserModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/sf/service/OrderService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/sf/service/impl/OrderServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/sf/util/DateUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/sf/util/SnowFlake.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/sf/others/TestInsert.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/eadeaafd-5c15-413a-bfb3-51235dd2c03d.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/eadeaafd-5c15-413a-bfb3-51235dd2c03d.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sf/filter/JwtFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sf/filter/JwtFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sf/jwt/JwtDefaultSubjectFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sf/jwt/JwtDefaultSubjectFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sf/shiro/shiroConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sf/shiro/shiroConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sf/filter/JwtFilter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sf/filter/JwtFilter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sf/jwt/JwtDefaultSubjectFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sf/jwt/JwtDefaultSubjectFactory.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sf/shiro/shiroConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sf/shiro/shiroConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap/fonts/glyphicons-halflings-regular.svg" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/bootstrap/fonts/glyphicons-halflings-regular.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/img/index_back.png" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/img/index_back.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/img/oppo.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/img/oppo.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/img/xiaomi.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/img/xiaomi.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/layer/skin/default/icon-ext.png" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/layer/skin/default/icon-ext.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/layer/skin/default/icon.png" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/layer/skin/default/icon.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sf/SeckillStartApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sf/SeckillStartApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sf/controller/GoodsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sf/controller/GoodsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sf/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sf/controller/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sf/dao/OrderMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sf/dao/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sf/dao/UserMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sf/entity/Order.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sf/entity/OrderExample.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sf/entity/OrdExample.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sf/entity/SeckillGoods.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sf/entity/SeckillGoods.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sf/entity/SeckillGoodsExample.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sf/entity/SeckillGoodsExample.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sf/entity/SeckillOrder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sf/entity/SeckillOrder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sf/entity/SeckillOrderExample.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sf/entity/SeckillOrderExample.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sf/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sf/entity/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sf/entity/UserExample.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sf/entity/UserExample.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sf/service/GoodsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sf/service/GoodsService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sf/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sf/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sf/service/impl/GoodsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sf/service/impl/GoodsServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sf/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sf/service/impl/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sf/util/UUIDUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sf/util/UUIDUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/generatorConfig.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/generatorConfig.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mybatis/mappers/GoodsMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mybatis/mappers/GoodsMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mybatis/mappers/OrderMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mybatis/mappers/OrdMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mybatis/mappers/SeckillGoodsMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mybatis/mappers/SeckillGoodsMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mybatis/mappers/SeckillOrderMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mybatis/mappers/SeckillOrderMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mybatis/mappers/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mybatis/mappers/UserMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/goods_detail.htm" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/goods_detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/order_detail.htm" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/order_detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/goods_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/goods_detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/goods_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/goods_list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/order_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/order_detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/sf/service/impl/UserServiceImplTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/generatorConfig.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/generatorConfig.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mybatis/mappers/GoodsMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mybatis/mappers/GoodsMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mybatis/mappers/OrderMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mybatis/mappers/SeckillGoodsMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mybatis/mappers/SeckillGoodsMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mybatis/mappers/SeckillOrderMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mybatis/mappers/SeckillOrderMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mybatis/mappers/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mybatis/mappers/UserMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/sf/SeckillStartApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sf/SeckillStartApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/sf/controller/GoodsController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sf/controller/GoodsController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/sf/controller/LoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sf/controller/LoginController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/sf/dao/OrderMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/sf/dao/UserMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sf/dao/UserMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/sf/entity/Order.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/sf/entity/OrderExample$Criteria.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/sf/entity/OrderExample$Criterion.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/sf/entity/OrderExample$GeneratedCriteria.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/sf/entity/OrderExample.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/sf/entity/SeckillGoods.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sf/entity/SeckillGoods.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/sf/entity/SeckillGoodsExample$Criteria.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sf/entity/SeckillGoodsExample$Criteria.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/sf/entity/SeckillGoodsExample$Criterion.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sf/entity/SeckillGoodsExample$Criterion.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/sf/entity/SeckillGoodsExample$GeneratedCriteria.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sf/entity/SeckillGoodsExample$GeneratedCriteria.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/sf/entity/SeckillOrder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sf/entity/SeckillOrder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/sf/entity/SeckillOrderExample$Criteria.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sf/entity/SeckillOrderExample$Criteria.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/sf/entity/SeckillOrderExample$GeneratedCriteria.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sf/entity/SeckillOrderExample$GeneratedCriteria.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/sf/entity/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sf/entity/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/sf/entity/UserExample$Criteria.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sf/entity/UserExample$Criteria.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/sf/entity/UserExample$Criterion.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sf/entity/UserExample$Criterion.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/sf/entity/UserExample$GeneratedCriteria.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sf/entity/UserExample$GeneratedCriteria.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/sf/entity/UserExample.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sf/entity/UserExample.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/sf/service/GoodsService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sf/service/GoodsService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/sf/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sf/service/UserService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/sf/service/impl/GoodsServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sf/service/impl/GoodsServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/sf/service/impl/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sf/service/impl/UserServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/sf/util/UUIDUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sf/util/UUIDUtil.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/goods_detail.htm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/order_detail.htm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/goods_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/goods_detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/goods_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/goods_list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/order_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/order_detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/sf/service/impl/UserServiceImplTest.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,6 +125,9 @@
       </path>
     </expand>
     <select />
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="SeckillFramework" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -119,7 +194,7 @@
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.Arquillian JUnit4" value="" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/static/js" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/mybatis/mappers" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -135,6 +210,7 @@
       <recent name="" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\Project\SeckillFramework\src\main\resources\mybatis\mappers" />
       <recent name="F:\Project\SeckillFramework\src\main\resources" />
       <recent name="F:\Project\SeckillFramework\src\main\java\sf\entity" />
     </key>
@@ -145,8 +221,8 @@
       <recent name="sf.entity" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="F:\Project\SeckillFramework\src\main\resources\static\js" />
       <recent name="F:\Project\SeckillFramework\src\main\resources\mybatis\mappers" />
+      <recent name="F:\Project\SeckillFramework\src\main\resources\static\js" />
       <recent name="F:\Project\SeckillFramework\src\main\resources" />
     </key>
   </component>
@@ -156,12 +232,12 @@
     </option>
   </component>
   <component name="RunManager" selected="Spring Boot.SeckillStartApplication">
-    <configuration name="basetest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="sf.others.basetest" />
+    <configuration name="UUIDUtil" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="sf.util.UUIDUtil" />
       <module name="SeckillFramework" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="sf.others.*" />
+          <option name="PATTERN" value="sf.util.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -169,17 +245,17 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SessionExpireFilterTest.doFilter" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TestInsert.insert" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="SeckillFramework" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="sf.filter.*" />
+          <option name="PATTERN" value="sf.others.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="sf.filter" />
-      <option name="MAIN_CLASS_NAME" value="sf.filter.SessionExpireFilterTest" />
-      <option name="METHOD_NAME" value="doFilter" />
+      <option name="PACKAGE_NAME" value="sf.others" />
+      <option name="MAIN_CLASS_NAME" value="sf.others.TestInsert" />
+      <option name="METHOD_NAME" value="insert" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -257,20 +333,20 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.basetest" />
-      <item itemvalue="JUnit.SessionExpireFilterTest.doFilter" />
       <item itemvalue="JUnit.basetest.GETbyID" />
       <item itemvalue="JUnit.UserServiceImplTest.GETbyID" />
       <item itemvalue="Maven.SeckillFramework [mybatis-generator:generate...]" />
       <item itemvalue="Spring Boot.SeckillStartApplication" />
+      <item itemvalue="JUnit.TestInsert.insert" />
+      <item itemvalue="Application.UUIDUtil" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Spring Boot.SeckillStartApplication" />
+        <item itemvalue="Application.UUIDUtil" />
+        <item itemvalue="JUnit.TestInsert.insert" />
         <item itemvalue="JUnit.UserServiceImplTest.GETbyID" />
         <item itemvalue="JUnit.basetest.GETbyID" />
-        <item itemvalue="Application.basetest" />
-        <item itemvalue="JUnit.SessionExpireFilterTest.doFilter" />
       </list>
     </recent_temporary>
   </component>
@@ -319,6 +395,10 @@
       <workItem from="1576287601897" duration="600000" />
       <workItem from="1576295003314" duration="5302000" />
       <workItem from="1576376164896" duration="23292000" />
+      <workItem from="1576410960899" duration="84000" />
+      <workItem from="1576414769795" duration="705000" />
+      <workItem from="1576419224655" duration="3107000" />
+      <workItem from="1576464560200" duration="22423000" />
     </task>
     <task id="LOCAL-00001" summary="2019年12月8日">
       <created>1575803498758</created>
@@ -376,7 +456,14 @@
       <option name="project" value="LOCAL" />
       <updated>1576410445335</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="2019年12月15日">
+      <created>1576410992379</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1576410992379</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -398,11 +485,11 @@
     </state>
     <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1575592554074" />
     <state x="414" y="177" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1576387769592" />
-    <state x="348" y="232" key="#com.intellij.ide.util.MemberChooser" timestamp="1576395033445">
+    <state x="348" y="232" key="#com.intellij.ide.util.MemberChooser" timestamp="1576490460576">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="348" y="230" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1575775182912" />
-    <state x="348" y="232" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1050@0.0.1920.1050" timestamp="1576395033445" />
+    <state x="348" y="232" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1050@0.0.1920.1050" timestamp="1576490460576" />
     <state x="580" y="198" key="#com.intellij.ide.util.frameworkSupport.AddFrameworkSupportDialog" timestamp="1575548468236">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -419,18 +506,18 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="739" y="404" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.packages/0.0.1920.1050@0.0.1920.1050" timestamp="1576219504439" />
-    <state x="704" y="31" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1575798535927">
+    <state x="704" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1576490302248">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="704" y="31" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1575798535927" />
-    <state x="690" y="271" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1576382299818">
+    <state x="704" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1576490302248" />
+    <state x="690" y="271" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1576490256964">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="690" y="271" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1576382299818" />
-    <state x="560" y="118" key="CommitChangelistDialog2" timestamp="1576390909261">
+    <state x="690" y="271" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1576490256964" />
+    <state x="560" y="118" key="CommitChangelistDialog2" timestamp="1576410991201">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="560" y="118" key="CommitChangelistDialog2/0.0.1920.1050@0.0.1920.1050" timestamp="1576390909261" />
+    <state x="560" y="118" key="CommitChangelistDialog2/0.0.1920.1050@0.0.1920.1050" timestamp="1576410991201" />
     <state x="719" y="209" key="FileChooserDialogImpl" timestamp="1576378244047">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
@@ -444,62 +531,62 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="740" y="230" key="Github.UntrackedFilesDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1575803232877" />
-    <state width="1877" height="209" key="GridCell.Tab.0.bottom" timestamp="1576410926400">
+    <state width="1877" height="266" key="GridCell.Tab.0.bottom" timestamp="1576493001285">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1131" height="233" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1575778672051" />
-    <state width="1877" height="209" key="GridCell.Tab.0.bottom/0.0.1920.1050@0.0.1920.1050" timestamp="1576410926400" />
-    <state width="1877" height="209" key="GridCell.Tab.0.center" timestamp="1576410926399">
+    <state width="1877" height="266" key="GridCell.Tab.0.bottom/0.0.1920.1050@0.0.1920.1050" timestamp="1576493001285" />
+    <state width="1877" height="266" key="GridCell.Tab.0.center" timestamp="1576493001284">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1131" height="233" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1575778672051" />
-    <state width="1877" height="209" key="GridCell.Tab.0.center/0.0.1920.1050@0.0.1920.1050" timestamp="1576410926399" />
-    <state width="1877" height="209" key="GridCell.Tab.0.left" timestamp="1576410926399">
+    <state width="1877" height="266" key="GridCell.Tab.0.center/0.0.1920.1050@0.0.1920.1050" timestamp="1576493001284" />
+    <state width="1877" height="266" key="GridCell.Tab.0.left" timestamp="1576493001284">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1131" height="233" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1575778672051" />
-    <state width="1877" height="209" key="GridCell.Tab.0.left/0.0.1920.1050@0.0.1920.1050" timestamp="1576410926399" />
-    <state width="1877" height="209" key="GridCell.Tab.0.right" timestamp="1576410926400">
+    <state width="1877" height="266" key="GridCell.Tab.0.left/0.0.1920.1050@0.0.1920.1050" timestamp="1576493001284" />
+    <state width="1877" height="266" key="GridCell.Tab.0.right" timestamp="1576493001285">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1131" height="233" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1575778672051" />
-    <state width="1877" height="209" key="GridCell.Tab.0.right/0.0.1920.1050@0.0.1920.1050" timestamp="1576410926400" />
-    <state width="1877" height="209" key="GridCell.Tab.1.bottom" timestamp="1576410926400">
+    <state width="1877" height="266" key="GridCell.Tab.0.right/0.0.1920.1050@0.0.1920.1050" timestamp="1576493001285" />
+    <state width="1877" height="266" key="GridCell.Tab.1.bottom" timestamp="1576493001287">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1131" height="233" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1575778672051" />
-    <state width="1877" height="209" key="GridCell.Tab.1.bottom/0.0.1920.1050@0.0.1920.1050" timestamp="1576410926400" />
-    <state width="1877" height="209" key="GridCell.Tab.1.center" timestamp="1576410926400">
+    <state width="1877" height="266" key="GridCell.Tab.1.bottom/0.0.1920.1050@0.0.1920.1050" timestamp="1576493001287" />
+    <state width="1877" height="266" key="GridCell.Tab.1.center" timestamp="1576493001286">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1131" height="233" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1575778672051" />
-    <state width="1877" height="209" key="GridCell.Tab.1.center/0.0.1920.1050@0.0.1920.1050" timestamp="1576410926400" />
-    <state width="1877" height="209" key="GridCell.Tab.1.left" timestamp="1576410926400">
+    <state width="1877" height="266" key="GridCell.Tab.1.center/0.0.1920.1050@0.0.1920.1050" timestamp="1576493001286" />
+    <state width="1877" height="266" key="GridCell.Tab.1.left" timestamp="1576493001286">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1131" height="233" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1575778672051" />
-    <state width="1877" height="209" key="GridCell.Tab.1.left/0.0.1920.1050@0.0.1920.1050" timestamp="1576410926400" />
-    <state width="1877" height="209" key="GridCell.Tab.1.right" timestamp="1576410926400">
+    <state width="1877" height="266" key="GridCell.Tab.1.left/0.0.1920.1050@0.0.1920.1050" timestamp="1576493001286" />
+    <state width="1877" height="266" key="GridCell.Tab.1.right" timestamp="1576493001286">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1131" height="233" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1575778672051" />
-    <state width="1877" height="209" key="GridCell.Tab.1.right/0.0.1920.1050@0.0.1920.1050" timestamp="1576410926400" />
-    <state width="1877" height="352" key="GridCell.Tab.2.bottom" timestamp="1576240369468">
+    <state width="1877" height="266" key="GridCell.Tab.1.right/0.0.1920.1050@0.0.1920.1050" timestamp="1576493001286" />
+    <state width="1877" height="352" key="GridCell.Tab.2.bottom" timestamp="1576483182875">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1877" height="352" key="GridCell.Tab.2.bottom/0.0.1920.1050@0.0.1920.1050" timestamp="1576240369468" />
-    <state width="1877" height="352" key="GridCell.Tab.2.center" timestamp="1576240369467">
+    <state width="1877" height="352" key="GridCell.Tab.2.bottom/0.0.1920.1050@0.0.1920.1050" timestamp="1576483182875" />
+    <state width="1877" height="352" key="GridCell.Tab.2.center" timestamp="1576483182875">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1877" height="352" key="GridCell.Tab.2.center/0.0.1920.1050@0.0.1920.1050" timestamp="1576240369467" />
-    <state width="1877" height="352" key="GridCell.Tab.2.left" timestamp="1576240369467">
+    <state width="1877" height="352" key="GridCell.Tab.2.center/0.0.1920.1050@0.0.1920.1050" timestamp="1576483182875" />
+    <state width="1877" height="352" key="GridCell.Tab.2.left" timestamp="1576483182875">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1877" height="352" key="GridCell.Tab.2.left/0.0.1920.1050@0.0.1920.1050" timestamp="1576240369467" />
-    <state width="1877" height="352" key="GridCell.Tab.2.right" timestamp="1576240369467">
+    <state width="1877" height="352" key="GridCell.Tab.2.left/0.0.1920.1050@0.0.1920.1050" timestamp="1576483182875" />
+    <state width="1877" height="352" key="GridCell.Tab.2.right" timestamp="1576483182875">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1877" height="352" key="GridCell.Tab.2.right/0.0.1920.1050@0.0.1920.1050" timestamp="1576240369467" />
+    <state width="1877" height="352" key="GridCell.Tab.2.right/0.0.1920.1050@0.0.1920.1050" timestamp="1576483182875" />
     <state x="490" y="180" key="Maven.ArtifactSearchDialog" timestamp="1576237151901">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
@@ -513,10 +600,10 @@
     </state>
     <state x="440" y="94" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1575544235424" />
     <state x="440" y="95" key="SettingsEditor/0.0.1920.1050@0.0.1920.1050" timestamp="1576401909740" />
-    <state x="552" y="258" key="Vcs.Push.Dialog.v2" timestamp="1576390915778">
+    <state x="552" y="258" key="Vcs.Push.Dialog.v2" timestamp="1576410997733">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="552" y="258" key="Vcs.Push.Dialog.v2/0.0.1920.1050@0.0.1920.1050" timestamp="1576390915778" />
+    <state x="552" y="258" key="Vcs.Push.Dialog.v2/0.0.1920.1050@0.0.1920.1050" timestamp="1576410997733" />
     <state x="759" y="302" key="chooseDestDirectoryDialog" timestamp="1576376652781">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
@@ -525,6 +612,10 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="739" y="348" width="441" height="350" key="com.intellij.database.psi.DbRenamePsiElementProcessor.DbRenameDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1575802655924" />
+    <state x="752" y="442" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1576414830297">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="752" y="442" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1050@0.0.1920.1050" timestamp="1576414830297" />
     <state x="731" y="227" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1576389376886">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>

@@ -63,15 +63,15 @@
 <script>
     function render(detail){
         var goods = detail.goods;
-        var order = detail.order;
+        var ord = detail.ord;
         $("#goodsName").text(goods.goodsName);
         $("#goodsImg").attr("src", goods.goodsImg);
-        $("#orderPrice").text(order.goodsPrice);
-        $("#createDate").text(new Date(order.createDate).format("yyyy-MM-dd hh:mm:ss"));
+        $("#orderPrice").text(ord.goodsPrice);
+        $("#createDate").text(new Date(ord.createDate).format("yyyy-MM-dd hh:mm:ss"));
         var status = "";
-        if(order.status == 0){
+        if(ord.status == 0){
             status = "未支付"
-        }else if(order.status == 1){
+        }else if(ord.status == 1){
             status = "待发货";
         }
         $("#orderStatus").text(status);
@@ -85,7 +85,7 @@
     function getOrderDetail(){
         var orderId = g_getQueryString("orderId");
         $.ajax({
-            url:"/order/detail",
+            url:"/ord/detail",
             type:"GET",
             data:{
                 orderId:orderId

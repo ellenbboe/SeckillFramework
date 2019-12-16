@@ -134,12 +134,12 @@
                 },
                 success: function (data) {
                     if (data.code == 0) {
-                        //window.location.href="/order_detail.htm?orderId="+data.data.id;
+                        //window.location.href="/order_detail.html?orderId="+data.data.id;
                         getMiaoshaResult($("#goodsId").val());
                     } else if (data.code == 500216) {
                         layer.confirm(data.msg, {btn: ["确定", "取消"]},
                             function () {
-                                window.location.href = "/page/login";
+                                window.location.href = "/user/login";
                             },
                             function () {
                                 layer.closeAll();

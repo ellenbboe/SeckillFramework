@@ -5,7 +5,6 @@
     <id column="id" property="id" jdbcType="INTEGER" />
     <result column="goods_id" property="goodsId" jdbcType="INTEGER" />
     <result column="seckill_price" property="seckillPrice" jdbcType="DECIMAL" />
-    <result column="seckill_number" property="seckillNumber" jdbcType="INTEGER" />
     <result column="seckill_starttime" property="seckillStarttime" jdbcType="TIMESTAMP" />
     <result column="seckill_endtime" property="seckillEndtime" jdbcType="TIMESTAMP" />
   </resultMap>
@@ -68,7 +67,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List" >
-    id, goods_id, seckill_price, seckill_number, seckill_starttime, seckill_endtime
+    id, goods_id, seckill_price, seckill_starttime, seckill_endtime
   </sql>
   <select id="selectByExample" resultMap="BaseResultMap" parameterType="sf.entity.SeckillGoodsExample" >
     select
@@ -81,7 +80,7 @@
       <include refid="Example_Where_Clause" />
     </if>
     <if test="orderByClause != null" >
-      order by ${orderByClause}
+      ord by ${orderByClause}
     </if>
   </select>
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
@@ -102,11 +101,9 @@
   </delete>
   <insert id="insert" parameterType="sf.entity.SeckillGoods" >
     insert into seckill_goods (id, goods_id, seckill_price, 
-      seckill_number, seckill_starttime, seckill_endtime
-      )
+      seckill_starttime, seckill_endtime)
     values (#{id,jdbcType=INTEGER}, #{goodsId,jdbcType=INTEGER}, #{seckillPrice,jdbcType=DECIMAL}, 
-      #{seckillNumber,jdbcType=INTEGER}, #{seckillStarttime,jdbcType=TIMESTAMP}, #{seckillEndtime,jdbcType=TIMESTAMP}
-      )
+      #{seckillStarttime,jdbcType=TIMESTAMP}, #{seckillEndtime,jdbcType=TIMESTAMP})
   </insert>
   <insert id="insertSelective" parameterType="sf.entity.SeckillGoods" >
     insert into seckill_goods
@@ -119,9 +116,6 @@
       </if>
       <if test="seckillPrice != null" >
         seckill_price,
-      </if>
-      <if test="seckillNumber != null" >
-        seckill_number,
       </if>
       <if test="seckillStarttime != null" >
         seckill_starttime,
@@ -139,9 +133,6 @@
       </if>
       <if test="seckillPrice != null" >
         #{seckillPrice,jdbcType=DECIMAL},
-      </if>
-      <if test="seckillNumber != null" >
-        #{seckillNumber,jdbcType=INTEGER},
       </if>
       <if test="seckillStarttime != null" >
         #{seckillStarttime,jdbcType=TIMESTAMP},
@@ -169,9 +160,6 @@
       <if test="record.seckillPrice != null" >
         seckill_price = #{record.seckillPrice,jdbcType=DECIMAL},
       </if>
-      <if test="record.seckillNumber != null" >
-        seckill_number = #{record.seckillNumber,jdbcType=INTEGER},
-      </if>
       <if test="record.seckillStarttime != null" >
         seckill_starttime = #{record.seckillStarttime,jdbcType=TIMESTAMP},
       </if>
@@ -188,7 +176,6 @@
     set id = #{record.id,jdbcType=INTEGER},
       goods_id = #{record.goodsId,jdbcType=INTEGER},
       seckill_price = #{record.seckillPrice,jdbcType=DECIMAL},
-      seckill_number = #{record.seckillNumber,jdbcType=INTEGER},
       seckill_starttime = #{record.seckillStarttime,jdbcType=TIMESTAMP},
       seckill_endtime = #{record.seckillEndtime,jdbcType=TIMESTAMP}
     <if test="_parameter != null" >
@@ -204,9 +191,6 @@
       <if test="seckillPrice != null" >
         seckill_price = #{seckillPrice,jdbcType=DECIMAL},
       </if>
-      <if test="seckillNumber != null" >
-        seckill_number = #{seckillNumber,jdbcType=INTEGER},
-      </if>
       <if test="seckillStarttime != null" >
         seckill_starttime = #{seckillStarttime,jdbcType=TIMESTAMP},
       </if>
@@ -220,7 +204,6 @@
     update seckill_goods
     set goods_id = #{goodsId,jdbcType=INTEGER},
       seckill_price = #{seckillPrice,jdbcType=DECIMAL},
-      seckill_number = #{seckillNumber,jdbcType=INTEGER},
       seckill_starttime = #{seckillStarttime,jdbcType=TIMESTAMP},
       seckill_endtime = #{seckillEndtime,jdbcType=TIMESTAMP}
     where id = #{id,jdbcType=INTEGER}

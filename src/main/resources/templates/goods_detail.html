@@ -15,8 +15,8 @@
 
 <div class="top">
     <span th:if="${user == null}"> 您还没有登录，请登陆后再操作</span>
-    <span th:if="${user != null}"> <span th:text="'欢迎您 '+${user.userName}"></span></span>
-    <span>没有收货地址的提示。。。</span>
+    <span th:if="${user != null}"> <span th:text="'欢迎您 '+${user.nickname}"></span></span>
+    <span th:text="${user.address}">北京市昌平区回龙观龙博一区</span>
 </div>
 <div class="goods">
     <div class="containers">
@@ -25,7 +25,6 @@
         </div>
         <div class="goods_info">
             <h2 th:text="${goods.goodsName}"></h2>
-            <p class="title" th:text="${goods.goodsTitle}"></p>
             <p>
                 <span class="price1" th:text="${goods.seckillPrice}+'元  '"></span>
                 <del><span class="price2" th:text="${goods.goodsPrice}+'元'"></span></del>
@@ -33,23 +32,22 @@
             <div class="seckill_data">
                 <div>
                     <span>秒杀开始时间</span>
-                    <p th:text="${#dates.format(goods.startDate, 'yyyy-MM-dd HH:mm:ss')}"></p>
+                    <p th:text="${#dates.format(goods.seckillStarttime, 'yyyy-MM-dd HH:mm:ss')}"></p>
                 </div>
                 <div>
                     <span>秒杀结束时间</span>
-                    <p th:text="${#dates.format(goods.endDate, 'yyyy-MM-dd HH:mm:ss')}"></p>
+                    <p th:text="${#dates.format(goods.seckillEndtime, 'yyyy-MM-dd HH:mm:ss')}"></p>
                 </div>
             </div>
             <div class="seckillStatus">
                 <input type="hidden" id="remainSeconds" th:value="${remainSeconds}"/>
-                <span th:if="${seckillStatus eq 0}">秒杀倒计时：<span id="countDown"
+                <span id="seckillStatus">秒杀倒计时：<span id="countDown"
                                                                 th:text="${remainSeconds}"></span>秒</span>
-                <span th:if="${seckillStatus eq 1}">秒杀进行中</span>
-                <span th:if="${seckillStatus eq 2}">秒杀已结束</span>
+
             </div>
             <div class="count">
                 <span>库存数量：</span>
-                <span th:text="${goods.stockCount}"></span>
+                <span th:text="${goods.goodsStock}"></span>
             </div>
 
             <form id="miaoshaForm" method="post" action="/seckill/seckill">
@@ -88,13 +86,15 @@
             }, 1000);
         } else if (remainSeconds == 0) {//秒杀进行中
             $("#buyButton").attr("disabled", false);
+            $("#seckillStatus").text("秒杀进行中");
             if (timeout) {
                 clearTimeout(timeout);
             }
-            $("#miaoshaTip").html("秒杀进行中");
+            $("#buyButton").html("秒杀进行中");
         } else {//秒杀已经结束
             $("#buyButton").attr("disabled", true);
-            $("#miaoshaTip").html("秒杀已经结束");
+            $("#seckillStatus").text("秒杀已经结束");
+            $("#buyButton").html("秒杀已经结束");
         }
     }
 
