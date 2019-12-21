@@ -2,35 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1c868734-b1ff-418b-a49a-f018d642be3a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/java/sf/others/TestJwt.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sf/SeckillStartApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sf/SeckillStartApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sf/controller/GoodsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sf/controller/GoodsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sf/filter/JwtFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sf/filter/JwtFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sf/redis/RedisService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sf/redis/RedisService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sf/redis/StringRedisService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sf/redis/StringRedisService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sf/result/CodeMsg.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sf/result/CodeMsg.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sf/service/impl/GoodsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sf/service/impl/GoodsServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sf/service/impl/OrderServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sf/service/impl/OrderServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sf/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sf/service/impl/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sf/shiro/ShiroRealm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sf/shiro/ShiroRealm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sf/shiro/shiroConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sf/shiro/shiroConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sf/util/Const.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sf/util/TokenUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sf/util/CookieUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sf/util/CookieUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sf/util/JwtUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sf/util/JwtUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sf/controller/GoodsController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sf/controller/GoodsController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sf/filter/JwtFilter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sf/filter/JwtFilter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sf/redis/RedisService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sf/redis/RedisService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sf/redis/StringRedisService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sf/redis/StringRedisService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sf/result/CodeMsg.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sf/result/CodeMsg.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sf/service/impl/OrderServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sf/service/impl/OrderServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sf/service/impl/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sf/service/impl/UserServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sf/shiro/shiroConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sf/shiro/shiroConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sf/util/Const.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sf/util/CookieUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sf/util/CookieUtil.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sf/util/JwtUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sf/util/JwtUtil.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/login.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -275,11 +248,11 @@
     </configuration>
     <list>
       <item itemvalue="Application.UUIDUtil" />
+      <item itemvalue="Application.TestJwt" />
       <item itemvalue="JUnit.TestInsert.insert" />
       <item itemvalue="JUnit.TestJwt.ver" />
       <item itemvalue="Maven.SeckillFramework [mybatis-generator:generate...]" />
       <item itemvalue="Spring Boot.SeckillStartApplication" />
-      <item itemvalue="Application.TestJwt" />
     </list>
     <recent_temporary>
       <list>
@@ -345,7 +318,8 @@
       <workItem from="1576735834640" duration="1453000" />
       <workItem from="1576741728557" duration="880000" />
       <workItem from="1576824309884" duration="599000" />
-      <workItem from="1576900287917" duration="11935000" />
+      <workItem from="1576900287917" duration="13044000" />
+      <workItem from="1576916998947" duration="362000" />
     </task>
     <task id="LOCAL-00001" summary="2019年12月8日">
       <created>1575803498758</created>
@@ -417,7 +391,14 @@
       <option name="project" value="LOCAL" />
       <updated>1576493729934</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="2019年12月21日">
+      <created>1576915416681</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1576915416682</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -432,7 +413,8 @@
     <MESSAGE value="2019年12月12日" />
     <MESSAGE value="2019年12月15日" />
     <MESSAGE value="2019年12月16日" />
-    <option name="LAST_COMMIT_MESSAGE" value="2019年12月16日" />
+    <MESSAGE value="2019年12月21日" />
+    <option name="LAST_COMMIT_MESSAGE" value="2019年12月21日" />
   </component>
   <component name="WindowStateProjectService">
     <state x="414" y="177" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1576387769592">
@@ -469,10 +451,10 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="690" y="271" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1576490256964" />
-    <state x="560" y="118" key="CommitChangelistDialog2" timestamp="1576493728769">
+    <state x="560" y="118" key="CommitChangelistDialog2" timestamp="1576915415327">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="560" y="118" key="CommitChangelistDialog2/0.0.1920.1050@0.0.1920.1050" timestamp="1576493728769" />
+    <state x="560" y="118" key="CommitChangelistDialog2/0.0.1920.1050@0.0.1920.1050" timestamp="1576915415327" />
     <state x="719" y="209" key="FileChooserDialogImpl" timestamp="1576378244047">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
@@ -486,46 +468,46 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="740" y="230" key="Github.UntrackedFilesDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1575803232877" />
-    <state width="1877" height="332" key="GridCell.Tab.0.bottom" timestamp="1576915357900">
+    <state width="1877" height="352" key="GridCell.Tab.0.bottom" timestamp="1576916463430">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1131" height="233" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1575778672051" />
-    <state width="1877" height="332" key="GridCell.Tab.0.bottom/0.0.1920.1050@0.0.1920.1050" timestamp="1576915357900" />
-    <state width="1877" height="332" key="GridCell.Tab.0.center" timestamp="1576915357900">
+    <state width="1877" height="352" key="GridCell.Tab.0.bottom/0.0.1920.1050@0.0.1920.1050" timestamp="1576916463430" />
+    <state width="1877" height="352" key="GridCell.Tab.0.center" timestamp="1576916463430">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1131" height="233" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1575778672051" />
-    <state width="1877" height="332" key="GridCell.Tab.0.center/0.0.1920.1050@0.0.1920.1050" timestamp="1576915357900" />
-    <state width="1877" height="332" key="GridCell.Tab.0.left" timestamp="1576915357899">
+    <state width="1877" height="352" key="GridCell.Tab.0.center/0.0.1920.1050@0.0.1920.1050" timestamp="1576916463430" />
+    <state width="1877" height="352" key="GridCell.Tab.0.left" timestamp="1576916463430">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1131" height="233" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1575778672051" />
-    <state width="1877" height="332" key="GridCell.Tab.0.left/0.0.1920.1050@0.0.1920.1050" timestamp="1576915357899" />
-    <state width="1877" height="332" key="GridCell.Tab.0.right" timestamp="1576915357900">
+    <state width="1877" height="352" key="GridCell.Tab.0.left/0.0.1920.1050@0.0.1920.1050" timestamp="1576916463430" />
+    <state width="1877" height="352" key="GridCell.Tab.0.right" timestamp="1576916463430">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1131" height="233" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1575778672051" />
-    <state width="1877" height="332" key="GridCell.Tab.0.right/0.0.1920.1050@0.0.1920.1050" timestamp="1576915357900" />
-    <state width="1877" height="332" key="GridCell.Tab.1.bottom" timestamp="1576915357900">
+    <state width="1877" height="352" key="GridCell.Tab.0.right/0.0.1920.1050@0.0.1920.1050" timestamp="1576916463430" />
+    <state width="1877" height="352" key="GridCell.Tab.1.bottom" timestamp="1576916463430">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1131" height="233" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1575778672051" />
-    <state width="1877" height="332" key="GridCell.Tab.1.bottom/0.0.1920.1050@0.0.1920.1050" timestamp="1576915357900" />
-    <state width="1877" height="332" key="GridCell.Tab.1.center" timestamp="1576915357900">
+    <state width="1877" height="352" key="GridCell.Tab.1.bottom/0.0.1920.1050@0.0.1920.1050" timestamp="1576916463430" />
+    <state width="1877" height="352" key="GridCell.Tab.1.center" timestamp="1576916463430">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1131" height="233" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1575778672051" />
-    <state width="1877" height="332" key="GridCell.Tab.1.center/0.0.1920.1050@0.0.1920.1050" timestamp="1576915357900" />
-    <state width="1877" height="332" key="GridCell.Tab.1.left" timestamp="1576915357900">
+    <state width="1877" height="352" key="GridCell.Tab.1.center/0.0.1920.1050@0.0.1920.1050" timestamp="1576916463430" />
+    <state width="1877" height="352" key="GridCell.Tab.1.left" timestamp="1576916463430">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1131" height="233" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1575778672051" />
-    <state width="1877" height="332" key="GridCell.Tab.1.left/0.0.1920.1050@0.0.1920.1050" timestamp="1576915357900" />
-    <state width="1877" height="332" key="GridCell.Tab.1.right" timestamp="1576915357900">
+    <state width="1877" height="352" key="GridCell.Tab.1.left/0.0.1920.1050@0.0.1920.1050" timestamp="1576916463430" />
+    <state width="1877" height="352" key="GridCell.Tab.1.right" timestamp="1576916463430">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1131" height="233" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1575778672051" />
-    <state width="1877" height="332" key="GridCell.Tab.1.right/0.0.1920.1050@0.0.1920.1050" timestamp="1576915357900" />
+    <state width="1877" height="352" key="GridCell.Tab.1.right/0.0.1920.1050@0.0.1920.1050" timestamp="1576916463430" />
     <state width="1877" height="352" key="GridCell.Tab.2.bottom" timestamp="1576735750618">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
@@ -555,10 +537,10 @@
     </state>
     <state x="440" y="94" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1575544235424" />
     <state x="440" y="95" key="SettingsEditor/0.0.1920.1050@0.0.1920.1050" timestamp="1576401909740" />
-    <state x="552" y="258" key="Vcs.Push.Dialog.v2" timestamp="1576493740449">
+    <state x="552" y="258" key="Vcs.Push.Dialog.v2" timestamp="1576915423243">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="552" y="258" key="Vcs.Push.Dialog.v2/0.0.1920.1050@0.0.1920.1050" timestamp="1576493740449" />
+    <state x="552" y="258" key="Vcs.Push.Dialog.v2/0.0.1920.1050@0.0.1920.1050" timestamp="1576915423243" />
     <state x="759" y="302" key="chooseDestDirectoryDialog" timestamp="1576376652781">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
