@@ -27,4 +27,39 @@ public class CookieUtil {
         return null;
     }
 
+    public static boolean setCookieValue(HttpServletRequest request,HttpServletResponse response,String cookieName,String value)
+    {
+        Cookie[] cookies = request.getCookies();
+        if(cookies!=null)
+        {
+            for (Cookie one:cookies
+            ) {
+                if(one.getName().equals(cookieName))
+                {
+                    one.setValue(value);
+                    one.setPath("/");
+                    one.setMaxAge(60*60*24);
+                    response.addCookie(one);
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+//del浏览器的Token cookies
+    public static boolean delTokenCookies(HttpServletResponse response)
+    {
+        try {
+            Cookie cookie = new Cookie("token", null);
+            cookie.setMaxAge(0);
+            cookie.setPath("/");
+            response.addCookie(cookie);
+            return true;
+        }catch (Exception e)
+        {
+            e.printStackTrace();
+            return false;
+        }
+
+    }
 }

@@ -15,6 +15,7 @@ import sf.entity.UserExample;
 import sf.exception.BaseException;
 import sf.model.UserModel;
 import sf.redis.RedisService;
+import sf.redis.StringRedisService;
 import sf.result.CodeMsg;
 import sf.service.UserService;
 import sf.util.JwtUtil;
@@ -30,7 +31,8 @@ public class UserServiceImpl implements UserService {
 
     @Autowired
     RedisService redisService;
-
+    @Autowired
+    StringRedisService stringRedisService;
 
     //登录
     @Override
@@ -52,7 +54,9 @@ public class UserServiceImpl implements UserService {
         {
             throw new BaseException(CodeMsg.LOGIN_OR_PASS_ERROR);
         }
-        return JwtUtil.createToken(phone);
+        String token = JwtUtil.createToken(phone);
+        stringRedisService.createRefreshTokenAndSave(token);
+        return token;
     }
 
 

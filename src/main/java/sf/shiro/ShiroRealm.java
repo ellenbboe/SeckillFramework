@@ -49,5 +49,6 @@ public class ShiroRealm extends AuthorizingRealm {
         }
         SimpleAuthenticationInfo info = new SimpleAuthenticationInfo(jwt,jwt,getName());
         return info;
+
     }
 }

@@ -12,7 +12,7 @@ import org.springframework.cache.annotation.EnableCaching;
  */
 @SpringBootApplication
 @MapperScan("sf.dao")
-//@EnableCaching
+@EnableCaching
 @ServletComponentScan
 public class SeckillStartApplication
 {

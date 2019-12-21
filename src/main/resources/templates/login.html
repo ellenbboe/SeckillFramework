@@ -92,6 +92,7 @@
                     window.location.href = "/goods/list";
                 } else {
                     layer.msg(data.msg);
+                    $.cookie('token', null,{path:"/",expires:-1});
                 }
             },
             error: function () {

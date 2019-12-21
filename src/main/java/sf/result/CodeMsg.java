@@ -16,6 +16,7 @@ public class CodeMsg {
     public static CodeMsg LOGIN_ERROR_MOBILE_EMPTY = new CodeMsg(500202,"手机号不能为空");
     public static CodeMsg LOGIN_ERROR_MOBILE_ERROR = new CodeMsg(500203,"手机号格式错误");
     public static CodeMsg LOGIN_OR_PASS_ERROR = new CodeMsg(500203,"用户名或者密码错误");
+    public static CodeMsg TOKEN_EXPIRED = new CodeMsg(500204,"Token过期");
 
     /*秒杀模块异常 5005xx*/
     public static CodeMsg MIAO_SHA_NO_STOCK = new CodeMsg(500501,"库存不足！");

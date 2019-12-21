@@ -67,7 +67,7 @@ public class shiroConfig {
         ShiroFilterFactoryBean shiroFilter = new ShiroFilterFactoryBean();
         shiroFilter.setSecurityManager(securityManager());
         shiroFilter.setLoginUrl("/user/login");
-        shiroFilter.setUnauthorizedUrl("/unauthorized");
+        shiroFilter.setUnauthorizedUrl("/user/login");
         /*
          * c. 添加jwt过滤器，并在下面注册
          * 也就是将jwtFilter注册到shiro的Filter中
@@ -80,14 +80,13 @@ public class shiroConfig {
 
         // 拦截器
         Map<String, String> filterRuleMap = new LinkedHashMap<>();
-        filterRuleMap.put("/**", "jwt");
         filterRuleMap.put("/user/login", "anon");
         filterRuleMap.put("/**/*.js","anon");
         filterRuleMap.put("/**/*.css","anon");
         filterRuleMap.put("/**/*.jpg","anon");
         filterRuleMap.put("/**/*.png","anon");
-//        filterRuleMap.put("/user/login", "anon");
         filterRuleMap.put("/static/","anon");
+        filterRuleMap.put("/**", "jwt");
         shiroFilter.setFilterChainDefinitionMap(filterRuleMap);
         return shiroFilter;
     }

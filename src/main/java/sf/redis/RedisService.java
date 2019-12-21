@@ -36,10 +36,4 @@ public class RedisService {
     }
 
 
-    //cookie服务
-    //生成用户的token,添加到cookie中
-    public void addTokenInCookie(HttpServletResponse response, User user)
-    {
-       
-    }
 }

@@ -41,4 +41,5 @@ public class GoodsServiceImpl implements GoodsService {
         SeckillGoods seckillGoods = seckillGoodsMapper.selectByExample(seckillGoodsExample).get(0);
         return new SeckillGoodsModel(goods,seckillGoods);
     }
+
 }

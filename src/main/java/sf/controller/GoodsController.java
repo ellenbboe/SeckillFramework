@@ -34,9 +34,9 @@ public class GoodsController {
     {
         model.addAttribute("user",userService.usertoModel(user));
         SeckillGoodsModel seckillGoodsModel = goodsService.GoodsToModel(goodsService.getGoodsById(id));
+        long remainSeconds = seckillGoodsModel.getGoodsStock()>0? DateUtil.secoundToSeckill(seckillGoodsModel.getSeckillStarttime(),seckillGoodsModel.getSeckillEndtime()):-1;
         model.addAttribute("goods",seckillGoodsModel);
-        model.addAttribute("remainSeconds", DateUtil.secoundToSeckill(seckillGoodsModel.getSeckillStarttime(),seckillGoodsModel.getSeckillEndtime()));
-        model.addAttribute("seckillStatus",0);
+        model.addAttribute("remainSeconds",remainSeconds);
         return "goods_detail";
     }
 
