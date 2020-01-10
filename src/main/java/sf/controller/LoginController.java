@@ -32,9 +32,9 @@ public class LoginController {
 
     @RequestMapping("/user/do_login")
     @ResponseBody
-    public Result<Object> LoginByMobile(@Valid LoginVo loginVo)
+    public Result<Object> LoginByMobile(HttpServletRequest request,@Valid LoginVo loginVo)
     {
-        String token = userService.login(loginVo);
+        String token = userService.login(request,loginVo);
         if (!StringUtils.isEmpty(token)){
             return Result.success(token);
         }else{

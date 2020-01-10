@@ -17,7 +17,7 @@ public class StringRedisServiceTest {
     StringRedisService stringRedisService;
     @Test
     public void setString() {
-        stringRedisService.setString("name","张贴表");
+
     }
 
     @Test

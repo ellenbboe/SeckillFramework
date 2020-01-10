@@ -14,12 +14,16 @@ import sf.entity.User;
 import sf.entity.UserExample;
 import sf.exception.BaseException;
 import sf.model.UserModel;
+import sf.redis.RedisKey;
 import sf.redis.RedisService;
 import sf.redis.StringRedisService;
 import sf.result.CodeMsg;
 import sf.service.UserService;
+import sf.util.CookieUtil;
 import sf.util.JwtUtil;
 import sf.vo.LoginVo;
+
+import javax.servlet.http.HttpServletRequest;
 
 @Service
 public class UserServiceImpl implements UserService {
@@ -36,11 +40,21 @@ public class UserServiceImpl implements UserService {
 
     //登录
     @Override
-    public String login(LoginVo loginVo) {
+    public String login(HttpServletRequest request, LoginVo loginVo) {
+
         if(loginVo == null)
         {
             throw new BaseException(CodeMsg.LOGIN_OR_PASS_ERROR);
         }
+        String token = CookieUtil.getCookieValue(request,"token");
+        String key = RedisKey.getRedisKey(RedisKey.REDIS_USER_LOGIN_MODEL,RedisKey.REDIS_USER_LOGIN_Token,token);
+        String oldRefreshToken = stringRedisService.getString(key);
+        if(!StringUtils.isEmpty(token) && !StringUtils.isEmpty(oldRefreshToken) && JwtUtil.canTokenRefresh(token,oldRefreshToken))//过期在前面已经判断过了
+        {
+            System.out.println("原来的token");
+            return token;
+        }
+        System.out.println("跳过");
         String phone = loginVo.getPhone();
         String password = loginVo.getPassword();
         ByteSource credentialsSalt = ByteSource.Util.bytes(phone);
@@ -54,7 +68,8 @@ public class UserServiceImpl implements UserService {
         {
             throw new BaseException(CodeMsg.LOGIN_OR_PASS_ERROR);
         }
-        String token = JwtUtil.createToken(phone);
+        stringRedisService.del(key);
+        token = JwtUtil.createToken(phone);
         stringRedisService.createRefreshTokenAndSave(token);
         return token;
     }

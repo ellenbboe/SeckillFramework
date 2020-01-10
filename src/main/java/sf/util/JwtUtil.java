@@ -5,18 +5,18 @@ import com.auth0.jwt.JWTVerifier;
 import com.auth0.jwt.algorithms.Algorithm;
 import com.auth0.jwt.exceptions.JWTDecodeException;
 import com.auth0.jwt.interfaces.DecodedJWT;
+import sf.redis.RedisKey;
 
 import java.util.Date;
-import java.util.Objects;
 
 public class JwtUtil {
 
     // 生成签名是所使用的秘钥
     private static final String SECRET = "find1you";
-    // 过期时间 24 小时
+    // token在后端的过期时间 24 小时
     private static final long EXPIRE_TIME = 60 * 24 * 60 * 1000;
     //refresh Token 刷新token的refreshtoken 20天
-    private static  final long REFRESH_TIME = 60 * 24 * 60 * 1000 * 20;
+    private static  final long REFRESH_TIME = 60 * 24 * 60 * 1000 * RedisKey.REDIS_LOGIN_TOKENREFRESH_EXPICETIME;
 
 
     /**
