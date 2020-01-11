@@ -10,6 +10,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.RequestMethod;
 import sf.exception.BaseException;
 import sf.jwt.JwtToken;
+import sf.redis.RedisKey;
 import sf.redis.StringRedisService;
 import sf.result.CodeMsg;
 import sf.util.CookieUtil;
@@ -20,7 +21,6 @@ import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.net.URLEncoder;
 
 
 public class JwtFilter extends BasicHttpAuthenticationFilter {
@@ -70,6 +70,7 @@ public class JwtFilter extends BasicHttpAuthenticationFilter {
         String token = CookieUtil.getCookieValue(httpServletRequest,"token");
         if(JwtUtil.isTokenExpired(token))
         {
+            System.out.println("过期了!!!!!!!!!!!!!!!!!!!!!!!!");
             if(!refreshToken(httpServletRequest,httpServletResponse,token))
             {
                 throw new BaseException(CodeMsg.TOKEN_EXPIRED);
@@ -131,9 +132,12 @@ public class JwtFilter extends BasicHttpAuthenticationFilter {
     {
         if(stringRedisService.exits(token))
         {
-            String refreshToken = stringRedisService.getString(token);
+            System.out.println("刷新token!!!!!!!!!!!!!!!!!!!!");
+            String key = RedisKey.getRedisKey(RedisKey.REDIS_USER_LOGIN_MODEL,RedisKey.REDIS_USER_LOGIN_Token,token);
+            String refreshToken = stringRedisService.getString(key);
             if(JwtUtil.canTokenRefresh(token,refreshToken))
             {
+                stringRedisService.del(key);
                 String newToken = JwtUtil.createToken(JwtUtil.getUsername(token));
                 stringRedisService.createRefreshTokenAndSave(newToken);
                 JwtToken jwtToken = new JwtToken(newToken);

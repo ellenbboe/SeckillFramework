@@ -17,9 +17,10 @@ public class StringRedisService {
     private StringRedisTemplate stringRedisTemplate;
 
 
-    public  void setString(String key, String value){
+    public  void setString(String key, String value,long time){
         logger.info("--------------------->[Redis set start]");
         stringRedisTemplate.opsForValue().set(key,value);
+        expice(key,time);
     }
 
     public String getString(String key){
@@ -34,11 +35,28 @@ public class StringRedisService {
         return false;
     }
 
-    //设置过期时间 天数
+    public boolean del(String key)
+    {
+        if(stringRedisTemplate.hasKey(key)!=null)
+        {
+            try{
+                stringRedisTemplate.delete(key);
+                return true;
+            }
+            catch (Exception e)
+            {
+                return false;
+            }
+
+        }
+        return false;
+    }
+
+    //设置过期时间 分钟
     public boolean expice(String key,long time)
     {
         try{
-            stringRedisTemplate.expire(key,time, TimeUnit.DAYS);
+            stringRedisTemplate.expire(key,time, TimeUnit.MINUTES);
         }catch (Exception e)
         {
             return false;
@@ -57,9 +75,11 @@ public class StringRedisService {
     public void createRefreshTokenAndSave(String token)
     {
         String newRefreshToken = JwtUtil.CreateRefreshToken(token);
-        setString(token,newRefreshToken);//将refreshToken存放到token中
-        expice(token,20);
+        String key = RedisKey.getRedisKey(RedisKey.REDIS_USER_LOGIN_MODEL,RedisKey.REDIS_USER_LOGIN_Token,token);
+        setString(key,newRefreshToken,RedisKey.REDIS_LOGIN_TOKENREFRESH_EXPICETIME);//将refreshToken存放到token中
     }
+
+
 
 
 
