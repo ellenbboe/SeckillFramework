@@ -1,4 +1,4 @@
 # Project exclude paths
-/target/
+/target
 /src/main/resources/application.properties
 /src/main/resources/generatorConfig.xml

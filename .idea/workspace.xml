@@ -62,7 +62,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="other" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -112,7 +112,7 @@
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.Arquillian JUnit4" value="" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../solo" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/mybatis/mappers" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -328,6 +328,7 @@
       <workItem from="1578587957625" duration="1449000" />
       <workItem from="1578640290714" duration="20707000" />
       <workItem from="1578720365673" duration="4890000" />
+
     </task>
     <task id="LOCAL-00001" summary="2019年12月8日">
       <created>1575803498758</created>
@@ -442,6 +443,7 @@
       <updated>1578728491477</updated>
     </task>
     <option name="localTasksCounter" value="17" />
+
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -463,7 +465,7 @@
     <option name="LAST_COMMIT_MESSAGE" value="2020年1月11日" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="552" y="183" key="#Notifications" timestamp="1576998098804">
+<state x="552" y="183" key="#Notifications" timestamp="1576998098804">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="552" y="183" key="#Notifications/0.0.1920.1050@0.0.1920.1050" timestamp="1576998098804" />
@@ -471,6 +473,7 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="579" y="290" key="#com.intellij.codeInsight.template.impl.EditVariableDialog/0.0.1536.834@0.0.1536.834" timestamp="1578664207481" />
+
     <state x="414" y="177" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1576387769592">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
@@ -506,6 +509,7 @@
     </state>
     <state x="552" y="215" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.834@0.0.1536.834" timestamp="1578727871871" />
     <state x="690" y="271" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1576490256964" />
+
     <state x="448" y="0" key="CommitChangelistDialog2" timestamp="1578728819608">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
@@ -513,10 +517,11 @@
     <state x="448" y="0" key="CommitChangelistDialog2/0.0.1536.834@0.0.1536.834" timestamp="1578728819608" />
     <state x="560" y="118" key="CommitChangelistDialog2/0.0.1920.1050@0.0.1920.1050" timestamp="1576917694380" />
     <state x="719" y="209" key="FileChooserDialogImpl" timestamp="1577009566367">
+
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="719" y="207" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1575544224802" />
-    <state x="719" y="209" key="FileChooserDialogImpl/0.0.1920.1050@0.0.1920.1050" timestamp="1577009566367" />
+    <state x="719" y="209" key="FileChooserDialogImpl/0.0.1920.1050@0.0.1920.1050" timestamp="1576378244047" />
     <state x="807" y="415" key="Github.ShareDialog" timestamp="1575803174551">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
@@ -593,10 +598,6 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="490" y="180" key="Maven.ArtifactSearchDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1576237151901" />
-    <state x="600" y="222" key="NewModule_or_Project.wizard" timestamp="1577009541411">
-      <screen x="0" y="0" width="1920" height="1050" />
-    </state>
-    <state x="600" y="222" key="NewModule_or_Project.wizard/0.0.1920.1050@0.0.1920.1050" timestamp="1577009541411" />
     <state x="531" y="187" key="Registry" timestamp="1576401983709">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
@@ -607,12 +608,14 @@
     <state x="38" y="58" width="1329" height="715" key="SettingsEditor/0.0.1536.834@0.0.1536.834" timestamp="1578664208302" />
     <state x="440" y="94" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1575544235424" />
     <state x="440" y="95" key="SettingsEditor/0.0.1920.1050@0.0.1920.1050" timestamp="1576401909740" />
+
     <state x="442" y="189" key="Vcs.Push.Dialog.v2" timestamp="1578728510488">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="368" y="156" key="Vcs.Push.Dialog.v2/0.0.1280.689@0.0.1280.689" timestamp="1578032473524" />
     <state x="442" y="189" key="Vcs.Push.Dialog.v2/0.0.1536.834@0.0.1536.834" timestamp="1578728510488" />
     <state x="552" y="258" key="Vcs.Push.Dialog.v2/0.0.1920.1050@0.0.1920.1050" timestamp="1577005576109" />
+
     <state x="759" y="302" key="chooseDestDirectoryDialog" timestamp="1576376652781">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
