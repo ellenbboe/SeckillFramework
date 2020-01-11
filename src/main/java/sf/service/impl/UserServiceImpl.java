@@ -5,8 +5,6 @@ import com.alibaba.druid.util.StringUtils;
 import org.apache.shiro.authc.AuthenticationException;
 import org.apache.shiro.crypto.hash.Md5Hash;
 import org.apache.shiro.util.ByteSource;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import sf.dao.UserMapper;
@@ -27,9 +25,6 @@ import javax.servlet.http.HttpServletRequest;
 
 @Service
 public class UserServiceImpl implements UserService {
-
-    private static final Logger logger = LoggerFactory.getLogger(UserServiceImpl.class);
-
     @Autowired(required = false)
     UserMapper userMapper;
 
@@ -41,7 +36,6 @@ public class UserServiceImpl implements UserService {
     //登录
     @Override
     public String login(HttpServletRequest request, LoginVo loginVo) {
-
         if(loginVo == null)
         {
             throw new BaseException(CodeMsg.LOGIN_OR_PASS_ERROR);
@@ -51,10 +45,8 @@ public class UserServiceImpl implements UserService {
         String oldRefreshToken = stringRedisService.getString(key);
         if(!StringUtils.isEmpty(token) && !StringUtils.isEmpty(oldRefreshToken) && JwtUtil.canTokenRefresh(token,oldRefreshToken))//过期在前面已经判断过了
         {
-            System.out.println("原来的token");
             return token;
         }
-        System.out.println("跳过");
         String phone = loginVo.getPhone();
         String password = loginVo.getPassword();
         ByteSource credentialsSalt = ByteSource.Util.bytes(phone);
@@ -98,6 +90,8 @@ public class UserServiceImpl implements UserService {
 //        criteria.andNicknameEqualTo("老王");
 //        return userMapper.selectByExample(userExample).get(0);
 //    }
+
+
     public UserModel usertoModel(User user)
     {
         return new UserModel(user);
