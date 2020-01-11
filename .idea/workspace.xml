@@ -3,8 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="1c868734-b1ff-418b-a49a-f018d642be3a" name="Default Changelist" comment="2020年1月11日">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sf/redis/StringRedisService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sf/redis/StringRedisService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/generatorConfig.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/generatorConfig.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/sf/redis/StringRedisService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sf/redis/StringRedisService.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -327,7 +327,7 @@
       <workItem from="1578028526862" duration="2418000" />
       <workItem from="1578587957625" duration="1449000" />
       <workItem from="1578640290714" duration="20707000" />
-      <workItem from="1578720365673" duration="4618000" />
+      <workItem from="1578720365673" duration="4890000" />
     </task>
     <task id="LOCAL-00001" summary="2019年12月8日">
       <created>1575803498758</created>
@@ -434,7 +434,14 @@
       <option name="project" value="LOCAL" />
       <updated>1578728232742</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="2020年1月11日">
+      <created>1578728491477</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1578728491477</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -499,11 +506,11 @@
     </state>
     <state x="552" y="215" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.834@0.0.1536.834" timestamp="1578727871871" />
     <state x="690" y="271" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1576490256964" />
-    <state x="448" y="0" key="CommitChangelistDialog2" timestamp="1578728426499">
+    <state x="448" y="0" key="CommitChangelistDialog2" timestamp="1578728819608">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="373" y="0" key="CommitChangelistDialog2/0.0.1280.689@0.0.1280.689" timestamp="1578032460025" />
-    <state x="448" y="0" key="CommitChangelistDialog2/0.0.1536.834@0.0.1536.834" timestamp="1578728426499" />
+    <state x="448" y="0" key="CommitChangelistDialog2/0.0.1536.834@0.0.1536.834" timestamp="1578728819608" />
     <state x="560" y="118" key="CommitChangelistDialog2/0.0.1920.1050@0.0.1920.1050" timestamp="1576917694380" />
     <state x="719" y="209" key="FileChooserDialogImpl" timestamp="1577009566367">
       <screen x="0" y="0" width="1920" height="1050" />
@@ -600,11 +607,11 @@
     <state x="38" y="58" width="1329" height="715" key="SettingsEditor/0.0.1536.834@0.0.1536.834" timestamp="1578664208302" />
     <state x="440" y="94" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1575544235424" />
     <state x="440" y="95" key="SettingsEditor/0.0.1920.1050@0.0.1920.1050" timestamp="1576401909740" />
-    <state x="442" y="189" key="Vcs.Push.Dialog.v2" timestamp="1578659701693">
+    <state x="442" y="189" key="Vcs.Push.Dialog.v2" timestamp="1578728510488">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="368" y="156" key="Vcs.Push.Dialog.v2/0.0.1280.689@0.0.1280.689" timestamp="1578032473524" />
-    <state x="442" y="189" key="Vcs.Push.Dialog.v2/0.0.1536.834@0.0.1536.834" timestamp="1578659701693" />
+    <state x="442" y="189" key="Vcs.Push.Dialog.v2/0.0.1536.834@0.0.1536.834" timestamp="1578728510488" />
     <state x="552" y="258" key="Vcs.Push.Dialog.v2/0.0.1920.1050@0.0.1920.1050" timestamp="1577005576109" />
     <state x="759" y="302" key="chooseDestDirectoryDialog" timestamp="1576376652781">
       <screen x="0" y="0" width="1920" height="1050" />
