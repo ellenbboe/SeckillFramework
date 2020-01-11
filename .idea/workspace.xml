@@ -2,144 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1c868734-b1ff-418b-a49a-f018d642be3a" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/SeckillFramework.kotlin_module" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/generatorConfig.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mybatis/mappers/GoodsMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mybatis/mappers/OrdMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mybatis/mappers/SeckillGoodsMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mybatis/mappers/SeckillOrderMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mybatis/mappers/UserMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mybatis/mybatis-config.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sf/Resolver/TokenResolver.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sf/SeckillStartApplication.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sf/config/WebConfig.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sf/controller/GoodsController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sf/controller/LoginController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sf/controller/SeckillController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sf/dao/GoodsMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sf/dao/OrdMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sf/dao/SeckillGoodsMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sf/dao/SeckillOrderMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sf/dao/UserMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sf/entity/Goods.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sf/entity/GoodsExample$Criteria.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sf/entity/GoodsExample$Criterion.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sf/entity/GoodsExample$GeneratedCriteria.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sf/entity/GoodsExample.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sf/entity/Ord.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sf/entity/OrdExample$Criteria.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sf/entity/OrdExample$Criterion.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sf/entity/OrdExample$GeneratedCriteria.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sf/entity/OrdExample.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sf/entity/SeckillGoods.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sf/entity/SeckillGoodsExample$Criteria.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sf/entity/SeckillGoodsExample$Criterion.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sf/entity/SeckillGoodsExample$GeneratedCriteria.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sf/entity/SeckillGoodsExample.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sf/entity/SeckillOrder.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sf/entity/SeckillOrderExample$Criteria.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sf/entity/SeckillOrderExample$Criterion.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sf/entity/SeckillOrderExample$GeneratedCriteria.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sf/entity/SeckillOrderExample.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sf/entity/User.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sf/entity/UserExample$Criteria.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sf/entity/UserExample$Criterion.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sf/entity/UserExample$GeneratedCriteria.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sf/entity/UserExample.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sf/exception/BaseException.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sf/exception/BaseExceptionHandler.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sf/filter/JwtFilter.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sf/jwt/JwtDefaultSubjectFactory.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sf/jwt/JwtToken.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sf/model/GoodsListModel.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sf/model/OrderModel.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sf/model/SeckillGoodsModel.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sf/model/UserModel.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sf/redis/RedisConfig.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sf/redis/RedisService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sf/redis/StringRedisService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sf/result/CodeMsg.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sf/result/Result.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sf/service/GoodsService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sf/service/OrderService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sf/service/UserService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sf/service/impl/GoodsServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sf/service/impl/OrderServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sf/service/impl/UserServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sf/shiro/ShiroRealm.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sf/shiro/shiroConfig.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sf/util/CookieUtil.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sf/util/DateUtil.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sf/util/JwtUtil.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sf/util/MD5Util.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sf/util/SnowFlake.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sf/util/TokenUtil.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sf/util/UUIDUtil.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sf/validator/IsMobile.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sf/validator/IsMobileValidator.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sf/validator/LoginTokenValidator.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sf/vo/LoginVo.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap/css/bootstrap-theme.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap/css/bootstrap-theme.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap/css/bootstrap-theme.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap/css/bootstrap-theme.min.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap/css/bootstrap.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap/css/bootstrap.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap/css/bootstrap.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap/css/bootstrap.min.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap/fonts/glyphicons-halflings-regular.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap/fonts/glyphicons-halflings-regular.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap/fonts/glyphicons-halflings-regular.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap/fonts/glyphicons-halflings-regular.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap/fonts/glyphicons-halflings-regular.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap/js/bootstrap.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap/js/bootstrap.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap/js/npm.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/css/detail.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/css/goods.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/css/login.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/goods_detail.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/img/index_back.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/img/iphone.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/img/oppo.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/img/rongyao.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/img/xiaomi.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/jquery-validation/additional-methods.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/jquery-validation/jquery.validate.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/jquery-validation/localization/messages_zh.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/js/common.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/js/jquery.cookie.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/js/jquery.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/js/md5.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/layer/layer.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/layer/mobile/layer.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/layer/mobile/need/layer.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/layer/skin/default/icon-ext.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/layer/skin/default/icon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/layer/skin/default/layer.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/layer/skin/default/loading-0.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/layer/skin/default/loading-1.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/layer/skin/default/loading-2.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/order_detail.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/bak/goods_detail.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/bak/goods_list.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/error/404.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/error/500.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/error/505.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/goods_detail.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/goods_list.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/login.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/miaosha_fail.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/order_detail.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/META-INF/SeckillFramework.kotlin_module" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/org/example/SeckillStartApplicationTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/sf/filter/SessionExpireFilterTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/sf/others/GeneratorUser.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/sf/others/TestInsert.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/sf/others/TestJwt.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/sf/redis/StringRedisServiceTest.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -197,7 +61,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="Develop" />
+        <entry key="$PROJECT_DIR$" value="other" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -247,11 +111,11 @@
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.Arquillian JUnit4" value="" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../solo" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/mybatis/mappers" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="editing.templates" />
+    <property name="settings.editor.selected.configurable" value="project.propCompiler" />
   </component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.RecentsKey">
@@ -393,10 +257,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Spring Boot.SeckillStartApplication" />
-        <item itemvalue="JUnit.TestJwt.ver" />
-        <item itemvalue="JUnit.TestInsert.insert" />
         <item itemvalue="Application.TestJwt" />
+        <item itemvalue="JUnit.TestJwt.ver" />
         <item itemvalue="Application.UUIDUtil" />
+        <item itemvalue="JUnit.TestInsert.insert" />
       </list>
     </recent_temporary>
   </component>
@@ -455,14 +319,7 @@
       <workItem from="1576741728557" duration="880000" />
       <workItem from="1576824309884" duration="599000" />
       <workItem from="1576900287917" duration="13044000" />
-      <workItem from="1576916998947" duration="697000" />
-      <workItem from="1576939405355" duration="888000" />
-      <workItem from="1576998067207" duration="3788000" />
-      <workItem from="1577008604855" duration="966000" />
-      <workItem from="1578028526862" duration="2418000" />
-      <workItem from="1578587957625" duration="1449000" />
-      <workItem from="1578640290714" duration="20707000" />
-      <workItem from="1578720365673" duration="5134000" />
+      <workItem from="1576916998947" duration="362000" />
     </task>
     <task id="LOCAL-00001" summary="2019年12月8日">
       <created>1575803498758</created>
@@ -541,49 +398,7 @@
       <option name="project" value="LOCAL" />
       <updated>1576915416682</updated>
     </task>
-    <task id="LOCAL-00012" summary="2019年12月21日">
-      <created>1576917509337</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1576917509337</updated>
-    </task>
-    <task id="LOCAL-00013" summary="2020年1月3日">
-      <created>1578032460940</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1578032460941</updated>
-    </task>
-    <task id="LOCAL-00014" summary="2020年1月10日 冲冲冲">
-      <created>1578659688752</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1578659688752</updated>
-    </task>
-    <task id="LOCAL-00015" summary="2020年1月11日">
-      <created>1578728232742</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1578728232742</updated>
-    </task>
-    <task id="LOCAL-00016" summary="2020年1月11日">
-      <created>1578728491477</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1578728491477</updated>
-    </task>
-    <task id="LOCAL-00017" summary="2020年1月11日 delete target">
-      <created>1578728840888</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1578728840888</updated>
-    </task>
-    <option name="localTasksCounter" value="18" />
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -599,21 +414,9 @@
     <MESSAGE value="2019年12月15日" />
     <MESSAGE value="2019年12月16日" />
     <MESSAGE value="2019年12月21日" />
-    <MESSAGE value="2020年1月3日" />
-    <MESSAGE value="2020年1月10日 冲冲冲" />
-    <MESSAGE value="2020年1月11日" />
-    <MESSAGE value="2020年1月11日 delete target" />
-    <option name="LAST_COMMIT_MESSAGE" value="2020年1月11日 delete target" />
+    <option name="LAST_COMMIT_MESSAGE" value="2019年12月21日" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="552" y="183" key="#Notifications" timestamp="1576998098804">
-      <screen x="0" y="0" width="1920" height="1050" />
-    </state>
-    <state x="552" y="183" key="#Notifications/0.0.1920.1050@0.0.1920.1050" timestamp="1576998098804" />
-    <state x="579" y="290" key="#com.intellij.codeInsight.template.impl.EditVariableDialog" timestamp="1578664207481">
-      <screen x="0" y="0" width="1536" height="834" />
-    </state>
-    <state x="579" y="290" key="#com.intellij.codeInsight.template.impl.EditVariableDialog/0.0.1536.834@0.0.1536.834" timestamp="1578664207481" />
     <state x="414" y="177" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1576387769592">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
@@ -644,22 +447,19 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="704" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1576490302248" />
-    <state x="552" y="215" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1578727871871">
-      <screen x="0" y="0" width="1536" height="834" />
+    <state x="690" y="271" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1576490256964">
+      <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="552" y="215" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.834@0.0.1536.834" timestamp="1578727871871" />
     <state x="690" y="271" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1576490256964" />
-    <state x="448" y="0" key="CommitChangelistDialog2" timestamp="1578728935744">
-      <screen x="0" y="0" width="1536" height="834" />
+    <state x="560" y="118" key="CommitChangelistDialog2" timestamp="1576915415327">
+      <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="373" y="0" key="CommitChangelistDialog2/0.0.1280.689@0.0.1280.689" timestamp="1578032460025" />
-    <state x="448" y="0" key="CommitChangelistDialog2/0.0.1536.834@0.0.1536.834" timestamp="1578728935744" />
-    <state x="560" y="118" key="CommitChangelistDialog2/0.0.1920.1050@0.0.1920.1050" timestamp="1576917694380" />
-    <state x="719" y="209" key="FileChooserDialogImpl" timestamp="1577009566367">
+    <state x="560" y="118" key="CommitChangelistDialog2/0.0.1920.1050@0.0.1920.1050" timestamp="1576915415327" />
+    <state x="719" y="209" key="FileChooserDialogImpl" timestamp="1576378244047">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="719" y="207" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1575544224802" />
-    <state x="719" y="209" key="FileChooserDialogImpl/0.0.1920.1050@0.0.1920.1050" timestamp="1577009566367" />
+    <state x="719" y="209" key="FileChooserDialogImpl/0.0.1920.1050@0.0.1920.1050" timestamp="1576378244047" />
     <state x="807" y="415" key="Github.ShareDialog" timestamp="1575803174551">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
@@ -668,52 +468,44 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="740" y="230" key="Github.UntrackedFilesDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1575803232877" />
-    <state width="1493" height="257" key="GridCell.Tab.0.bottom" timestamp="1578728426551">
-      <screen x="0" y="0" width="1536" height="834" />
+    <state width="1877" height="352" key="GridCell.Tab.0.bottom" timestamp="1576916463430">
+      <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1493" height="257" key="GridCell.Tab.0.bottom/0.0.1536.834@0.0.1536.834" timestamp="1578728426551" />
     <state width="1131" height="233" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1575778672051" />
     <state width="1877" height="352" key="GridCell.Tab.0.bottom/0.0.1920.1050@0.0.1920.1050" timestamp="1576916463430" />
-    <state width="1493" height="257" key="GridCell.Tab.0.center" timestamp="1578728426551">
-      <screen x="0" y="0" width="1536" height="834" />
+    <state width="1877" height="352" key="GridCell.Tab.0.center" timestamp="1576916463430">
+      <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1493" height="257" key="GridCell.Tab.0.center/0.0.1536.834@0.0.1536.834" timestamp="1578728426551" />
     <state width="1131" height="233" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1575778672051" />
     <state width="1877" height="352" key="GridCell.Tab.0.center/0.0.1920.1050@0.0.1920.1050" timestamp="1576916463430" />
-    <state width="1493" height="257" key="GridCell.Tab.0.left" timestamp="1578728426550">
-      <screen x="0" y="0" width="1536" height="834" />
+    <state width="1877" height="352" key="GridCell.Tab.0.left" timestamp="1576916463430">
+      <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1493" height="257" key="GridCell.Tab.0.left/0.0.1536.834@0.0.1536.834" timestamp="1578728426550" />
     <state width="1131" height="233" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1575778672051" />
     <state width="1877" height="352" key="GridCell.Tab.0.left/0.0.1920.1050@0.0.1920.1050" timestamp="1576916463430" />
-    <state width="1493" height="257" key="GridCell.Tab.0.right" timestamp="1578728426551">
-      <screen x="0" y="0" width="1536" height="834" />
+    <state width="1877" height="352" key="GridCell.Tab.0.right" timestamp="1576916463430">
+      <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1493" height="257" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1578728426551" />
     <state width="1131" height="233" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1575778672051" />
     <state width="1877" height="352" key="GridCell.Tab.0.right/0.0.1920.1050@0.0.1920.1050" timestamp="1576916463430" />
-    <state width="1493" height="257" key="GridCell.Tab.1.bottom" timestamp="1578728426552">
-      <screen x="0" y="0" width="1536" height="834" />
+    <state width="1877" height="352" key="GridCell.Tab.1.bottom" timestamp="1576916463430">
+      <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1493" height="257" key="GridCell.Tab.1.bottom/0.0.1536.834@0.0.1536.834" timestamp="1578728426552" />
     <state width="1131" height="233" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1575778672051" />
     <state width="1877" height="352" key="GridCell.Tab.1.bottom/0.0.1920.1050@0.0.1920.1050" timestamp="1576916463430" />
-    <state width="1493" height="257" key="GridCell.Tab.1.center" timestamp="1578728426552">
-      <screen x="0" y="0" width="1536" height="834" />
+    <state width="1877" height="352" key="GridCell.Tab.1.center" timestamp="1576916463430">
+      <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1493" height="257" key="GridCell.Tab.1.center/0.0.1536.834@0.0.1536.834" timestamp="1578728426552" />
     <state width="1131" height="233" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1575778672051" />
     <state width="1877" height="352" key="GridCell.Tab.1.center/0.0.1920.1050@0.0.1920.1050" timestamp="1576916463430" />
-    <state width="1493" height="257" key="GridCell.Tab.1.left" timestamp="1578728426552">
-      <screen x="0" y="0" width="1536" height="834" />
+    <state width="1877" height="352" key="GridCell.Tab.1.left" timestamp="1576916463430">
+      <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1493" height="257" key="GridCell.Tab.1.left/0.0.1536.834@0.0.1536.834" timestamp="1578728426552" />
     <state width="1131" height="233" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1575778672051" />
     <state width="1877" height="352" key="GridCell.Tab.1.left/0.0.1920.1050@0.0.1920.1050" timestamp="1576916463430" />
-    <state width="1493" height="257" key="GridCell.Tab.1.right" timestamp="1578728426552">
-      <screen x="0" y="0" width="1536" height="834" />
+    <state width="1877" height="352" key="GridCell.Tab.1.right" timestamp="1576916463430">
+      <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1493" height="257" key="GridCell.Tab.1.right/0.0.1536.834@0.0.1536.834" timestamp="1578728426552" />
     <state width="1131" height="233" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1575778672051" />
     <state width="1877" height="352" key="GridCell.Tab.1.right/0.0.1920.1050@0.0.1920.1050" timestamp="1576916463430" />
     <state width="1877" height="352" key="GridCell.Tab.2.bottom" timestamp="1576735750618">
@@ -736,26 +528,19 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="490" y="180" key="Maven.ArtifactSearchDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1576237151901" />
-    <state x="600" y="222" key="NewModule_or_Project.wizard" timestamp="1577009541411">
-      <screen x="0" y="0" width="1920" height="1050" />
-    </state>
-    <state x="600" y="222" key="NewModule_or_Project.wizard/0.0.1920.1050@0.0.1920.1050" timestamp="1577009541411" />
     <state x="531" y="187" key="Registry" timestamp="1576401983709">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="531" y="187" key="Registry/0.0.1920.1050@0.0.1920.1050" timestamp="1576401983709" />
-    <state x="38" y="58" width="1329" height="715" key="SettingsEditor" timestamp="1578664208302">
-      <screen x="0" y="0" width="1536" height="834" />
+    <state x="440" y="95" key="SettingsEditor" timestamp="1576401909740">
+      <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="38" y="58" width="1329" height="715" key="SettingsEditor/0.0.1536.834@0.0.1536.834" timestamp="1578664208302" />
     <state x="440" y="94" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1575544235424" />
     <state x="440" y="95" key="SettingsEditor/0.0.1920.1050@0.0.1920.1050" timestamp="1576401909740" />
-    <state x="442" y="189" key="Vcs.Push.Dialog.v2" timestamp="1578728510488">
-      <screen x="0" y="0" width="1536" height="834" />
+    <state x="552" y="258" key="Vcs.Push.Dialog.v2" timestamp="1576915423243">
+      <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="368" y="156" key="Vcs.Push.Dialog.v2/0.0.1280.689@0.0.1280.689" timestamp="1578032473524" />
-    <state x="442" y="189" key="Vcs.Push.Dialog.v2/0.0.1536.834@0.0.1536.834" timestamp="1578728510488" />
-    <state x="552" y="258" key="Vcs.Push.Dialog.v2/0.0.1920.1050@0.0.1920.1050" timestamp="1577005576109" />
+    <state x="552" y="258" key="Vcs.Push.Dialog.v2/0.0.1920.1050@0.0.1920.1050" timestamp="1576915423243" />
     <state x="759" y="302" key="chooseDestDirectoryDialog" timestamp="1576376652781">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
@@ -776,24 +561,17 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="641" y="316" key="git4idea.merge.GitPullDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1576410589731" />
-    <state x="334" y="220" key="new project wizard" timestamp="1577009551577">
+    <state x="702" y="152" key="refactoring.ChangeSignatureDialog" timestamp="1576223357611">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="334" y="220" key="new project wizard/0.0.1920.1050@0.0.1920.1050" timestamp="1577009551577" />
-    <state x="562" y="90" key="refactoring.ChangeSignatureDialog" timestamp="1578655810432">
-      <screen x="0" y="0" width="1536" height="834" />
-    </state>
-    <state x="562" y="90" key="refactoring.ChangeSignatureDialog/0.0.1536.834@0.0.1536.834" timestamp="1578655810432" />
     <state x="702" y="152" key="refactoring.ChangeSignatureDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1576223357611" />
-    <state x="493" y="193" width="672" height="538" key="run.anything.popup" timestamp="1578650015257">
-      <screen x="0" y="0" width="1536" height="834" />
+    <state x="616" y="243" width="672" height="677" key="run.anything.popup" timestamp="1576378254908">
+      <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="493" y="193" width="672" height="538" key="run.anything.popup/0.0.1536.834@0.0.1536.834" timestamp="1578650015257" />
     <state x="616" y="243" width="672" height="677" key="run.anything.popup/0.0.1920.1050@0.0.1920.1050" timestamp="1576378254908" />
-    <state x="498" y="180" width="672" height="539" key="search.everywhere.popup" timestamp="1578648116173">
-      <screen x="0" y="0" width="1536" height="834" />
+    <state x="623" y="227" width="672" height="678" key="search.everywhere.popup" timestamp="1575975494310">
+      <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="498" y="180" width="672" height="539" key="search.everywhere.popup/0.0.1536.834@0.0.1536.834" timestamp="1578648116173" />
     <state x="623" y="227" width="672" height="678" key="search.everywhere.popup/0.0.1920.1050@0.0.1920.1050" timestamp="1575975494310" />
   </component>
   <component name="XDebuggerManager">
