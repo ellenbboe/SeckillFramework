@@ -74,7 +74,6 @@ public class StringRedisService {
      */
     public void createRefreshTokenAndSave(String token)
     {
-        System.out.println("出错了!!!!!!!");
         String newRefreshToken = JwtUtil.CreateRefreshToken(token);
         String key = RedisKey.getRedisKey(RedisKey.REDIS_USER_LOGIN_MODEL,RedisKey.REDIS_USER_LOGIN_Token,token);
         setString(key,newRefreshToken,RedisKey.REDIS_LOGIN_TOKENREFRESH_EXPICETIME);//将refreshToken存放到token中
