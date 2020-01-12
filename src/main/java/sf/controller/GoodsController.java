@@ -1,6 +1,7 @@
 package sf.controller;
 
 import com.alibaba.druid.util.StringUtils;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -16,16 +17,19 @@ import sf.model.SeckillGoodsModel;
 import sf.redis.RedisKey;
 import sf.redis.RedisService;
 import sf.redis.StringRedisService;
+import sf.result.Result;
 import sf.service.GoodsService;
 import sf.service.UserService;
 import sf.util.DateUtil;
 import sf.validator.LoginTokenValidator;
+import sf.vo.GoodsDetailVo;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.List;
 
 @Controller
+@Slf4j
 public class GoodsController {
     @Autowired
     GoodsService goodsService;
@@ -56,15 +60,31 @@ public class GoodsController {
         return html;
     }
 
+//    @RequestMapping("/goods_detail/goodsId/{id}")
+//    public String toDetail(@PathVariable("id") int id,Model model,@LoginTokenValidator User user)
+//    {
+//        model.addAttribute("user",userService.usertoModel(user));
+//        SeckillGoodsModel seckillGoodsModel = goodsService.GoodsToModel(goodsService.getGoodsById(id));
+//        long remainSeconds = seckillGoodsModel.getGoodsStock()>0? DateUtil.secoundToSeckill(seckillGoodsModel.getSeckillStarttime(),seckillGoodsModel.getSeckillEndtime()):-1;
+//        model.addAttribute("goods",seckillGoodsModel);
+//        model.addAttribute("remainSeconds",remainSeconds);
+//        return "goods_detail";
+//    }
     @RequestMapping("/goods_detail/goodsId/{id}")
-    public String toDetail(@PathVariable("id") int id,Model model,@LoginTokenValidator User user)
+    @ResponseBody
+    public Result<GoodsDetailVo> toDetail(@PathVariable("id") int id, Model model, @LoginTokenValidator User user)
     {
-        model.addAttribute("user",userService.usertoModel(user));
+        GoodsDetailVo goodsDetailVo = new GoodsDetailVo();
+//        model.addAttribute("user",);
+        goodsDetailVo.setUser(userService.usertoModel(user));
         SeckillGoodsModel seckillGoodsModel = goodsService.GoodsToModel(goodsService.getGoodsById(id));
         long remainSeconds = seckillGoodsModel.getGoodsStock()>0? DateUtil.secoundToSeckill(seckillGoodsModel.getSeckillStarttime(),seckillGoodsModel.getSeckillEndtime()):-1;
-        model.addAttribute("goods",seckillGoodsModel);
-        model.addAttribute("remainSeconds",remainSeconds);
-        return "goods_detail";
+        log.info(""+DateUtil.secoundToSeckill(seckillGoodsModel.getSeckillStarttime(),seckillGoodsModel.getSeckillEndtime()));
+//        model.addAttribute("goods",seckillGoodsModel);
+//        model.addAttribute("remainSeconds",remainSeconds);
+        goodsDetailVo.setGoods(seckillGoodsModel);
+        goodsDetailVo.setRemainSeconds(remainSeconds);
+        return Result.success(goodsDetailVo);
     }
 
 

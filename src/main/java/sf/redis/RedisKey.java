@@ -17,9 +17,9 @@ public class RedisKey {
     public static final long REDIS_LOGIN_TOKENREFRESH_EXPICETIME = 20;
 
     //页面在redis中的缓存时间(分钟)
-    public static final long REDIS_LOGIN_PAGE_EXPICETIME = 1;
+    public static final long REDIS_LOGIN_PAGE_EXPICETIME = 10;
     //用户的pagemodel缓存
-    public static final long REDIS_USER_PAGEMODEL_EXPICETIME = 1;
+    public static final long REDIS_USER_PAGEMODEL_EXPICETIME = 10;
 
 
     //方法
