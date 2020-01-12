@@ -11,13 +11,15 @@ public class RedisKey {
     //前缀
     public static final String REDIS_USER_LOGIN_Token = "UserLoginToken:";
     public static final String REDIS_PAGENAME_SECKILLLIST = "SeckillList";
-
+    public static final String REDIS_USER_PAGEMODEL = "UserPageModel:";
     //redis中的过期时间常数
     //用户token用于刷新的过期时间(分钟)
     public static final long REDIS_LOGIN_TOKENREFRESH_EXPICETIME = 20;
 
-    //页面在redis中的缓存时间
+    //页面在redis中的缓存时间(分钟)
     public static final long REDIS_LOGIN_PAGE_EXPICETIME = 1;
+    //用户的pagemodel缓存
+    public static final long REDIS_USER_PAGEMODEL_EXPICETIME = 1;
 
 
     //方法

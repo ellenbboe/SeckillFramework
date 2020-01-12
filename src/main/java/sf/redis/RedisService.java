@@ -16,18 +16,19 @@ public class RedisService {
     @Autowired
     private RedisTemplate<String,Object> redisTemplate;
 
-    public void setObj(String key, User value) {
+    public void setObj(String key, Object value,Long time) {
         redisTemplate.opsForValue().set(key,value);
+        expice(key,time);
     }
 
-    public User getObj(String key) {
-        return (User)redisTemplate.opsForValue().get(key);
+    public Object getObj(String key) {
+        return redisTemplate.opsForValue().get(key);
     }
 
     public boolean expice(String key,long time)
     {
         try{
-            redisTemplate.expire(key,time, TimeUnit.SECONDS);
+            redisTemplate.expire(key,time, TimeUnit.MINUTES);
         }catch (Exception e)
         {
             return false;

@@ -2,6 +2,7 @@ package sf.service.impl;
 
 
 import com.alibaba.druid.util.StringUtils;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.shiro.authc.AuthenticationException;
 import org.apache.shiro.crypto.hash.Md5Hash;
 import org.apache.shiro.util.ByteSource;
@@ -23,7 +24,9 @@ import sf.vo.LoginVo;
 
 import javax.servlet.http.HttpServletRequest;
 
+@Slf4j
 @Service
+
 public class UserServiceImpl implements UserService {
     @Autowired(required = false)
     UserMapper userMapper;
@@ -40,7 +43,7 @@ public class UserServiceImpl implements UserService {
         {
             throw new BaseException(CodeMsg.LOGIN_OR_PASS_ERROR);
         }
-        String token = CookieUtil.getCookieValue(request,"token");
+        String token = CookieUtil.getCookieValue(request,CookieUtil.USER_COOKIE_TOKEN_NAME);
         String key = RedisKey.getRedisKey(RedisKey.REDIS_USER_LOGIN_MODEL,RedisKey.REDIS_USER_LOGIN_Token,token);
         String oldRefreshToken = stringRedisService.getString(key);
         if(!StringUtils.isEmpty(token) && !StringUtils.isEmpty(oldRefreshToken) && JwtUtil.canTokenRefresh(token,oldRefreshToken))//过期在前面已经判断过了
@@ -78,10 +81,23 @@ public class UserServiceImpl implements UserService {
         if (username == null || !JwtUtil.verify(token, username)) {
             throw new AuthenticationException("token认证失败！");
         }
+        //取缓存
+        String key  = RedisKey.getRedisKey(RedisKey.REDIS_USER_LOGIN_MODEL,RedisKey.REDIS_USER_PAGEMODEL,username);
+        Object o  = redisService.getObj(key);
+        if(o!=null)
+        {
+            log.info("取缓存");
+            return (User) o;
+        }
+        //数据库查找
         UserExample userExample = new UserExample();
         UserExample.Criteria criteria = userExample.createCriteria();
         criteria.andPhoneEqualTo(username);
-        return userMapper.selectByExample(userExample).get(0);
+        User result = userMapper.selectByExample(userExample).get(0);
+        //放入缓存
+        redisService.setObj(key,result,RedisKey.REDIS_USER_PAGEMODEL_EXPICETIME);
+        log.info("放入缓存");
+        return result;
     }
 
 //    public User GETbyID(){
