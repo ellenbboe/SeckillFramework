@@ -74,15 +74,16 @@ public class GoodsController {
     @ResponseBody
     public Result<GoodsDetailVo> toDetail(@PathVariable("id") int id, Model model, @LoginTokenValidator User user)
     {
+        // TODO: 2020/1/12 放入缓存 
         GoodsDetailVo goodsDetailVo = new GoodsDetailVo();
 //        model.addAttribute("user",);
         goodsDetailVo.setUser(userService.usertoModel(user));
         SeckillGoodsModel seckillGoodsModel = goodsService.GoodsToModel(goodsService.getGoodsById(id));
         long remainSeconds = seckillGoodsModel.getGoodsStock()>0? DateUtil.secoundToSeckill(seckillGoodsModel.getSeckillStarttime(),seckillGoodsModel.getSeckillEndtime()):-1;
-        log.info(""+DateUtil.secoundToSeckill(seckillGoodsModel.getSeckillStarttime(),seckillGoodsModel.getSeckillEndtime()));
 //        model.addAttribute("goods",seckillGoodsModel);
 //        model.addAttribute("remainSeconds",remainSeconds);
         goodsDetailVo.setGoods(seckillGoodsModel);
+        // TODO: 2020/1/12 还是会被放到缓存中,单位时间的并发会打到缓存中,设置1秒 
         goodsDetailVo.setRemainSeconds(remainSeconds);
         return Result.success(goodsDetailVo);
     }

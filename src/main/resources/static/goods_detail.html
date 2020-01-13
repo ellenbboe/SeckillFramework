@@ -12,6 +12,27 @@
     $(function () {
         getDetail();
     });
+    function seckill() {
+        $.ajax({
+            url:"/seckill/seckill",
+            type:"POST",
+            data:{
+                goodsId:$("#goodsId").val()
+            },
+            success: function (data) {
+                if (data.code == 0) {
+                    var orderid = data.data;
+                    window.location.href="order_detail.html?orderid="+orderid;
+                } else {
+                    layer.msg(data.msg);
+                }
+            },
+            error: function () {
+                layer.msg("客户端请求有误");
+            }
+        })
+    }
+
 </script>
 </head>
 <body>
@@ -53,10 +74,16 @@
                 <span id="goodsStock"></span>
             </div>
 
-            <form id="miaoshaForm" method="post" action="/seckill/seckill">
-                <button class="btn btn-primary btn-block" type="submit" id="buyButton">马上抢...</button>
-                <input type="hidden" name="goodsId" id="goodsId"/>
-            </form>
+<!--            <form id="miaoshaForm" method="post" action="/seckill/seckill">-->
+<!--                <button class="btn btn-primary btn-block" type="submit" id="buyButton">马上抢...</button>-->
+<!--                <input type="hidden" name="goodsId" id="goodsId"/>-->
+<!--            </form>-->
+
+
+<!--                        <form id="miaoshaForm" method="post" action="/seckill/seckill">-->
+            <button class="btn btn-primary btn-block" id="buyButton" onclick="seckill()">马上抢...</button>
+            <input type="hidden" name="goodsId" id="goodsId"/>
+<!--                        </form>-->
         </div>
     </div>
 </div>
@@ -73,9 +100,10 @@
 <!-- common.js -->
 <script type="text/javascript" src="/js/common.js"></script>
 <script>
+
     function getDetail() {
         var goodsId = g_getQueryString("goodsId");
-        $("#goodsId").text(goodsId);
+        $("#goodsId").val(goodsId);
         $.ajax({
             url: "/goods_detail/goodsId/" + goodsId,
             type: "GET",

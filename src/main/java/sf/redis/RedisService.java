@@ -28,7 +28,7 @@ public class RedisService {
     public boolean expice(String key,long time)
     {
         try{
-            redisTemplate.expire(key,time, TimeUnit.MINUTES);
+            redisTemplate.expire(key,time, TimeUnit.SECONDS);
         }catch (Exception e)
         {
             return false;

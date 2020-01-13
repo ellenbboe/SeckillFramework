@@ -16,7 +16,7 @@ public class Ord {
     private Date ordTime;
 
     private Date payTime;
-
+    public Ord(){}
     public Ord(Integer userId, Integer goodsId) {
         this.id = UUIDUtil.snowFlake();
         this.userId = userId;

@@ -37,6 +37,8 @@ public class SeckillGoodsModel {
         this.seckillStarttime = seckillGoods.getSeckillStarttime();
         this.seckillEndtime = seckillGoods.getSeckillEndtime();
     }
+
+
     public Integer getId() {
         return id;
     }

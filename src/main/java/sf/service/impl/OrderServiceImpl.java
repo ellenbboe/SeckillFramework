@@ -1,5 +1,6 @@
 package sf.service.impl;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import sf.dao.GoodsMapper;
@@ -9,10 +10,13 @@ import sf.entity.Ord;
 import sf.entity.OrdExample;
 import sf.exception.BaseException;
 import sf.model.OrderModel;
+import sf.redis.RedisKey;
+import sf.redis.RedisService;
 import sf.result.CodeMsg;
 import sf.service.GoodsService;
 import sf.service.OrderService;
 @Service
+@Slf4j
 public class OrderServiceImpl implements OrderService {
 
     @Autowired(required = false)
@@ -21,13 +25,15 @@ public class OrderServiceImpl implements OrderService {
     GoodsMapper goodsMapper;
     @Autowired
     GoodsService goodsService;
+    @Autowired
+    RedisService redisService;
     @Override
     public Ord GetById(String id) {
         return ordMapper.selectByPrimaryKey(id);
     }
 
     @Override
-    public Ord CreateOrderByGoodsAndUserID(int userId, int goodsId) {
+    public String CreateOrderByGoodsAndUserID(int userId, int goodsId) {
         Goods goods = goodsService.getGoodsById(goodsId);
         if(goods.getGoodsStock()<=0)
         {
@@ -39,20 +45,29 @@ public class OrderServiceImpl implements OrderService {
         }
         Ord newOrd = new Ord(userId,goodsId);
         try{
-            ordMapper.insertSelective(newOrd);
             goods.setGoodsStock(goods.getGoodsStock()-1);
             goodsMapper.updateByPrimaryKeySelective(goods);
+            ordMapper.insertSelective(newOrd);
         }catch (Exception e)
         {
-            e.printStackTrace();
+            throw new BaseException(CodeMsg.MIAO_SHA_NO_STOCK);
         }
-
-        return newOrd;
+        return newOrd.getId();
     }
 
+
+    // TODO: 2020/1/12 是否可以使用aop实现
     @Override
     public OrderModel OrderToModel(Ord ord) {
-        return new OrderModel(ord);
+        String key = RedisKey.getRedisKey(RedisKey.REDIS_MODEL,RedisKey.REDIS_MODEL_ORDERMODEL,ord.getId());
+        OrderModel orderModel = (OrderModel)redisService.getObj(key);
+        if(orderModel !=null)
+        {
+            return orderModel;
+        }
+        orderModel = new OrderModel(ord);
+        redisService.setObj(key,orderModel,RedisKey.REDIS_MODEL_EXPICETIME);
+        return orderModel;
     }
 
     public boolean OrderExist(int userId,int goodsId)
@@ -61,6 +76,6 @@ public class OrderServiceImpl implements OrderService {
         OrdExample.Criteria criteria = ordExample.createCriteria();
         criteria.andGoodsIdEqualTo(goodsId);
         criteria.andUserIdEqualTo(userId);
-        return ordMapper.selectByExample(ordExample).get(0) != null;
+        return ordMapper.countByExample(ordExample) > 0;
     }
 }

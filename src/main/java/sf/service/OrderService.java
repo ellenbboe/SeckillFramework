@@ -5,6 +5,6 @@ import sf.model.OrderModel;
 
 public interface OrderService {
     Ord GetById(String id);
-    Ord CreateOrderByGoodsAndUserID(int userId, int goodsId);
+    String CreateOrderByGoodsAndUserID(int userId, int goodsId);
     OrderModel OrderToModel(Ord ord);
 }
