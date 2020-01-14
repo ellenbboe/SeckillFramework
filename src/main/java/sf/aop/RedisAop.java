@@ -6,7 +6,7 @@ import java.lang.annotation.*;
 @Target({ElementType.METHOD})
 @Documented
 public @interface RedisAop {
-    String keypre();
+    String key();
     String value() ;
 
     long expire() default -1;

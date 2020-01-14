@@ -7,7 +7,7 @@ public class RedisKey {
     //模块/功能
     public static final String REDIS_PAGE_MODEL = "PAGE:";
     public static final String REDIS_USER_LOGIN_MODEL = "USER:";
-    public static final String REDIS_MODEL = "MODEL";
+    public static final String REDIS_MODEL = "MODEL:";
 
     //前缀有冒号  特征值不确定
     public static final String REDIS_USER_LOGIN_Token = "UserLoginToken:";

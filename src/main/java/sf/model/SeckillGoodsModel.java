@@ -25,6 +25,8 @@ public class SeckillGoodsModel {
 
     private Date seckillEndtime;
 
+    public SeckillGoodsModel() {
+    }
 
     public SeckillGoodsModel(Goods goods, SeckillGoods seckillGoods){
         this.id = goods.getId();

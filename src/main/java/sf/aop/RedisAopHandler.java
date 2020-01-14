@@ -22,9 +22,9 @@ public class RedisAopHandler {
         String key = redisAop.value();
         for (int i = 0; i < args.length; i++) {
             String replace = "#{" + i + "}";
-            key = key.replace(replace, String.valueOf(args[i]));
+            key = key.replace(replace, ":"+String.valueOf(args[i]));
         }
-        key = redisAop.keypre()+key;
+        key = redisAop.key()+key;
         ValueOperations valueOperations = redisTemplate.opsForValue();
         Object value = valueOperations.get(key);
         //redis 热点问题
@@ -42,4 +42,7 @@ public class RedisAopHandler {
         }
         return value;
     }
+
+
+//    public Object
 }
