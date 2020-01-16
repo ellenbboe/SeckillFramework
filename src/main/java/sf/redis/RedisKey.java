@@ -8,6 +8,7 @@ public class RedisKey {
     public static final String REDIS_PAGE_MODEL = "PAGE:";
     public static final String REDIS_USER_LOGIN_MODEL = "USER:";
     public static final String REDIS_MODEL = "MODEL:";
+    public static final String REDIS_GOODS = "GOODS:";
 
     //前缀有冒号  特征值不确定
     public static final String REDIS_USER_LOGIN_Token = "UserLoginToken:";
@@ -16,11 +17,11 @@ public class RedisKey {
     public static final String REDIS_MODEL_USERMODEL="userModel:";
     public static final String REDIS_MODEL_GOODSMODEL="goodsModel:";
     public static final String REDIS_MODEL_ORDERMODEL="orderModel:";
+    public static final String REDIS_GOODS_STOCK = "goodsStock:";
 
     //前缀+特征值已确定
-    public static final String REDIS_PAGENAME_SECKILLLIST = "SeckillList";
-
-
+    public static final String REDIS_PAGENAME_GOODSlIST = "GoodsList";//属于页面
+    public static final String REDIS_GOODS_GOODSLIST = "GoodsList";//属于对象
 
     //redis中的过期时间常数
     //用户token用于刷新的过期时间(秒)
@@ -32,6 +33,12 @@ public class RedisKey {
     public static final long REDIS_USER_PAGEMODEL_EXPICETIME = 10*60;
     //Model time
     public static final long REDIS_MODEL_EXPICETIME = 10*60;
+    //goodslist
+    public static final long REDIS_GOODS_GOODSLISTEXPICETIME = 10*60;
+    //goods stock
+    public static final long REDIS_GOODS_GOODSSTOCKXPICETIME = 10*60;
+
+
 
 
     //方法

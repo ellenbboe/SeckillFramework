@@ -9,20 +9,27 @@
     <link rel="stylesheet" type="text/css" href="/bootstrap/css/bootstrap.min.css"/>
     <link rel="stylesheet" type="text/css" href="/css/detail.css"/>
 <script>
+    if(window.name !== "a"){
+        location.reload();
+        window.name = "a";
+    }else{
+        window.name = "";
+    }
     $(function () {
         getDetail();
     });
     function seckill() {
+        var goodsId = $("#goodsId").val();
         $.ajax({
             url:"/seckill/seckill",
             type:"POST",
             data:{
-                goodsId:$("#goodsId").val()
+                goodsId:goodsId
             },
             success: function (data) {
-                if (data.code == 0) {
-                    var orderid = data.data;
-                    window.location.href="order_detail.html?orderid="+orderid;
+                if (data.code === 0) {
+                    layer.msg("排队中");
+                    getResult(goodsId);
                 } else {
                     layer.msg(data.msg);
                 }
@@ -30,6 +37,38 @@
             error: function () {
                 layer.msg("客户端请求有误");
             }
+        })
+    }
+
+    function getResult(id) {
+        g_showLoading();
+        $.ajax({
+            url:"/seckill/seckill/result",
+            type:"get",
+            data: {
+                goodsId:id
+            },
+            success:function (data) {
+                if (data.code === 0) {
+                    layer.confirm("秒杀成功!查看订单?",{btn:["确定","取消"]},
+                    function () {
+                        var orderid = data.data;
+                        window.location.href="order_detail.html?orderid="+orderid;
+                    },
+                        function () {
+                        layer.closeAll();
+                    });
+                }else {
+                    setTimeout(function () {
+                        getResult(id)
+                    },1000);
+                    layer.msg(data.msg);
+                }
+            },
+            error:function () {
+                layer.msg("客户端请求有误");
+            }
+
         })
     }
 
@@ -100,7 +139,6 @@
 <!-- common.js -->
 <script type="text/javascript" src="/js/common.js"></script>
 <script>
-
     function getDetail() {
         var goodsId = g_getQueryString("goodsId");
         $("#goodsId").val(goodsId);

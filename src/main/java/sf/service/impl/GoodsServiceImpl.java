@@ -27,10 +27,18 @@ public class GoodsServiceImpl implements GoodsService {
     RedisService redisService;
     @Override
     public List<Goods> GetGoodsList() {
+        String key = RedisKey.getRedisKey(RedisKey.REDIS_GOODS,RedisKey.REDIS_PAGENAME_GOODSlIST,"");
+        List<Goods> list = (List<Goods>) redisService.getList(key);
+        if(list!=null)
+        {
+            return list;
+        }
         GoodsExample goodsExample = new GoodsExample();
         GoodsExample.Criteria criteria = goodsExample.createCriteria();
         criteria.andIdIsNotNull();
-        return goodsMapper.selectByExample(goodsExample);
+        list = goodsMapper.selectByExample(goodsExample);
+        redisService.setList(key,list,RedisKey.REDIS_GOODS_GOODSLISTEXPICETIME);
+        return list;
     }
 
     @Override
@@ -54,6 +62,14 @@ public class GoodsServiceImpl implements GoodsService {
         model = new SeckillGoodsModel(goods,seckillGoods);
         redisService.setObj(key,model,RedisKey.REDIS_MODEL_EXPICETIME);
         return model;
+    }
+
+    @Override
+    public void updateModel(int goodsId) {
+        String key = RedisKey.getRedisKey(RedisKey.REDIS_MODEL,RedisKey.REDIS_MODEL_GOODSMODEL,String.valueOf(goodsId));
+        SeckillGoodsModel model = (SeckillGoodsModel)redisService.getObj(key);
+        model.setGoodsStock(model.getGoodsStock()-1);
+        redisService.setObj(key,model,RedisKey.REDIS_MODEL_EXPICETIME);
     }
 
 }

@@ -8,11 +8,9 @@ import sf.dao.OrdMapper;
 import sf.entity.Goods;
 import sf.entity.Ord;
 import sf.entity.OrdExample;
-import sf.exception.BaseException;
 import sf.model.OrderModel;
 import sf.redis.RedisKey;
 import sf.redis.RedisService;
-import sf.result.CodeMsg;
 import sf.service.GoodsService;
 import sf.service.OrderService;
 @Service
@@ -33,26 +31,19 @@ public class OrderServiceImpl implements OrderService {
     }
 
     @Override
-    public String CreateOrderByGoodsAndUserID(int userId, int goodsId) {
+    public boolean CreateOrderByGoodsAndUserID(int userId, int goodsId) {
+        if(OrderExist(userId,goodsId))
+        {
+            return false;
+        }
         Goods goods = goodsService.getGoodsById(goodsId);
-        if(goods.getGoodsStock()<=0)
-        {
-            throw new BaseException(CodeMsg.MIAO_SHA_NO_STOCK);
-        }
-        if(OrderExist(userId, goodsId))
-        {
-            throw new BaseException(CodeMsg.MIAO_SHA_REPEAT);
-        }
         Ord newOrd = new Ord(userId,goodsId);
-        try{
-            goods.setGoodsStock(goods.getGoodsStock()-1);
-            goodsMapper.updateByPrimaryKeySelective(goods);
-            ordMapper.insertSelective(newOrd);
-        }catch (Exception e)
-        {
-            throw new BaseException(CodeMsg.MIAO_SHA_NO_STOCK);
-        }
-        return newOrd.getId();
+        goods.setGoodsStock(goods.getGoodsStock()-1);
+        goodsMapper.updateByPrimaryKeySelective(goods);
+        ordMapper.insertSelective(newOrd);
+        //update redis
+        goodsService.updateModel(goodsId);
+        return true;
     }
 
 
@@ -70,6 +61,7 @@ public class OrderServiceImpl implements OrderService {
         return orderModel;
     }
 
+    @Override
     public boolean OrderExist(int userId,int goodsId)
     {
         OrdExample ordExample = new OrdExample();
@@ -77,5 +69,18 @@ public class OrderServiceImpl implements OrderService {
         criteria.andGoodsIdEqualTo(goodsId);
         criteria.andUserIdEqualTo(userId);
         return ordMapper.countByExample(ordExample) > 0;
+    }
+    @Override
+    public String getOrderByUserIdAndGoodsId(int userId,int goodsId){
+        OrdExample ordExample = new OrdExample();
+        OrdExample.Criteria criteria = ordExample.createCriteria();
+        criteria.andGoodsIdEqualTo(goodsId);
+        criteria.andUserIdEqualTo(userId);
+        if(ordMapper.countByExample(ordExample)>0)
+        {
+            return ordMapper.selectByExample(ordExample).get(0).getId();
+        }else{
+            return null;
+        }
     }
 }
