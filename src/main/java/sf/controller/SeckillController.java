@@ -60,11 +60,24 @@ public class SeckillController implements InitializingBean {
             redisService.setObj(key,stock,RedisKey.REDIS_GOODS_GOODSSTOCKXPICETIME);
         }
     }
-    //生成订单,返回订单id fakesnow即可
-    @PostMapping(value = "/seckill/seckill")
+
+    @GetMapping(value = "/seckill/getpath")
     @ResponseBody
-    public Result<CodeMsg> to_seckill(@RequestParam("goodsId")int goodsId, @LoginTokenValidator User user)
+    public String create_path(@RequestParam("goodsId")int goodsId)
     {
+        return goodsService.createRandomPath(goodsId);
+    }
+
+
+    //生成订单,返回订单id fakesnow即可
+    @PostMapping(value = "/seckill/{path}/seckill")
+    @ResponseBody
+    public Result<CodeMsg> to_seckill(@RequestParam("goodsId")int goodsId,@PathVariable("path")String path, @LoginTokenValidator User user)
+    {
+        if(!goodsService.checkRandomPath(path, goodsId))
+        {
+            return Result.error(CodeMsg.MIAO_SHA_FAIL);
+        }
         if(!goodsStock.get(goodsId))
         {
             return Result.error(CodeMsg.MIAO_SHA_NO_STOCK);
@@ -97,11 +110,16 @@ public class SeckillController implements InitializingBean {
     @ResponseBody
     public Result<String> getSeckillResult(@RequestParam("goodsId")int goodsId, @LoginTokenValidator User user)
     {
+        if(!goodsService.haveStock(goodsId))
+        {
+            return Result.error(CodeMsg.MIAO_SHA_NO_STOCK);
+        }
         String result = orderService.getOrderByUserIdAndGoodsId(user.getId(),goodsId);
         if(StringUtils.isEmpty(result))
         {
             return Result.error(CodeMsg.ORDER_IN_LINE);
-        }else{
+        }else
+        {
             return Result.success(result);
         }
     }

@@ -18,6 +18,7 @@ public class RedisKey {
     public static final String REDIS_MODEL_GOODSMODEL="goodsModel:";
     public static final String REDIS_MODEL_ORDERMODEL="orderModel:";
     public static final String REDIS_GOODS_STOCK = "goodsStock:";
+    public static final String REDIS_GOODS_RANDOM_PATH="randomPath:";
 
     //前缀+特征值已确定
     public static final String REDIS_PAGENAME_GOODSlIST = "GoodsList";//属于页面
@@ -37,7 +38,8 @@ public class RedisKey {
     public static final long REDIS_GOODS_GOODSLISTEXPICETIME = 10*60;
     //goods stock
     public static final long REDIS_GOODS_GOODSSTOCKXPICETIME = 10*60;
-
+    //random seckill path
+    public static final long REDIS_GOODS_RANDOM_PATHEXPICETIME = 5*60;
 
 
 

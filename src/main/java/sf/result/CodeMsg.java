@@ -12,9 +12,9 @@ public class CodeMsg {
     public static CodeMsg REQUEST_OVER_LIMIT = new CodeMsg(500999,"请求次数过多！"); /*用占位符 传入一个参数*/
 
     /*登陆异常 5002xx*/
-    public static CodeMsg LOGIN_ERROR_PASSWORD_EMPTY = new CodeMsg(500201,"密码不能为空");
-    public static CodeMsg LOGIN_ERROR_MOBILE_EMPTY = new CodeMsg(500202,"手机号不能为空");
-    public static CodeMsg LOGIN_ERROR_MOBILE_ERROR = new CodeMsg(500203,"手机号格式错误");
+//    public static CodeMsg LOGIN_ERROR_PASSWORD_EMPTY = new CodeMsg(500201,"密码不能为空");
+//    public static CodeMsg LOGIN_ERROR_MOBILE_EMPTY = new CodeMsg(500202,"手机号不能为空");
+//    public static CodeMsg LOGIN_ERROR_MOBILE_ERROR = new CodeMsg(500203,"手机号格式错误");
     public static CodeMsg LOGIN_OR_PASS_ERROR = new CodeMsg(500203,"用户名或者密码错误");
     public static CodeMsg TOKEN_EXPIRED = new CodeMsg(500204,"Token过期");
 
@@ -29,7 +29,6 @@ public class CodeMsg {
     public static CodeMsg ORDER_IN_LINE = new CodeMsg(500400,"排队中");
 
     /*xx模块异常*/
-
 
     /*私有化构造函数
      * 并且使得所有set 方法失效，接口健壮性*/

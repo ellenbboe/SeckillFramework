@@ -18,10 +18,10 @@
     $(function () {
         getDetail();
     });
-    function seckill() {
-        var goodsId = $("#goodsId").val();
+    function seckill(path,goodsId) {
+        console.log(path);
         $.ajax({
-            url:"/seckill/seckill",
+            url:"/seckill/"+path+"/seckill",
             type:"POST",
             data:{
                 goodsId:goodsId
@@ -37,6 +37,25 @@
             error: function () {
                 layer.msg("客户端请求有误");
             }
+        })
+    }
+
+    function getpath() {
+        var goodsId = $("#goodsId").val();
+        console.log("getpath");
+        $.ajax({
+            url:"/seckill/getpath",
+            type:"get",
+            data: {
+                goodsId:goodsId
+            },
+            success:function (data) {
+                seckill(data,goodsId);
+            },
+            error:function () {
+                layer.msg("客户端请求有误");
+            }
+
         })
     }
 
@@ -59,9 +78,12 @@
                         layer.closeAll();
                     });
                 }else {
-                    setTimeout(function () {
-                        getResult(id)
-                    },1000);
+                    if(data.code === 500400)
+                    {
+                        setTimeout(function () {
+                            getResult(id)
+                        },1000);
+                    }
                     layer.msg(data.msg);
                 }
             },
@@ -120,7 +142,7 @@
 
 
 <!--                        <form id="miaoshaForm" method="post" action="/seckill/seckill">-->
-            <button class="btn btn-primary btn-block" id="buyButton" onclick="seckill()">马上抢...</button>
+            <button class="btn btn-primary btn-block" id="buyButton" onclick="getpath()">马上抢...</button>
             <input type="hidden" name="goodsId" id="goodsId"/>
 <!--                        </form>-->
         </div>
