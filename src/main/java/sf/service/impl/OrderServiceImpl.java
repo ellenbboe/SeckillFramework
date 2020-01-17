@@ -31,10 +31,14 @@ public class OrderServiceImpl implements OrderService {
     }
 
     @Override
-    public boolean CreateOrderByGoodsAndUserID(int userId, int goodsId) {
+    public void CreateOrderByGoodsAndUserID(int userId, int goodsId) {
         if(OrderExist(userId,goodsId))
         {
-            return false;
+            return;
+        }
+        if (!goodsService.haveStock(goodsId))
+        {
+            return;
         }
         Goods goods = goodsService.getGoodsById(goodsId);
         Ord newOrd = new Ord(userId,goodsId);
@@ -43,7 +47,6 @@ public class OrderServiceImpl implements OrderService {
         ordMapper.insertSelective(newOrd);
         //update redis
         goodsService.updateModel(goodsId);
-        return true;
     }
 
 

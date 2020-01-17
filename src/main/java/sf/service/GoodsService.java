@@ -10,4 +10,5 @@ public interface GoodsService {
     Goods getGoodsById(int id);
     SeckillGoodsModel GoodsToModel(Goods goods);
     void updateModel(int goodsId);
+    boolean haveStock(int goodsId);
 }

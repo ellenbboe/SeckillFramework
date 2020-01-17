@@ -72,4 +72,10 @@ public class GoodsServiceImpl implements GoodsService {
         redisService.setObj(key,model,RedisKey.REDIS_MODEL_EXPICETIME);
     }
 
+    @Override
+    public boolean haveStock(int goodsId) {
+        Goods goods = goodsMapper.selectByPrimaryKey(goodsId);
+        int stock = goods.getGoodsStock();
+        return stock > 0;
+    }
 }
