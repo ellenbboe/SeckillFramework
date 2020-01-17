@@ -24,7 +24,7 @@
             url:"/seckill/"+path+"/seckill",
             type:"POST",
             data:{
-                goodsId:goodsId
+                goodsId:goodsId,
             },
             success: function (data) {
                 if (data.code === 0) {
@@ -42,21 +42,27 @@
 
     function getpath() {
         var goodsId = $("#goodsId").val();
-        console.log("getpath");
         $.ajax({
             url:"/seckill/getpath",
             type:"get",
             data: {
-                goodsId:goodsId
+                goodsId:goodsId,
+                verifyCodeActual:$("#verifyCodeInput").val()
             },
             success:function (data) {
-                seckill(data,goodsId);
+                if(data.code===0)
+                {
+                    seckill(data.data,goodsId);
+                }else{
+                    layer.msg(data.msg);
+                }
             },
             error:function () {
                 layer.msg("客户端请求有误");
             }
 
-        })
+        });
+        refresh();
     }
 
     function getResult(id) {
@@ -142,6 +148,13 @@
 
 
 <!--                        <form id="miaoshaForm" method="post" action="/seckill/seckill">-->
+            <div class="row">
+                <div class="form-inline">
+                    <img id="verifyCodeImg" width="100" height="40" style="display: none" onclick="refresh()"/>
+                    <input id="verifyCodeInput" name="verifyCodeActual" class="form-control" style="display: none"/>
+                </div>
+            </div>
+
             <button class="btn btn-primary btn-block" id="buyButton" onclick="getpath()">马上抢...</button>
             <input type="hidden" name="goodsId" id="goodsId"/>
 <!--                        </form>-->
@@ -168,7 +181,7 @@
             url: "/goods_detail/goodsId/" + goodsId,
             type: "GET",
             success: function (data) {
-                if (data.code == 0) {
+                if (data.code === 0) {
                     render(data.data);
                 } else {
                     layer.msg(data.msg);
@@ -218,17 +231,25 @@
             }, 1000);
         } else if (remainSeconds == 0) {//秒杀进行中
             $("#buyButton").attr("disabled", false);
+            $("#verifyCodeImg").attr("src","/kaptcha");
+            $("#verifyCodeImg").show();
+            $("#verifyCodeInput").show();
             $("#seckillStatus").text("秒杀进行中");
             if (timeout) {
                 clearTimeout(timeout);
             }
             $("#buyButton").html("秒杀进行中");
         } else {//秒杀已经结束
+            $("#verifyCodeImg").hide();
+            $("#verifyCodeInput").hide();
             $("#buyButton").attr("disabled", true);
             $("#seckillStatus").text("秒杀已经结束");
             $("#buyButton").html("秒杀已经结束");
         }
     }
-
+    function refresh() {
+        $("#verifyCodeImg").attr("src","/kaptcha?"+Math.random());
+        $("#verifyCodeInput").val("");
+    }
 </script>
 </html>

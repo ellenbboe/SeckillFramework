@@ -73,8 +73,12 @@
       <artifactId>druid</artifactId>
       <version>1.1.10</version>
     </dependency>
-
-
+<!--    验证码-->
+    <dependency>
+      <groupId>com.github.penggle</groupId>
+      <artifactId>kaptcha</artifactId>
+      <version>2.3.2</version>
+    </dependency>
     <!-- https://mvnrepository.com/artifact/redis.clients/jedis -->
     <dependency>
       <groupId>redis.clients</groupId>
@@ -111,9 +115,6 @@
       <artifactId>shiro-spring-boot-web-starter</artifactId>
       <version>1.4.0</version>
     </dependency>
-
-
-
     <!-- https://mvnrepository.com/artifact/com.auth0/java-jwt -->
     <dependency>
       <groupId>com.auth0</groupId>
@@ -121,17 +122,12 @@
       <version>3.4.0</version>
     </dependency>
     <!-- https://mvnrepository.com/artifact/io.jsonwebtoken/jjwt -->
-
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
       <version>4.12</version>
       <scope>test</scope>
     </dependency>
-
-
-
-
     <!--  mybatis-generator-->
     <dependency>
       <groupId>org.mybatis.generator</groupId>
@@ -154,11 +150,7 @@
       <artifactId>spring-boot-starter-amqp</artifactId>
       <version>2.0.4.RELEASE</version>
     </dependency>
-
-
   </dependencies>
-
-
   <build>
     <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
       <plugins>

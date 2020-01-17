@@ -21,11 +21,13 @@ public class CodeMsg {
     /*秒杀模块异常 5005xx*/
     public static CodeMsg MIAO_SHA_NO_STOCK = new CodeMsg(500501,"库存不足！");
     public static CodeMsg MIAO_SHA_REPEAT = new CodeMsg(500502,"重复秒杀！");
-    public static CodeMsg MIAO_SHA_VERICODE = new CodeMsg(500503,"验证法非法！");
+    public static CodeMsg MIAO_SHA_VERICODE = new CodeMsg(500503,"验证码非法！");
     public static CodeMsg MIAO_SHA_FAIL = new CodeMsg(500503,"秒杀失败！");
 
     /*订单模块异常 5003xx*/
     public static CodeMsg ORDER_NOT_EXIST = new CodeMsg(500301,"订单不存在");
+    public static CodeMsg LINK_OUTTIME = new CodeMsg(500321,"链接超时");
+
     public static CodeMsg ORDER_IN_LINE = new CodeMsg(500400,"排队中");
 
     /*xx模块异常*/

@@ -23,9 +23,11 @@ import sf.result.Result;
 import sf.service.GoodsService;
 import sf.service.OrderService;
 import sf.service.UserService;
+import sf.util.CodeUtil;
 import sf.validator.LoginTokenValidator;
 import sf.vo.SeckillDetailVo;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.HashMap;
 import java.util.List;
 
@@ -63,9 +65,18 @@ public class SeckillController implements InitializingBean {
 
     @GetMapping(value = "/seckill/getpath")
     @ResponseBody
-    public String create_path(@RequestParam("goodsId")int goodsId)
+    public Result<String> create_path(@RequestParam("goodsId")int goodsId, HttpServletRequest request)
     {
-        return goodsService.createRandomPath(goodsId);
+        if(!CodeUtil.checkVerifyCode(request))
+        {
+            return Result.error(CodeMsg.MIAO_SHA_VERICODE);
+        }
+        String result = goodsService.createRandomPath(goodsId);
+        if(StringUtils.isEmpty(result))
+        {
+            return Result.error(CodeMsg.LINK_OUTTIME);
+        }
+        return Result.success(result);
     }
 
 
