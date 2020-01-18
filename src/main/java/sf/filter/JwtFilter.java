@@ -32,7 +32,6 @@ public class JwtFilter extends BasicHttpAuthenticationFilter {
     @Override
     protected boolean isAccessAllowed(ServletRequest servletRequest, ServletResponse servletResponse, Object o) throws UnauthorizedException {
         //判断请求的请求头是否带上 "token"
-        System.out.println("isAccessAllowed");
         if (isLoginAttempt(servletRequest, servletResponse)) {
             //如果存在，则进入 executeLogin 方法执行登入，检查 token 是否正确
             try {
@@ -64,13 +63,11 @@ public class JwtFilter extends BasicHttpAuthenticationFilter {
      */
     @Override
     protected boolean executeLogin(ServletRequest request, ServletResponse response){
-        System.out.println("executeLogin");
         HttpServletRequest httpServletRequest = (HttpServletRequest) request;
         HttpServletResponse httpServletResponse = (HttpServletResponse) response;
         String token = CookieUtil.getCookieValue(httpServletRequest,"token");
         if(JwtUtil.isTokenExpired(token))
         {
-            System.out.println("过期了!!!!!!!!!!!!!!!!!!!!!!!!");
             if(!refreshToken(httpServletRequest,httpServletResponse,token))
             {
                 throw new BaseException(CodeMsg.TOKEN_EXPIRED);

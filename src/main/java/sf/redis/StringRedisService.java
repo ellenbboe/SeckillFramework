@@ -52,11 +52,11 @@ public class StringRedisService {
         return false;
     }
 
-    //设置过期时间 分钟
+    //设置过期时间 秒
     public boolean expice(String key,long time)
     {
         try{
-            stringRedisTemplate.expire(key,time, TimeUnit.MINUTES);
+            stringRedisTemplate.expire(key,time, TimeUnit.SECONDS);
         }catch (Exception e)
         {
             return false;

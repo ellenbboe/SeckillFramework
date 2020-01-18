@@ -9,6 +9,9 @@ public class OrderModel {
     private Date createDate;
     private Integer orderStatus;
 
+    public OrderModel() {
+    }
+
     public OrderModel(Ord ord) {
         this.id = ord.getId();
         this.createDate = ord.getOrdTime();

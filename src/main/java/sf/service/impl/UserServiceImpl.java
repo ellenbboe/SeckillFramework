@@ -86,7 +86,6 @@ public class UserServiceImpl implements UserService {
         Object o  = redisService.getObj(key);
         if(o!=null)
         {
-            log.info("取缓存");
             return (User) o;
         }
         //数据库查找
@@ -96,7 +95,6 @@ public class UserServiceImpl implements UserService {
         User result = userMapper.selectByExample(userExample).get(0);
         //放入缓存
         redisService.setObj(key,result,RedisKey.REDIS_USER_PAGEMODEL_EXPICETIME);
-        log.info("放入缓存");
         return result;
     }
 
@@ -107,10 +105,18 @@ public class UserServiceImpl implements UserService {
 //        return userMapper.selectByExample(userExample).get(0);
 //    }
 
-
+//     TODO: 2020/1/12 aop是否可以实现
     public UserModel usertoModel(User user)
     {
-        return new UserModel(user);
+        String key = RedisKey.getRedisKey(RedisKey.REDIS_MODEL,RedisKey.REDIS_MODEL_USERMODEL,String.valueOf(user.getId()));
+        UserModel userModel = (UserModel)redisService.getObj(key);
+        if(userModel !=null)
+        {
+            return userModel;
+        }
+        userModel = new UserModel(user);
+        redisService.setObj(key,userModel,RedisKey.REDIS_MODEL_EXPICETIME);
+        return userModel;
     }
 
 }

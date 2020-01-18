@@ -2,6 +2,7 @@ package sf.controller;
 
 import com.alibaba.druid.util.StringUtils;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -42,10 +43,11 @@ public class GoodsController {
     @Autowired
     ThymeleafViewResolver thymeleafViewResolver;
 
+
     @RequestMapping("/goods/list")
     @ResponseBody
     public String toLogin(HttpServletRequest request, HttpServletResponse response,Model model, @LoginTokenValidator User user){
-        String html = stringRedisService.getString(RedisKey.getRedisKey(RedisKey.REDIS_PAGE_MODEL,RedisKey.REDIS_PAGENAME_SECKILLLIST,""));
+        String html = stringRedisService.getString(RedisKey.getRedisKey(RedisKey.REDIS_PAGE_MODEL,RedisKey.REDIS_PAGENAME_GOODSlIST,""));
         if(!StringUtils.isEmpty(html)){
             return html;
         }
@@ -56,7 +58,7 @@ public class GoodsController {
         WebContext ctx = new WebContext(request,response,request.getServletContext(),
                 request.getLocale(),model.asMap());
         html=thymeleafViewResolver.getTemplateEngine().process("goods_list",ctx);
-        stringRedisService.setString(RedisKey.getRedisKey(RedisKey.REDIS_PAGE_MODEL,RedisKey.REDIS_PAGENAME_SECKILLLIST,""),html,RedisKey.REDIS_LOGIN_PAGE_EXPICETIME);
+        stringRedisService.setString(RedisKey.getRedisKey(RedisKey.REDIS_PAGE_MODEL,RedisKey.REDIS_PAGENAME_GOODSlIST,""),html,RedisKey.REDIS_LOGIN_PAGE_EXPICETIME);
         return html;
     }
 
@@ -74,18 +76,17 @@ public class GoodsController {
     @ResponseBody
     public Result<GoodsDetailVo> toDetail(@PathVariable("id") int id, Model model, @LoginTokenValidator User user)
     {
+        // TODO: 2020/1/12 放入缓存 
         GoodsDetailVo goodsDetailVo = new GoodsDetailVo();
 //        model.addAttribute("user",);
         goodsDetailVo.setUser(userService.usertoModel(user));
         SeckillGoodsModel seckillGoodsModel = goodsService.GoodsToModel(goodsService.getGoodsById(id));
         long remainSeconds = seckillGoodsModel.getGoodsStock()>0? DateUtil.secoundToSeckill(seckillGoodsModel.getSeckillStarttime(),seckillGoodsModel.getSeckillEndtime()):-1;
-        log.info(""+DateUtil.secoundToSeckill(seckillGoodsModel.getSeckillStarttime(),seckillGoodsModel.getSeckillEndtime()));
 //        model.addAttribute("goods",seckillGoodsModel);
 //        model.addAttribute("remainSeconds",remainSeconds);
         goodsDetailVo.setGoods(seckillGoodsModel);
+        // TODO: 2020/1/12 还是会被放到缓存中,单位时间的并发会打到缓存中,设置1秒 
         goodsDetailVo.setRemainSeconds(remainSeconds);
         return Result.success(goodsDetailVo);
     }
-
-
 }

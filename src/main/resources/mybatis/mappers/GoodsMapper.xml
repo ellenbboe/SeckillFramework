@@ -228,7 +228,7 @@
         goods_seckillPrice = #{goodsSeckillprice,jdbcType=DECIMAL},
       </if>
     </set>
-    where id = #{id,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER} and goods_stock >= 0
   </update>
   <update id="updateByPrimaryKey" parameterType="sf.entity.Goods" >
     update goods
