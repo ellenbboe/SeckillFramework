@@ -18,95 +18,93 @@
     <script type="text/javascript" src="/js/md5.min.js"></script>
     <!-- common.js -->
     <script type="text/javascript" src="/js/common.js"></script>
+    <script>
+        $(function () {
+            getOrderDetail();
+        });
+        function getOrderDetail() {
+            var orderid = g_getQueryString("orderid");
+           $.ajax({
+               url:"/seckill/order_detail",
+               type:"GET",
+               data:{
+                   orderid:orderid
+               },
+               success: function (data) {
+                   if (data.code == 0) {
+                       render(data.data);
+                   } else {
+                       layer.msg(data.msg);
+                   }
+               },
+               error: function () {
+                   layer.msg("客户端请求有误");
+               }
+           })
+        }
+
+        function render(detail) {
+            var user = detail.user;
+            var goods = detail.goods;
+            var order = detail.orderModel;
+            $("#goodsName").text(goods.goodsName);
+            $("#goodsImg").attr("src",goods.goodsImg);
+            $("#seckillPrice").text(goods.seckillPrice);
+            $("#userName").text(user.nickname);
+            $("#userAddress").text("地址: "+ user.address);
+            $("#userPhone").text("联系电话: "+ user.phone);
+            $("#orderCreateTime").text(new Date(order.createDate).format("yyyy-MM-dd hh:mm:ss"));
+            switch (order.orderStatus) {
+                case 0:
+                    $("#orderStatus").text("未支付");
+                    break;
+                case 1:
+                    $("#orderStatus").text("已支付");
+                    break;
+            }
+        }
+    </script>
 </head>
 <body>
 
-<div class="top">
-    <h4 style="text-align: center">订单详情页</h4>
-</div>
-<div class="goods">
-    <div class="containers">
-        <div class="goods_view">
-            <img  id="goodsImg"  width="560"/>
-        </div>
-        <div class="goods_info">
-            <h2 id="goodsName"></h2>
-            <p class="title" text="${goods.goodsTitle}"></p>
-            <p>
-                <span class="price1"  id="orderPrice"></span>
-            </p>
-            <div class="seckill_data">
-                <div>
-                    <span>下单时间</span>
-                    <p id="createDate"></p>
-                </div>
-                <div>
-                    <span>订单状态</span>
-                    <p id="orderStatus"></p>
-                </div>
-            </div>
-            <div class="count">
-                <span>收货人：</span>
-                <span>XXX  1383838483</span>
-            </div>
-            <div class="count">
-                <span>收货地址：</span>
-                <span>北京市昌平区回龙观龙博一区</span>
-            </div>
 
-                <button class="btn btn-primary btn-block" type="submit" id="payButton">立即支付</button>
-        </div>
-    </div>
+<div class="panel panel-default">
+  <div class="panel-heading">秒杀订单详情</div>
+  <table class="table" id="goodslist">
+        <tr>  
+        <td>商品名称</td>  
+        <td id="goodsName" colspan="3"></td>
+     </tr>  
+     <tr>
+        <td>商品图片</td>  
+        <td colspan="2"><img id="goodsImg" width="200" height="200" /></td>
+     </tr>
+      <tr>  
+        <td>商品价格</td>
+        <td colspan="2" id="seckillPrice"></td>
+     </tr>
+     <tr>
+     		<td>下单时间</td>  
+        	<td id="orderCreateTime" colspan="2"></td>
+     </tr>
+     <tr>
+     	<td>订单状态</td>  
+        <td >
+        	<span id="orderStatus"></span>
+        </td>  
+        <td>
+        	<button class="btn btn-primary btn-block" type="submit" id="payButton">立即支付</button>
+        </td>
+     </tr>
+      <tr>
+     		<td>收货人</td>  
+        	<td id="userName">无姓名</td>&nbsp;&nbsp;<span id="userPhone">无联系电话</span>
+     </tr>
+     <tr>
+     		<td>收货地址</td>  
+        	<td id="userAddress"></td>
+     </tr>
+  </table>
 </div>
 </body>
 </html>
-<script>
-    function render(detail){
-        var goods = detail.goods;
-        var ord = detail.ord;
-        $("#goodsName").text(goods.goodsName);
-        $("#goodsImg").attr("src", goods.goodsImg);
-        $("#orderPrice").text(ord.goodsPrice);
-        $("#createDate").text(new Date(ord.createDate).format("yyyy-MM-dd hh:mm:ss"));
-        var status = "";
-        if(ord.status == 0){
-            status = "未支付"
-        }else if(ord.status == 1){
-            status = "待发货";
-        }
-        $("#orderStatus").text(status);
-
-    }
-
-    $(function(){
-        getOrderDetail();
-    })
-
-    function getOrderDetail(){
-        var orderId = g_getQueryString("orderId");
-        $.ajax({
-            url:"/ord/detail",
-            type:"GET",
-            data:{
-                orderId:orderId
-            },
-            success:function(data){
-                if(data.code == 0){
-                    render(data.data);
-                }else if(data.code == 500216){
-                    layer.msg(data.msg);
-                    window.location.href = "/page/login";
-                }else{
-                    layer.msg(data.msg);
-                }
-
-            },
-            error:function(){
-                layer.msg("客户端请求有误");
-            }
-        });
-    }
-
-
-
-</script>

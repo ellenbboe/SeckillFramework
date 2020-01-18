@@ -43,7 +43,6 @@ public class ShiroRealm extends AuthorizingRealm {
     protected AuthenticationInfo doGetAuthenticationInfo(AuthenticationToken authenticationToken) throws AuthenticationException {
         String jwt = (String) authenticationToken.getPrincipal();
         String username = JwtUtil.getUsername(jwt);
-        System.out.println("ShiroRealm中用户验证");
         if (username == null || !JwtUtil.verify(jwt, username)) {
             throw new AuthenticationException("token认证失败！");
         }

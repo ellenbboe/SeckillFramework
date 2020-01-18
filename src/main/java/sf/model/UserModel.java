@@ -7,6 +7,7 @@ public class UserModel {
     private String phone;
     private String address;
 
+    public UserModel(){}
     public UserModel(User user) {
         this.phone = user.getPhone();
         this.nickname = user.getNickname();
