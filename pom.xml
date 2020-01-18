@@ -53,7 +53,16 @@
       <artifactId>mybatis-spring-boot-starter</artifactId>
       <version>1.3.2</version>
     </dependency>
-
+    <dependency>
+      <groupId>org.aspectj</groupId>
+      <artifactId>aspectjrt</artifactId>
+      <version>1.9.4</version>
+    </dependency>
+    <dependency>
+      <groupId>org.aspectj</groupId>
+      <artifactId>aspectjweaver</artifactId>
+      <version>1.9.2</version>
+    </dependency>
 <!--    redis-->
     <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-data-redis -->
     <dependency>
@@ -150,6 +159,12 @@
       <artifactId>spring-boot-starter-amqp</artifactId>
       <version>2.0.4.RELEASE</version>
     </dependency>
+    <!-- https://mvnrepository.com/artifact/com.google.guava/guava -->
+    <dependency>
+      <groupId>com.google.guava</groupId>
+      <artifactId>guava</artifactId>
+      <version>28.1-jre</version>
+    </dependency>
   </dependencies>
   <build>
     <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
@@ -177,6 +192,10 @@
               <artifactId>mybatis-generator-core</artifactId>
               <version>1.3.2</version>
             </dependency>
+<!--            工具类-->
+            <!-- https://mvnrepository.com/artifact/com.google.guava/guava -->
+
+
           </dependencies>
         </plugin>
 

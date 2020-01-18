@@ -25,6 +25,7 @@ import sf.service.OrderService;
 import sf.service.UserService;
 import sf.util.CodeUtil;
 import sf.validator.LoginTokenValidator;
+import sf.validator.ServiceLimit;
 import sf.vo.SeckillDetailVo;
 
 import javax.servlet.http.HttpServletRequest;
@@ -63,6 +64,7 @@ public class SeckillController implements InitializingBean {
         }
     }
 
+    @ServiceLimit(limitType = ServiceLimit.LimitType.IP)
     @GetMapping(value = "/seckill/getpath")
     @ResponseBody
     public Result<String> create_path(@RequestParam("goodsId")int goodsId, HttpServletRequest request)
@@ -79,7 +81,7 @@ public class SeckillController implements InitializingBean {
         return Result.success(result);
     }
 
-
+    @ServiceLimit(limitType = ServiceLimit.LimitType.IP)
     //生成订单,返回订单id fakesnow即可
     @PostMapping(value = "/seckill/{path}/seckill")
     @ResponseBody
@@ -117,6 +119,7 @@ public class SeckillController implements InitializingBean {
 //        return Result.success(orderService.CreateOrderByGoodsAndUserID(user.getId(),goodsId));
     }
 
+    @ServiceLimit(limitType = ServiceLimit.LimitType.IP)
     @GetMapping(value = "/seckill/seckill/result")
     @ResponseBody
     public Result<String> getSeckillResult(@RequestParam("goodsId")int goodsId, @LoginTokenValidator User user)
@@ -134,6 +137,7 @@ public class SeckillController implements InitializingBean {
             return Result.success(result);
         }
     }
+    @ServiceLimit(limitType = ServiceLimit.LimitType.IP)
     //返回订单信息
     @GetMapping("/seckill/order_detail")
     @ResponseBody

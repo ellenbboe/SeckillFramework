@@ -5,6 +5,7 @@ import com.google.code.kaptcha.Producer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import sf.validator.ServiceLimit;
 
 import javax.imageio.ImageIO;
 import javax.servlet.ServletOutputStream;
@@ -18,6 +19,7 @@ public class CodeController {
     @Autowired
     private Producer captchaProducer = null;
     @RequestMapping("/kaptcha")
+    @ServiceLimit(limitType = ServiceLimit.LimitType.IP)
     public void getKaptchaImage(HttpServletRequest request, HttpServletResponse response) throws Exception {
         HttpSession session = request.getSession();
         response.setDateHeader("Expires", 0);
