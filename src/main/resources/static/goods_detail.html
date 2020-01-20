@@ -56,13 +56,14 @@
                 }else{
                     layer.msg(data.msg);
                 }
+                refresh();
             },
             error:function () {
                 layer.msg("客户端请求有误");
-            }
+                refresh();
 
+            }
         });
-        refresh();
     }
 
     function getResult(id) {

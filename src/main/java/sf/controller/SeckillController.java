@@ -31,6 +31,7 @@ import sf.vo.SeckillDetailVo;
 import javax.servlet.http.HttpServletRequest;
 import java.util.HashMap;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 @Controller
 @Slf4j
@@ -51,7 +52,7 @@ public class SeckillController implements InitializingBean {
     //将秒杀商品数量加载到redis中
     @Override
     public void afterPropertiesSet() throws Exception {
-        List<Goods> list = goodsService.GetGoodsList();
+    List<Goods> list = goodsService.GetGoodsList();
         for (Goods one:list) {
             int stock = one.getGoodsStock();
             if (stock>0) {
@@ -59,8 +60,9 @@ public class SeckillController implements InitializingBean {
             } else {
                 goodsStock.put(one.getId(), false);
             }
-            String key = RedisKey.getRedisKey(RedisKey.REDIS_GOODS,RedisKey.REDIS_GOODS_STOCK,one.getId().toString());
-            redisService.setObj(key,stock,RedisKey.REDIS_GOODS_GOODSSTOCKXPICETIME);
+            Object[] objects = {one.getId()};
+            String key = RedisKey.genKey(Goods.class.getName(),"getGoodsStock",objects);
+            redisService.setObj(Integer.class,key,stock,RedisKey.REDIS_GOODS_GOODSSTOCKXPICETIME, TimeUnit.SECONDS);
         }
     }
 
@@ -73,7 +75,7 @@ public class SeckillController implements InitializingBean {
         {
             return Result.error(CodeMsg.MIAO_SHA_VERICODE);
         }
-        String result = goodsService.createRandomPath(goodsId);
+        String result = goodsService.getRandomPath(goodsId);
         if(StringUtils.isEmpty(result))
         {
             return Result.error(CodeMsg.LINK_OUTTIME);
@@ -87,7 +89,7 @@ public class SeckillController implements InitializingBean {
     @ResponseBody
     public Result<CodeMsg> to_seckill(@RequestParam("goodsId")int goodsId,@PathVariable("path")String path, @LoginTokenValidator User user)
     {
-        if(!goodsService.checkRandomPath(path, goodsId))
+        if(StringUtils.isEmpty(path)||!path.equals(goodsService.getRandomPath(goodsId)))
         {
             return Result.error(CodeMsg.MIAO_SHA_FAIL);
         }
@@ -95,9 +97,11 @@ public class SeckillController implements InitializingBean {
         {
             return Result.error(CodeMsg.MIAO_SHA_NO_STOCK);
         }
-        Long stock = (Long)redisService.decr(RedisKey.getRedisKey(RedisKey.REDIS_GOODS,RedisKey.REDIS_GOODS_STOCK,String.valueOf(goodsId)));
+        Object[] objects = {goodsId};
+        Long stock = redisService.decr(RedisKey.genKey(Goods.class.getName(),"getGoodsStock",objects));
         if (stock < 0) {
             goodsStock.put(goodsId, false);
+            log.info("2");
             return Result.error(CodeMsg.MIAO_SHA_NO_STOCK);
         }
         OrdMessage message = new OrdMessage(user.getId(),goodsId);
@@ -119,13 +123,13 @@ public class SeckillController implements InitializingBean {
 //        return Result.success(orderService.CreateOrderByGoodsAndUserID(user.getId(),goodsId));
     }
 
-    @ServiceLimit(limitType = ServiceLimit.LimitType.IP)
     @GetMapping(value = "/seckill/seckill/result")
     @ResponseBody
     public Result<String> getSeckillResult(@RequestParam("goodsId")int goodsId, @LoginTokenValidator User user)
     {
         if(!goodsService.haveStock(goodsId))
         {
+            log.info("3");
             return Result.error(CodeMsg.MIAO_SHA_NO_STOCK);
         }
         String result = orderService.getOrderByUserIdAndGoodsId(user.getId(),goodsId);
@@ -144,14 +148,13 @@ public class SeckillController implements InitializingBean {
     public Result<SeckillDetailVo> get_seckill_orderdetail(@RequestParam("orderid")String id,@LoginTokenValidator User user)
     {
         log.info("fuck the bug");
-        SeckillDetailVo seckillDetailVo= new SeckillDetailVo();
+        SeckillDetailVo seckillDetailVo= orderService.getSeckillDetailVo(id,user);
         //seckillDetailVo取缓存
-        // TODO: 2020/1/12 下面的方法里面写进缓存
         //查数据库
-        Ord ord = orderService.GetById(id);
-        seckillDetailVo.setOrderModel(orderService.OrderToModel(ord));
-        seckillDetailVo.setGoods(goodsService.GoodsToModel(goodsService.getGoodsById(ord.getGoodsId())));
-        seckillDetailVo.setUser(userService.usertoModel(user));
+//        Ord ord = orderService.GetById(id);
+//        seckillDetailVo.setOrderModel(orderService.OrderToModel(ord));
+//        seckillDetailVo.setGoods(goodsService.GoodsToModel(goodsService.getGoodsById(ord.getGoodsId())));
+//        seckillDetailVo.setUser(userService.usertoModel(user));
         //seckillDetailVo放缓存
 //        redisService.setObj();
         return Result.success(seckillDetailVo);

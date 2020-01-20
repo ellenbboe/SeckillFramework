@@ -1,4 +1,4 @@
-package sf.aop;
+package sf.aspect;
 
 import com.google.common.cache.CacheBuilder;
 import com.google.common.cache.CacheLoader;
@@ -8,11 +8,8 @@ import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
-import org.aspectj.lang.annotation.Before;
 import org.aspectj.lang.annotation.Pointcut;
 import org.aspectj.lang.reflect.MethodSignature;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
@@ -35,7 +32,7 @@ public class LimitAspect {
             .build(new CacheLoader<String,RateLimiter>(){
                 @Override
                 public RateLimiter load(String key){
-                    return RateLimiter.create(1);
+                    return RateLimiter.create(100);
                 }
             });
 
@@ -68,6 +65,7 @@ public class LimitAspect {
             }
         }catch (Throwable e)
         {
+            e.printStackTrace();
             throw new BaseException(CodeMsg.REQUEST_OVER_LIMIT);
         }
         return obj;

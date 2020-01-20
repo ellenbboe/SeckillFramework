@@ -11,6 +11,5 @@ public interface GoodsService {
     SeckillGoodsModel GoodsToModel(Goods goods);
     void updateModel(int goodsId);
     boolean haveStock(int goodsId);
-    String createRandomPath(int goodsId);
-    boolean checkRandomPath(String path,int goodsId);
+    String getRandomPath(int goodsId);
 }
