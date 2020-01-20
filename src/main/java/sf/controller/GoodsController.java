@@ -52,7 +52,7 @@ public class GoodsController {
             return html;
         }
         model.addAttribute("user",userService.usertoModel(user));
-        List<Goods>  goodsList = goodsService.GetGoodsList();
+        List<Goods> goodsList = goodsService.GetGoodsList();
         model.addAttribute("goodsList",goodsList);
         //手动渲染
         WebContext ctx = new WebContext(request,response,request.getServletContext(),
@@ -74,9 +74,9 @@ public class GoodsController {
 //    }
     @RequestMapping("/goods_detail/goodsId/{id}")
     @ResponseBody
-    public Result<GoodsDetailVo> toDetail(@PathVariable("id") int id, Model model, @LoginTokenValidator User user)
+    public Result<GoodsDetailVo> toDetail(@PathVariable("id") int id, @LoginTokenValidator User user)
     {
-        // TODO: 2020/1/12 放入缓存 
+        //还是不让入缓存了,里面有服务器的seconds -.-
         GoodsDetailVo goodsDetailVo = new GoodsDetailVo();
 //        model.addAttribute("user",);
         goodsDetailVo.setUser(userService.usertoModel(user));
@@ -85,7 +85,6 @@ public class GoodsController {
 //        model.addAttribute("goods",seckillGoodsModel);
 //        model.addAttribute("remainSeconds",remainSeconds);
         goodsDetailVo.setGoods(seckillGoodsModel);
-        // TODO: 2020/1/12 还是会被放到缓存中,单位时间的并发会打到缓存中,设置1秒 
         goodsDetailVo.setRemainSeconds(remainSeconds);
         return Result.success(goodsDetailVo);
     }

@@ -6,6 +6,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Service;
+import sf.cache.RedisCache;
 import sf.util.JwtUtil;
 
 import java.util.concurrent.TimeUnit;
@@ -72,11 +73,12 @@ public class StringRedisService {
      * 创建refreshToken并存放到redis中
      * @param token
      */
-    public void createRefreshTokenAndSave(String token)
+    @RedisCache(TYPE=String.class)
+    public String RefreshTokenAndSave(String token)
     {
-        String newRefreshToken = JwtUtil.CreateRefreshToken(token);
-        String key = RedisKey.getRedisKey(RedisKey.REDIS_USER_LOGIN_MODEL,RedisKey.REDIS_USER_LOGIN_Token,token);
-        setString(key,newRefreshToken,RedisKey.REDIS_LOGIN_TOKENREFRESH_EXPICETIME);//将refreshToken存放到token中
+        //        String key = RedisKey.getRedisKey(RedisKey.REDIS_USER_LOGIN_MODEL,RedisKey.REDIS_USER_LOGIN_Token,token);
+//        setString(key,newRefreshToken,RedisKey.REDIS_LOGIN_TOKENREFRESH_EXPICETIME);//将refreshToken存放到token中
+        return JwtUtil.CreateRefreshToken(token);
     }
 
 

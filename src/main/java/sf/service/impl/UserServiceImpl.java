@@ -8,6 +8,7 @@ import org.apache.shiro.crypto.hash.Md5Hash;
 import org.apache.shiro.util.ByteSource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import sf.cache.RedisCache;
 import sf.dao.UserMapper;
 import sf.entity.User;
 import sf.entity.UserExample;
@@ -44,7 +45,8 @@ public class UserServiceImpl implements UserService {
             throw new BaseException(CodeMsg.LOGIN_OR_PASS_ERROR);
         }
         String token = CookieUtil.getCookieValue(request,CookieUtil.USER_COOKIE_TOKEN_NAME);
-        String key = RedisKey.getRedisKey(RedisKey.REDIS_USER_LOGIN_MODEL,RedisKey.REDIS_USER_LOGIN_Token,token);
+        Object[] objects = {token};
+        String key = RedisKey.genKey(StringRedisService.class.getName(),"RefreshTokenAndSave",objects);
         String oldRefreshToken = stringRedisService.getString(key);
         if(!StringUtils.isEmpty(token) && !StringUtils.isEmpty(oldRefreshToken) && JwtUtil.canTokenRefresh(token,oldRefreshToken))//过期在前面已经判断过了
         {
@@ -65,12 +67,13 @@ public class UserServiceImpl implements UserService {
         }
         stringRedisService.del(key);
         token = JwtUtil.createToken(phone);
-        stringRedisService.createRefreshTokenAndSave(token);
+        stringRedisService.RefreshTokenAndSave(token);
         return token;
     }
 
 
     //使用token得到user
+    @RedisCache(TYPE = User.class)
     public User getByToken(String token)
     {
         if(StringUtils.isEmpty(token))
@@ -82,20 +85,19 @@ public class UserServiceImpl implements UserService {
             throw new AuthenticationException("token认证失败！");
         }
         //取缓存
-        String key  = RedisKey.getRedisKey(RedisKey.REDIS_USER_LOGIN_MODEL,RedisKey.REDIS_USER_PAGEMODEL,username);
-        Object o  = redisService.getObj(key);
-        if(o!=null)
-        {
-            return (User) o;
-        }
+//        String key  = RedisKey.getRedisKey(RedisKey.REDIS_USER_LOGIN_MODEL,RedisKey.REDIS_USER_PAGEMODEL,username);
+//        User o  = redisService.getObj(key,User.class);
+//        if(o!=null)
+//        {
+//            return o;
+//        }
         //数据库查找
         UserExample userExample = new UserExample();
         UserExample.Criteria criteria = userExample.createCriteria();
         criteria.andPhoneEqualTo(username);
-        User result = userMapper.selectByExample(userExample).get(0);
         //放入缓存
-        redisService.setObj(key,result,RedisKey.REDIS_USER_PAGEMODEL_EXPICETIME);
-        return result;
+//        redisService.setObj(key,result,RedisKey.REDIS_USER_PAGEMODEL_EXPICETIME);
+        return userMapper.selectByExample(userExample).get(0);
     }
 
 //    public User GETbyID(){
@@ -105,18 +107,10 @@ public class UserServiceImpl implements UserService {
 //        return userMapper.selectByExample(userExample).get(0);
 //    }
 
-//     TODO: 2020/1/12 aop是否可以实现
+    @RedisCache(TYPE = UserModel.class)
     public UserModel usertoModel(User user)
     {
-        String key = RedisKey.getRedisKey(RedisKey.REDIS_MODEL,RedisKey.REDIS_MODEL_USERMODEL,String.valueOf(user.getId()));
-        UserModel userModel = (UserModel)redisService.getObj(key);
-        if(userModel !=null)
-        {
-            return userModel;
-        }
-        userModel = new UserModel(user);
-        redisService.setObj(key,userModel,RedisKey.REDIS_MODEL_EXPICETIME);
-        return userModel;
+        return new UserModel(user);
     }
 
 }

@@ -130,13 +130,16 @@ public class JwtFilter extends BasicHttpAuthenticationFilter {
         if(stringRedisService.exits(token))
         {
             System.out.println("刷新token!!!!!!!!!!!!!!!!!!!!");
-            String key = RedisKey.getRedisKey(RedisKey.REDIS_USER_LOGIN_MODEL,RedisKey.REDIS_USER_LOGIN_Token,token);
+            //获取refresh
+            Object[] objects={token};
+            String key = RedisKey.genKey(StringRedisService.class.getName(),"RefreshTokenAndSave",objects);
             String refreshToken = stringRedisService.getString(key);
+//            String refreshToken1 =
             if(JwtUtil.canTokenRefresh(token,refreshToken))
             {
                 stringRedisService.del(key);
                 String newToken = JwtUtil.createToken(JwtUtil.getUsername(token));
-                stringRedisService.createRefreshTokenAndSave(newToken);
+                stringRedisService.RefreshTokenAndSave(newToken);
                 JwtToken jwtToken = new JwtToken(newToken);
                 getSubject(request,response).login(jwtToken);
                 CookieUtil.setCookieValue(request,response,"token",newToken);

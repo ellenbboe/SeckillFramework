@@ -50,4 +50,9 @@ public class User {
     public void setAddress(String address) {
         this.address = address == null ? null : address.trim();
     }
+
+    @Override
+    public String toString() {
+        return this.phone;
+    }
 }

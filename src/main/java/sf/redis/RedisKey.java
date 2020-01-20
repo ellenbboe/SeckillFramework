@@ -1,5 +1,7 @@
 package sf.redis;
 
+import sf.util.Constants;
+
 public class RedisKey {
     //模式:项目+模块(功能)+前缀+特征值
     public static final String REDIS_PROJECT = "SECKILLFRAMEWORK:";
@@ -48,5 +50,24 @@ public class RedisKey {
     {
         return REDIS_PROJECT+model+pre+value;
     }
-
+    /**
+     * 生成key
+     * @param clazzName
+     * @param methodName
+     * @param args
+     * @return
+     */
+    public static String genKey(String clazzName, String methodName, Object[] args) {
+        StringBuilder sb = new StringBuilder(clazzName);
+        sb.append(Constants.DELIMITER);
+        sb.append(methodName);
+        sb.append(Constants.DELIMITER);
+        for (Object obj : args) {
+            sb.append(obj.toString());
+            sb.append(Constants.DELIMITER);
+        }
+        sb.delete(sb.length()-1,sb.length());
+        return sb.toString();
+    }
+    
 }
