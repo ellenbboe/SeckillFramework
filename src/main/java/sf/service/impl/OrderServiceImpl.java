@@ -3,22 +3,29 @@ package sf.service.impl;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import sf.cache.RedisCache;
 import sf.dao.GoodsMapper;
 import sf.dao.OrdMapper;
 import sf.entity.Goods;
 import sf.entity.Ord;
 import sf.entity.OrdExample;
+import sf.entity.User;
 import sf.model.OrderModel;
 import sf.redis.RedisKey;
 import sf.redis.RedisService;
 import sf.service.GoodsService;
 import sf.service.OrderService;
+import sf.service.UserService;
+import sf.vo.SeckillDetailVo;
+
 @Service
 @Slf4j
 public class OrderServiceImpl implements OrderService {
 
     @Autowired(required = false)
     OrdMapper ordMapper;
+    @Autowired
+    UserService userService;
     @Autowired(required = false)
     GoodsMapper goodsMapper;
     @Autowired
@@ -26,6 +33,7 @@ public class OrderServiceImpl implements OrderService {
     @Autowired
     RedisService redisService;
     @Override
+    @RedisCache(TYPE = Ord.class)
     public Ord GetById(String id) {
         return ordMapper.selectByPrimaryKey(id);
     }
@@ -49,19 +57,22 @@ public class OrderServiceImpl implements OrderService {
         goodsService.updateModel(goodsId);
     }
 
-
-    // TODO: 2020/1/12 是否可以使用aop实现
     @Override
+    @RedisCache(TYPE = SeckillDetailVo.class)
+    public SeckillDetailVo getSeckillDetailVo(String id, User user)
+    {
+        SeckillDetailVo seckillDetailVo= new SeckillDetailVo();
+        Ord ord = GetById(id);
+        seckillDetailVo.setOrderModel(OrderToModel(ord));
+        seckillDetailVo.setGoods(goodsService.GoodsToModel(goodsService.getGoodsById(ord.getGoodsId())));
+        seckillDetailVo.setUser(userService.usertoModel(user));
+        return seckillDetailVo;
+    }
+
+    @Override
+    @RedisCache(TYPE = OrderModel.class)
     public OrderModel OrderToModel(Ord ord) {
-        String key = RedisKey.getRedisKey(RedisKey.REDIS_MODEL,RedisKey.REDIS_MODEL_ORDERMODEL,ord.getId());
-        OrderModel orderModel = (OrderModel)redisService.getObj(key);
-        if(orderModel !=null)
-        {
-            return orderModel;
-        }
-        orderModel = new OrderModel(ord);
-        redisService.setObj(key,orderModel,RedisKey.REDIS_MODEL_EXPICETIME);
-        return orderModel;
+        return new OrderModel(ord);
     }
 
     @Override
@@ -74,6 +85,7 @@ public class OrderServiceImpl implements OrderService {
         return ordMapper.countByExample(ordExample) > 0;
     }
     @Override
+//    @RedisCache(TYPE = String.class)
     public String getOrderByUserIdAndGoodsId(int userId,int goodsId){
         OrdExample ordExample = new OrdExample();
         OrdExample.Criteria criteria = ordExample.createCriteria();

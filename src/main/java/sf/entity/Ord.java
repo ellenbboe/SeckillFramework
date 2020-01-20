@@ -73,4 +73,9 @@ public class Ord {
     public void setPayTime(Date payTime) {
         this.payTime = payTime;
     }
+
+    @Override
+    public String toString() {
+        return id;
+    }
 }

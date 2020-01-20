@@ -53,4 +53,9 @@ public class SeckillGoods {
     public void setSeckillEndtime(Date seckillEndtime) {
         this.seckillEndtime = seckillEndtime;
     }
+
+    @Override
+    public String toString() {
+        return "seckillId:"+id;
+    }
 }

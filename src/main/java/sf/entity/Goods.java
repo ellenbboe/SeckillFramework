@@ -1,5 +1,7 @@
 package sf.entity;
 
+import sf.cache.RedisCache;
+
 import java.math.BigDecimal;
 
 public class Goods {
@@ -71,5 +73,10 @@ public class Goods {
 
     public void setGoodsSeckillprice(BigDecimal goodsSeckillprice) {
         this.goodsSeckillprice = goodsSeckillprice;
+    }
+
+    @Override
+    public String toString() {
+        return String.valueOf(id);
     }
 }
