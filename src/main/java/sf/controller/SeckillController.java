@@ -97,27 +97,28 @@ public class SeckillController implements InitializingBean {
         {
             return Result.error(CodeMsg.MIAO_SHA_NO_STOCK);
         }
+        if(orderService.OrderExist(user.getId(), goodsId))
+        {
+            return Result.error(CodeMsg.MIAO_SHA_REPEAT);
+        }
+        Goods goods = goodsService.getGoodsById(goodsId);
+        if(goods.getGoodsStock()<=0)
+        {
+            return Result.error(CodeMsg.MIAO_SHA_NO_STOCK);
+        }
         Object[] objects = {goodsId};
         Long stock = redisService.decr(RedisKey.genKey(Goods.class.getName(),"getGoodsStock",objects));
         if (stock < 0) {
             goodsStock.put(goodsId, false);
-            log.info("2");
             return Result.error(CodeMsg.MIAO_SHA_NO_STOCK);
         }
+
+
         OrdMessage message = new OrdMessage(user.getId(),goodsId);
         try{
             mqSender.send(message);
         }catch (Exception e){
             e.printStackTrace();
-        }
-        Goods goods = goodsService.getGoodsById(goodsId);
-        if(goods.getGoodsStock()<=0)
-        {
-            throw new BaseException(CodeMsg.MIAO_SHA_NO_STOCK);
-        }
-        if(orderService.OrderExist(user.getId(), goodsId))
-        {
-            throw new BaseException(CodeMsg.MIAO_SHA_REPEAT);
         }
         return Result.success(CodeMsg.ORDER_IN_LINE);
 //        return Result.success(orderService.CreateOrderByGoodsAndUserID(user.getId(),goodsId));
